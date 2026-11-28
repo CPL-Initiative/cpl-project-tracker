@@ -553,6 +553,22 @@
    "run": "45627459464"
   },
   {
+   "code": "IDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IDS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI IDS 299 Selected Topics in IDS",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "JAPN",
    "heading": "Japanese",
    "heading_printed": "Japanese",
@@ -985,6 +1001,6 @@
    "run": "45627459464"
   }
  ],
- "subjects": 61,
- "with_heading": 61
+ "subjects": 62,
+ "with_heading": 62
 }

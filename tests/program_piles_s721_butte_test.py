@@ -75,9 +75,13 @@ saved = W.REVIEWED["01305"]
 W.REVIEWED["01305"] = dict(saved, courses=["AET99"])
 check(W.claim(f) == "a named course not found", "a named course the capture lacks holds it")
 W.REVIEWED["01305"] = saved
-check(W.shared_with("14583") == ["43185"] and not any(W.shared_with(cn) for cn in ROWS), "only 14583's page is shared")
+# S742 read 14583 from its own page (S741's site pin, node 28324; paid read 46012628995): shared with 43185's page as
+# this plan found it, or on a page of its own once that read's record is filed.
+OWN_14583 = str(W._load("14583").get("extracted_run")) == "46012628995"
+check(W.shared_with("14583") == ([] if OWN_14583 else ["43185"]) and not any(W.shared_with(cn) for cn in ROWS),
+      "only 14583's page is shared, until S742's read from its own page")
 W.REVIEWED["14583"] = dict(W.REVIEWED["01305"])
-check(W.claim(W._load("14583")) == "the page is shared and no note names the record's own section",
+check(OWN_14583 or W.claim(W._load("14583")) == "the page is shared and no note names the record's own section",
       "a shared page without its own-section words holds")
 del W.REVIEWED["14583"]
 

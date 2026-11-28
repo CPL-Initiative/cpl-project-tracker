@@ -1,0 +1,47 @@
+{
+ "_readme": "S742, lane 1 (keys): the 2 programs of San Diego City College lane 1 held by key since S741, each a filed record (run 38252422845) that places none of the state's listed courses. The capture of 2026-11-27 (run 45960365618, page checks on) read the catalog's 228 entries of degree curricula and certificate programs and found no entry for either: it files both under not_found, and the state's file lists both as Active - Teachout Only. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "San Diego City College",
+ "written": "2026-11-27T12:54:08Z",
+ "capture": "45960365618",
+ "page_reads": [],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: its list of degrees and certificates does not list it.",
+  "catalog_award_differs": "The state lists the program as a Certificate of Achievement, and the 2026-27 catalog prints its entry, the only one under its title, as a Certificate of Performance: the extraction, asked for the Certificate of Achievement, finds no such section and records no list."
+ },
+ "programs": [
+  {
+   "control_number": "22352",
+   "title": "Honeywell Tool and Die Apprenticeship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The capture read 228 entries and none names a Honeywell Tool and Die Apprenticeship ('no page read names the program'); its A.S. sister 15818 has no page either. The filed record was read from 'Manufacturing Fundamentals - Certificate of Performance: City' (15945/15821), and its own notes say 'No section for the named award appears in the text'. The state's file lists the certificate as Active - Teachout Only.",
+   "listed": 6,
+   "placed": 0,
+   "record": "kb/program_requirements_college/san_diego_city/records/22352.json",
+   "confidence": {
+    "unit_arithmetic": 0,
+    "course_list_match": 0,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 60
+   }
+  },
+  {
+   "control_number": "38732",
+   "title": "Certified Public Accountant (CPA) Preparatory Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "catalog_award_differs",
+   "note": "The one entry under the title is 'Certified Public Accountant Preparatory Program - Certificate of Performance: City' (15945/15760), which the capture's page checks refuse for the Certificate of Achievement (it names 3 of the 5 listed courses). The filed record's own notes: that section 'requires ACCT 119 (3.0 units) and one course from ACCT 125 or ACCT 135 (3.0 units each), for Total Units: 6.0', fewer units than the state's award requires, and 'ACCT 120 and ACCT 220 from the closed list do not appear anywhere in the text'. The state's file lists the certificate as Active - Teachout Only.",
+   "listed": 5,
+   "placed": 0,
+   "record": "kb/program_requirements_college/san_diego_city/records/38732.json",
+   "confidence": {
+    "unit_arithmetic": 0,
+    "course_list_match": 0,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 60
+   }
+  }
+ ]
+}

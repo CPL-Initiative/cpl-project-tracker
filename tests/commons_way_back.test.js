@@ -85,8 +85,21 @@ function withHunt() { const d = JSON.parse(JSON.stringify(FILES["kb/status/commo
   await go(front, "#program-requirements/list");
   const pl = back(front, "program-requirements");
   check("(9) ⭐ a tab opened from a Commons card carries Back to CPL Commons", pl && txt(pl) === "Back to CPL Commons" && pl.getAttribute("href") === "#commons", pl ? txt(pl) : "none");
-  await go(front, "#exhibits");
+  // Leaving for a tab outside the Commons drops it. (This went to #exhibits until S747, when Exhibits, the Exhibit
+  // titles card's own page, began to carry the link however it is reached.)
+  await go(front, "#cpl-pathways");
   check("(9) leaving that tab drops it", !front.d.getElementById("cpl-back-needs"));
+  // Exhibits, the Exhibit titles card's own page, carries the way back however it is reached (Sam's Commons Clarity
+  // list: "the Exhibits pages lack back links"; S747 found #exhibits and #exhibits/held with none, opened cold).
+  for (const hash of ["#exhibits", "#exhibits/held"]) {
+    const ex = load(hash);
+    await ex.M.boot(); await settle();
+    ex.w.dispatchEvent(new ex.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } })); await settle();
+    const el = back(ex, "exhibits");
+    check("(9) ⭐ " + hash + " opened cold carries Back to CPL Commons in its own pane",
+      el && txt(el) === "Back to CPL Commons" && el.getAttribute("href") === "#commons" && ex.d.querySelectorAll("#cpl-back-needs").length === 1,
+      el ? txt(el) : "none");
+  }
   const menu = load("#program-requirements/list");
   await settle();
   menu.w.dispatchEvent(new menu.w.CustomEvent("cpl-tab-activated", { detail: { tab: "program-requirements" } })); await settle();

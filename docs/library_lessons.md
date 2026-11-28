@@ -966,3 +966,33 @@ with `scripts/library_page.py`, and filed while its record's url still named cla
   `cpl_library_guard_public` (run 45719960204: *"Listing in the public library needs the team phrase or a reviewer
   sign-in"*), the service role included, and was withdrawn from #3864. Public fields change only through
   `cpl_library_set_public()` from the card; the summary waits on a person's press of Publish to Public Library.
+
+## S736 SkyBrant (2026-11-26 to 11-27): the publish fixes, the 3-hour check and a first check that failed
+
+- **The check runs every three hours.** `library-publish.yml` fires on cron `41 */3 * * *` UTC, so a piece that has
+  just moved to its Pages address can wait up to three hours for its check row. The card now shows the steps, a bar and
+  the next run's time, so a wait reads as a wait (`f-library-check-runs-every-3h-s736`; #3865).
+- **A timer keeps a jsdom shard alive.** A `setInterval` the card starts for its countdown kept one CI test shard from
+  exiting, and the shard hung; #3865 carries a jsdom timer guard for it
+  (`p-setinterval-keeps-jsdom-test-shard-alive-s736`).
+- **A page's first check can fail, and the card must say so.** Adult Ed CPL Starting Points looked finished and failed
+  its first check with 19 findings (target size, the eyebrow's contrast, the column grip's aria). #3868 fixed them and
+  the re-check passed at 01:13Z 2026-11-26 with 0. Read the check row before calling a piece done.
+- **Sam's asks:** the top Publish opens the form, the public summary is prefilled, the sidebar matches the list, a
+  waiting piece offers *Add its public summary*, and *File a new version* is gone (*"the file feature is not needed"*).
+  The summary itself is still his to press: a session cannot write a public field.
+
+## S744 SkyCurlew (2026-11-27): the exhibit deep link and the Cable Splicer flyer
+
+- **Verify a MAP behavior live and read its bundle before building on a report of it.** Pedro's word (relayed by COBIx)
+  was that the landing page takes the exhibit in the address. Live, `?Exhibit=<code>` fills the page's search box and
+  lists that exhibit's courses; Possible Qualifications stays unpicked. MAP's own bundle gave the rest: each
+  comma-separated value must match `^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$`, at most 10, or the page drops the whole
+  parameter; `Exhibit` or `exhibit`; no course parameter; a numeric `map_id`, a course code or a title does nothing.
+  The KB note: `docs/kb-notes/reference-map-landing-page-exhibit-parameter.md` (`f-map-landing-exhibit-param-pattern-s744`).
+- **#3909 (`3ef5933a`).** `reference_data.mjs` `landingButton`/`exhibitParam` keep only passing codes; the pick
+  instruction is gone; the drafter is told in `cobi_data.mjs`. Codes MAP refuses: Chaffey MAPICI-BP&C-1-001, Laney
+  MAPICI-E&ET-1-001, Modesto Junior MAPICI-E3S--1-001, Cerritos MAPCXA-E&R-1-001 (renamed, they would work).
+- **The Cable Splicer flyer** (`cable-splicer-cpl-opportunities-mwmo31a1`) predates the link, so its five buttons open
+  bare landing pages. The re-point is *Revise* on the card, Sam's press; a session cannot call the revise function. The
+  expected buttons are in the lane. No record exists for "Foothill Sheet Metal", which Sam named.

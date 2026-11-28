@@ -78,16 +78,18 @@ function ladderOf(w) { return w.CPL_PATHWAYS.programs.find((p) => p.kind === "la
     text.includes("up to " + fig.up_to + " of the " + fig.total.min + "–" + fig.total.max + " major units"), fig);
   check("(c) the map line agrees", !!assoc && assoc.textContent.includes("Up to " + fig.up_to + " of " + fig.total.min + "–" + fig.total.max + " units"));
   const sums = [...root.querySelectorAll(".cplpw-lblock .bsum")].map((n) => n.textContent);
-  check("(c) the three blocks sum from the record (core 16.5 of 19, Reinforcing 15 of 15, Structural 0 of 19)",
-    sums.join(" | ") === "16.5 of 19 units through CPL | 15 of 15 units through CPL | 0 of 19 units through CPL", sums.join(" | "));
-  check("(c) Reinforcing certificate: 34 units, up to 31.5", /Reinforcing \(control number 36002\), 34 units: up to 31\.5 through CPL/.test(text));
-  check("(c) Structural certificate: 38 units, up to 16.5", /Structural \(control number 36003\), 38 units: up to 16\.5 through CPL/.test(text));
+  // S746: the display build reads MAP's live view (kb/exhibits_adoption.json), so Cerritos's Ironworker
+  // apprenticeship exhibits reach every IWAP course (f-cerritos-ironworkers-all-24-cpl-s744).
+  check("(c) the three blocks sum from the record (core 19 of 19, Reinforcing 15 of 15, Structural 19 of 19)",
+    sums.join(" | ") === "19 of 19 units through CPL | 15 of 15 units through CPL | 19 of 19 units through CPL", sums.join(" | "));
+  check("(c) Reinforcing certificate: 34 units, up to 34", /Reinforcing \(control number 36002\), 34 units: up to 34 through CPL/.test(text), (text.match(/Reinforcing \(control number 36002\)[^.]*/) || [""])[0]);
+  check("(c) Structural certificate: 38 units, up to 38", /Structural \(control number 36003\), 38 units: up to 38 through CPL/.test(text), (text.match(/Structural \(control number 36003\)[^.]*/) || [""])[0]);
   check("(c) the stale '27–29 major units' appears nowhere in the ladder", !/27\s*[–-]\s*29/.test(text));
   check("(c) the footer names the build Sierra reads", text.includes("display build " + rec.display.build));
   const rows = root.querySelectorAll(".cplpw-ltable tbody tr");
   check("(c) 24 course rows, each with a row header", rows.length === 24 && [...rows].every((r) => r.querySelector('th[scope="row"]')));
-  check("(c) Welding I shows no CPL yet",
-    [...rows].some((r) => /IWAP 40\.10/.test(r.textContent) && /None yet/.test(r.textContent)));
+  check("(c) Welding I shows CPL from the apprenticeship (MAPICA-RA4P3-1-001 lists IWAP 40.10)",
+    [...rows].some((r) => /IWAP 40\.10/.test(r.textContent) && !/None yet/.test(r.textContent)));
 
   const points = prog.steps.flatMap((s) => s.points || []);
   const confirms = points.filter((p) => p.s === "confirm").length;

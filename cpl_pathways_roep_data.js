@@ -1,13 +1,14 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "5b80d4de75e9",
+ "build": "229a759101f7",
  "built": "2026-11-13",
  "inputs": {
-  "records": 18748,
+  "records": 18752,
   "map_read_at": "2026-11-13",
   "registry_read_at": "2026-11-13",
   "articulations": "2026-09-03T20:19:16Z",
+  "adoption": "2026-11-27T06:23:49Z",
   "memberships": "2026-11-27 06:19",
   "cer": "2026-11-27T06:20:29+00:00"
  },
@@ -262,7 +263,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -835,7 +836,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -1079,7 +1080,7 @@ window.CPL_PATHWAYS_ROEP = {
    "display": {
     "v": 1,
     "figure": {
-     "up_to": 31.5,
+     "up_to": 38.0,
      "measure": "units",
      "total": {
       "min": 34,
@@ -1092,15 +1093,16 @@ window.CPL_PATHWAYS_ROEP = {
       "IWAP 40.63",
       "IWAP 40.09",
       "IWAP 40.22",
+      "IWAP 40.10",
       "IWAP 40.11",
-      "IWAP 40.12",
-      "IWAP 41.03",
-      "IWAP 40.15",
-      "IWAP 41.07",
-      "IWAP 40.53",
-      "IWAP 40.55",
-      "IWAP 41.08",
-      "IWAP 41.09"
+      "IWAP 40.21",
+      "IWAP 41.06",
+      "IWAP 40.05",
+      "IWAP 40.60",
+      "IWAP 41.05",
+      "IWAP 40.61",
+      "IWAP 41.04",
+      "IWAP 40.26"
      ],
      "path": null,
      "path_picks": [],
@@ -1108,7 +1110,7 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "counts": {
      "courses": 24,
-     "here": 15,
+     "here": 24,
      "adopt": 3,
      "consider": 0
     },
@@ -1129,11 +1131,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "FIW Orientation"
+        "FIW Orientation",
+        "Ironworker Apprenticeship — Reinforcing, Period 1"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1141,6 +1144,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "FIW Orientation",
          "credential": "FIW Orientation",
          "type": "Credit By Exam",
+         "recs": [
+          "4 hours in FIW - Orientation"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 1",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 1",
+         "type": null,
          "recs": [
           "4 hours in FIW - Orientation"
          ]
@@ -1164,11 +1176,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — Mixed Base"
+        "Ironworker Apprenticeship — Mixed Base",
+        "Ironworker Apprenticeship — Reinforcing, Period 1"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1176,6 +1189,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Mixed Base",
          "credential": "Ironworker Apprenticeship — Mixed Base",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Mixed Base - Reinforcing"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 1",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 1",
+         "type": null,
          "recs": [
           "2 hours in IW - Mixed Base - Reinforcing"
          ]
@@ -1199,11 +1221,13 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 3,
        "credentials": [
-        "Ironworker Apprenticeship — Ironworker History"
+        "Ironworker Apprenticeship — Ironworker History",
+        "Ironworker Apprenticeship — Reinforcing, Period 7",
+        "Ironworker Apprenticeship — Structural, Period 7"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1211,6 +1235,24 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW-Ironworker History",
          "credential": "Ironworker Apprenticeship — Ironworker History",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Trade Science/Ironworker History"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P6-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 7",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 7",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Trade Science/Ironworker History"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P6-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 7",
+         "credential": "Ironworker Apprenticeship — Structural, Period 7",
+         "type": null,
          "recs": [
           "2 hours in IW - Trade Science/Ironworker History"
          ]
@@ -1234,11 +1276,13 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 3,
        "credentials": [
-        "Ironworker Apprenticeship — Lead Hazard"
+        "Ironworker Apprenticeship — Lead Hazard",
+        "Ironworker Apprenticeship — Reinforcing, Period 4",
+        "Ironworker Apprenticeship — Structural, Period 4"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1246,6 +1290,24 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Lead Hazard",
          "credential": "Ironworker Apprenticeship — Lead Hazard",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Structural Lead Hazard"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P3-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 4",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 4",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Structural Lead Hazard"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P3-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 4",
+         "credential": "Ironworker Apprenticeship — Structural, Period 4",
+         "type": null,
          "recs": [
           "2 hours in IW - Structural Lead Hazard"
          ]
@@ -1281,11 +1343,13 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 3,
        "credentials": [
-        "Ironworker Apprenticeship — General Rigging"
+        "Ironworker Apprenticeship — General Rigging",
+        "Ironworker Apprenticeship — Reinforcing, Period 3",
+        "Ironworker Apprenticeship — Structural, Period 3"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1293,6 +1357,24 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Gen Rigging",
          "credential": "Ironworker Apprenticeship — General Rigging",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - GEN Rigging"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P2-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 3",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 3",
+         "type": null,
+         "recs": [
+          "2 hours in IW - GEN Rigging"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P2-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 3",
+         "credential": "Ironworker Apprenticeship — Structural, Period 3",
+         "type": null,
          "recs": [
           "2 hours in IW - GEN Rigging"
          ]
@@ -1316,11 +1398,13 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 3,
        "credentials": [
-        "Ironworker Apprenticeship — Cranes"
+        "Ironworker Apprenticeship — Cranes",
+        "Ironworker Apprenticeship — Reinforcing, Period 3",
+        "Ironworker Apprenticeship — Structural, Period 3"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1328,6 +1412,24 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW-Cranes",
          "credential": "Ironworker Apprenticeship — Cranes",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Cranes"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P2-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 3",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 3",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Cranes"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P2-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 3",
+         "credential": "Ironworker Apprenticeship — Structural, Period 3",
+         "type": null,
          "recs": [
           "2 hours in IW - Cranes"
          ]
@@ -1348,7 +1450,47 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "WELD M1111",
         "title": "IW - Detailing/Reinforcing Iron"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 3,
+       "credentials": [
+        "Ironworker Apprenticeship — Reinforcing, Period 4",
+        "Ironworker Apprenticeship — Structural, Period 4",
+        "Ironworker Apprenticeship — Welding 1"
+       ],
+       "exhibits_n": 3,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-RA4P3-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 4",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 4",
+         "type": null,
+         "recs": [
+          "2.5 hours in Welding l - Reinforcing"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P3-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 4",
+         "credential": "Ironworker Apprenticeship — Structural, Period 4",
+         "type": null,
+         "recs": [
+          "2.5 hours in Welding l - Reinforcing"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Apprenticeship — Welding 1",
+         "credential": "Ironworker Apprenticeship — Welding 1",
+         "type": null,
+         "recs": [
+          "2.5 hours in Welding l - Reinforcing"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 40.11": {
       "title": "Welding ll- Reinforcing",
@@ -1366,11 +1508,13 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 3,
        "credentials": [
-        "Ironworker Apprenticeship — Welding 2"
+        "Ironworker Apprenticeship — Welding 2",
+        "Ironworker Apprenticeship — Reinforcing, Period 5",
+        "Ironworker Apprenticeship — Structural, Period 5"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1378,6 +1522,24 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Welding II",
          "credential": "Ironworker Apprenticeship — Welding 2",
          "type": "Credit By Exam",
+         "recs": [
+          "2.5 hours in Welding ll- Reinforcing"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P4-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 5",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 5",
+         "type": null,
+         "recs": [
+          "2.5 hours in Welding ll- Reinforcing"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-SA4P4-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 5",
+         "credential": "Ironworker Apprenticeship — Structural, Period 5",
+         "type": null,
          "recs": [
           "2.5 hours in Welding ll- Reinforcing"
          ]
@@ -1401,11 +1563,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Reinforcing 1"
+        "Reinforcing 1",
+        "Ironworker Apprenticeship — Reinforcing, Period 2"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1413,6 +1576,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "Reinforcing I",
          "credential": "Reinforcing 1",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Reinforcing Iron l"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P1-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 2",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 2",
+         "type": null,
          "recs": [
           "2 hours in IW - Reinforcing Iron l"
          ]
@@ -1436,11 +1608,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — Reinforcing 2"
+        "Ironworker Apprenticeship — Reinforcing 2",
+        "Ironworker Apprenticeship — Reinforcing, Period 2"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1448,6 +1621,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW-Reinforcing II",
          "credential": "Ironworker Apprenticeship — Reinforcing 2",
          "type": "Credit By Exam",
+         "recs": [
+          "1 hour in IW - Reinforcing ll"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P1-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 2",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 2",
+         "type": null,
          "recs": [
           "1 hour in IW - Reinforcing ll"
          ]
@@ -1471,11 +1653,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — Post Tensioning 1"
+        "Ironworker Apprenticeship — Post Tensioning 1",
+        "Ironworker Apprenticeship — Reinforcing, Period 6"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1483,6 +1666,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Post Tensioning I",
          "credential": "Ironworker Apprenticeship — Post Tensioning 1",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Post Tension l"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P5-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 6",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 6",
+         "type": null,
          "recs": [
           "2 hours in IW - Post Tension l"
          ]
@@ -1506,11 +1698,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — Post Tensioning 2"
+        "Ironworker Apprenticeship — Post Tensioning 2",
+        "Ironworker Apprenticeship — Reinforcing, Period 6"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1518,6 +1711,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Post Tensioning II",
          "credential": "Ironworker Apprenticeship — Post Tensioning 2",
          "type": "Credit By Exam",
+         "recs": [
+          "2.5 hours in Post - Tension ll"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P5-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 6",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 6",
+         "type": null,
          "recs": [
           "2.5 hours in Post - Tension ll"
          ]
@@ -1553,11 +1755,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — Detailing"
+        "Ironworker Apprenticeship — Detailing",
+        "Ironworker Apprenticeship — Reinforcing, Period 5"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1565,6 +1768,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "IW- Detailing",
          "credential": "Ironworker Apprenticeship — Detailing",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Detailing/Reinforcing Iron"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P4-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 5",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 5",
+         "type": null,
          "recs": [
           "2 hours in IW - Detailing/Reinforcing Iron"
          ]
@@ -1588,11 +1800,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Foreman Training"
+        "Foreman Training",
+        "Ironworker Apprenticeship — Reinforcing, Period 8"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1600,6 +1813,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "Foreman Training",
          "credential": "Foreman Training",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IWS - Reinforcing Foreman Training"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P7-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 8",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 8",
+         "type": null,
          "recs": [
           "2 hours in IWS - Reinforcing Foreman Training"
          ]
@@ -1623,11 +1845,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Post Tensioning 3"
+        "Post Tensioning 3",
+        "Ironworker Apprenticeship — Reinforcing, Period 7"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1635,6 +1858,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "Post Tensioning III",
          "credential": "Post Tensioning 3",
          "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Post - Tension lll"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P6-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 7",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 7",
+         "type": null,
          "recs": [
           "2 hours in IW - Post - Tension lll"
          ]
@@ -1658,11 +1890,12 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 0,
-       "credentials_n": 1,
+       "credentials_n": 2,
        "credentials": [
-        "Ironworker Apprenticeship — OSHA 30 and Extension Review"
+        "Ironworker Apprenticeship — OSHA 30 and Extension Review",
+        "Ironworker Apprenticeship — Reinforcing, Period 8"
        ],
-       "exhibits_n": 1,
+       "exhibits_n": 2,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -1670,6 +1903,15 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "Ext & Review",
          "credential": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
          "type": "Credit By Exam",
+         "recs": [
+          "1.5 hours in OSHA 30/Extension Review"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-RA4P7-1-001",
+         "title": "Ironworker Apprenticeship — Reinforcing, Period 8",
+         "credential": "Ironworker Apprenticeship — Reinforcing, Period 8",
+         "type": null,
          "recs": [
           "1.5 hours in OSHA 30/Extension Review"
          ]
@@ -1691,6 +1933,36 @@ window.CPL_PATHWAYS_ROEP = {
         "title": "Heavy Plate, Structural Steel and Welding Certification"
        }
       ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 2",
+        "Ironworker Structural Steel 1"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P1-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 2",
+         "credential": "Ironworker Apprenticeship — Structural, Period 2",
+         "type": null,
+         "recs": [
+          "2.5 hours in Structural Steel l"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Structural Steel 1",
+         "credential": "Ironworker Structural Steel 1",
+         "type": null,
+         "recs": [
+          "2.5 hours in Structural Steel l"
+         ]
+        }
+       ]
+      },
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -1717,7 +1989,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "INDT M1152",
         "title": "IW - Structural Steel Ll"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 2",
+        "Ironworker Structural Steel 2"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P1-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 2",
+         "credential": "Ironworker Apprenticeship — Structural, Period 2",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Structural Steel ll"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Structural Steel 2",
+         "credential": "Ironworker Structural Steel 2",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Structural Steel ll"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 40.05": {
       "title": "IW- Welding lll",
@@ -1732,7 +2034,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "INDT M1153",
         "title": "IW - Post - Tension Lll"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 5",
+        "Ironworker Welding 3"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P4-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 5",
+         "credential": "Ironworker Apprenticeship — Structural, Period 5",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW- Welding lll"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Welding 3",
+         "credential": "Ironworker Welding 3",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW- Welding lll"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 40.60": {
       "title": "Structural Arch Orn l",
@@ -1747,7 +2079,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "INDT M1026",
         "title": "Structural Arch Orn L"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 6",
+        "Ironworker Structural, Architectural and Ornamental 1"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P5-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 6",
+         "credential": "Ironworker Apprenticeship — Structural, Period 6",
+         "type": null,
+         "recs": [
+          "2.5 hours in Structural Arch Orn l"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Structural, Architectural and Ornamental 1",
+         "credential": "Ironworker Structural, Architectural and Ornamental 1",
+         "type": null,
+         "recs": [
+          "2.5 hours in Structural Arch Orn l"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 41.05": {
       "title": "IW - Architectural ll",
@@ -1762,7 +2124,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "INDT M1152",
         "title": "IW - Structural Steel Ll"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 6",
+        "Ironworker Architectural 2"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P5-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 6",
+         "credential": "Ironworker Apprenticeship — Structural, Period 6",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW - Architectural ll"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Architectural 2",
+         "credential": "Ironworker Architectural 2",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW - Architectural ll"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 40.61": {
       "title": "IW - Structural Precast Concrete/Qualified Rigger",
@@ -1777,7 +2169,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "MANU M10FT",
         "title": "IW - Structural Precast Concrete/Qualified Rigger"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 7",
+        "Ironworker Structural Precast Concrete"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P6-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 7",
+         "credential": "Ironworker Apprenticeship — Structural, Period 7",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Structural Precast Concrete/Qualified Rigger"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Structural Precast Concrete",
+         "credential": "Ironworker Structural Precast Concrete",
+         "type": null,
+         "recs": [
+          "2 hours in IW - Structural Precast Concrete/Qualified Rigger"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 41.04": {
       "title": "IW - Architectural lll",
@@ -1792,7 +2214,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "INDT M1153",
         "title": "IW - Post - Tension Lll"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 8",
+        "Ironworker Architectural 3"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P7-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 8",
+         "credential": "Ironworker Apprenticeship — Structural, Period 8",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW - Architectural lll"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Ironworker Architectural 3",
+         "credential": "Ironworker Architectural 3",
+         "type": null,
+         "recs": [
+          "2.5 hours in IW - Architectural lll"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 40.26": {
       "title": "Metal Building Erection /Foreman Training",
@@ -1807,7 +2259,37 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "MANU M10ED",
         "title": "Metal Building Erection /Foreman Training"
        }
-      ]
+      ],
+      "here": {
+       "recs": 0,
+       "credentials_n": 2,
+       "credentials": [
+        "Ironworker Apprenticeship — Structural, Period 8",
+        "Metal Building Erection 1 / Foreman Training"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-SA4P7-1-001",
+         "title": "Ironworker Apprenticeship — Structural, Period 8",
+         "credential": "Ironworker Apprenticeship — Structural, Period 8",
+         "type": null,
+         "recs": [
+          "2.5 hours in Metal Building Erection /Foreman Training"
+         ]
+        },
+        {
+         "exhibit": null,
+         "title": "Metal Building Erection 1 / Foreman Training",
+         "credential": "Metal Building Erection 1 / Foreman Training",
+         "type": null,
+         "recs": [
+          "2.5 hours in Metal Building Erection /Foreman Training"
+         ]
+        }
+       ]
+      }
      }
     },
     "gaps": [
@@ -1865,7 +2347,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -2758,7 +3240,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -3037,25 +3519,31 @@ window.CPL_PATHWAYS_ROEP = {
    "display": {
     "v": 1,
     "figure": {
-     "up_to": 3.0,
+     "up_to": 12.0,
      "measure": "units",
      "total": {
       "min": 27,
       "max": 27
      },
      "picks": [
+      "ART 40",
+      "ART 41",
+      "ART 80",
       "ART 85"
      ],
-     "path": 3.0,
+     "path": 12.0,
      "path_picks": [
+      "ART 40",
+      "ART 41",
+      "ART 80",
       "ART 85"
      ],
      "path_why": null
     },
     "counts": {
      "courses": 25,
-     "here": 1,
-     "adopt": 5,
+     "here": 4,
+     "adopt": 4,
      "consider": 0
     },
     "courses": {
@@ -3073,25 +3561,30 @@ window.CPL_PATHWAYS_ROEP = {
         "title": "2-D Foundations"
        }
       ],
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 10,
+      "here": {
+       "recs": 0,
+       "credentials_n": 1,
        "credentials": [
+        "AP 2-D Art and Design"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
         {
+         "exhibit": null,
+         "title": "AP 2-D Art and Design",
          "credential": "AP 2-D Art and Design",
-         "colleges": [
-          "Coastline Community College",
-          "Los Angeles Harbor College",
-          "Los Angeles Pierce College",
-          "Moreno Valley College",
-          "Mt. San Jacinto College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College",
-          "Yuba College"
+         "type": "Credit By Exam, Standardized Assessment",
+         "recs": [
+          "3 hours in 2-D DESIGN AND COLOR"
          ]
-        },
+        }
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
         {
          "credential": "AP 3-D Art and Design",
          "colleges": [
@@ -3121,20 +3614,22 @@ window.CPL_PATHWAYS_ROEP = {
         "title": "3-D Foundations"
        }
       ],
-      "adopt": {
+      "here": {
+       "recs": 0,
        "credentials_n": 1,
-       "colleges_n": 7,
        "credentials": [
+        "AP 3-D Art and Design"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
         {
+         "exhibit": null,
+         "title": "AP 3-D Art and Design",
          "credential": "AP 3-D Art and Design",
-         "colleges": [
-          "Chaffey College",
-          "Los Angeles Pierce College",
-          "Mt. San Jacinto College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College"
+         "type": "Credit By Exam, Standardized Assessment",
+         "recs": [
+          "3 hours in 3D DESIGN"
          ]
         }
        ]
@@ -3181,25 +3676,30 @@ window.CPL_PATHWAYS_ROEP = {
         "title": "Fundamentals of Drawing"
        }
       ],
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 11,
+      "here": {
+       "recs": 0,
+       "credentials_n": 1,
        "credentials": [
+        "AP Drawing"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
         {
+         "exhibit": null,
+         "title": "AP Drawing",
          "credential": "AP Drawing",
-         "colleges": [
-          "Chaffey College",
-          "Los Angeles Pierce College",
-          "Moreno Valley College",
-          "Mt. San Jacinto College",
-          "Napa Valley College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College",
-          "Woodland Community College"
+         "type": "Credit By Exam, Standardized Assessment",
+         "recs": [
+          "3 hours in DRAWING FUNDAMENTALS"
          ]
-        },
+        }
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
         {
          "credential": "Drawing",
          "colleges": [
@@ -3829,7 +4329,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -4731,7 +5231,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -5633,7 +6133,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -6752,13 +7252,14 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 1,
-       "credentials_n": 3,
+       "credentials_n": 4,
        "credentials": [
         "FAA-issued Private Pilot Certificate",
         "FAA Certified Flight Instructor (CFI)",
-        "FAA Private Pilot Certificate"
+        "FAA Private Pilot Certificate",
+        "Generic Credit by Exam — San Diego Miramar College"
        ],
-       "exhibits_n": 2,
+       "exhibits_n": 3,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -6773,6 +7274,15 @@ window.CPL_PATHWAYS_ROEP = {
          "type": "Industry Certification",
          "recs": [
           "3 hours in Private Pilot Ground School"
+         ]
+        },
+        {
+         "exhibit": "MAPCBES-CBEM-1-001",
+         "title": "Generic Credit by Exam — San Diego Miramar College",
+         "credential": "Generic Credit by Exam — San Diego Miramar College",
+         "type": null,
+         "recs": [
+          "3 hours in Private Pilot Grounded School"
          ]
         }
        ]
@@ -7177,7 +7687,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -7707,7 +8217,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -9134,7 +9644,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -10404,7 +10914,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -11125,7 +11635,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -11478,7 +11988,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -11801,7 +12311,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -12074,7 +12584,7 @@ window.CPL_PATHWAYS_ROEP = {
      "courses": 27,
      "here": 10,
      "adopt": 19,
-     "consider": 4
+     "consider": 3
     },
     "courses": {
      "ADJ-1": {
@@ -12093,14 +12603,14 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "here": {
        "recs": 2,
-       "credentials_n": 5,
+       "credentials_n": 6,
        "credentials": [
         "Basic Military Police One Station Unit Training (OSUT)",
         "Maritime Enforcement Specialist",
         "Maritime Enforcement Specialist 'A' School (ME 'A')",
         "Maritime Enforcement Specialist Second Class"
        ],
-       "exhibits_n": 5,
+       "exhibits_n": 6,
        "untitled_n": 0,
        "exhibits": [
         {
@@ -12127,42 +12637,22 @@ window.CPL_PATHWAYS_ROEP = {
          "title": "Military Police",
          "source": "ACE",
          "recs_n": 1
+        },
+        {
+         "exhibit": null,
+         "title": "POST Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Introduction to the Administration of Justice"
+         ]
         }
        ]
       },
       "adopt": {
-       "credentials_n": 7,
-       "colleges_n": 26,
+       "credentials_n": 6,
+       "colleges_n": 6,
        "credentials": [
-        {
-         "credential": "POST Basic Academy",
-         "colleges": [
-          "Bakersfield College",
-          "Barstow Community College",
-          "Butte College",
-          "Cabrillo College",
-          "Cerro Coso Community College",
-          "Chabot College",
-          "Chaffey College",
-          "College of San Mateo",
-          "College of the Desert",
-          "Copper Mountain College",
-          "Fullerton College",
-          "Glendale Community College",
-          "Grossmont College",
-          "Lake Tahoe Community College",
-          "Las Positas College",
-          "Lemoore College",
-          "Los Medanos College",
-          "Moreno Valley College",
-          "Reedley College",
-          "San Bernardino Valley College",
-          "Shasta College",
-          "Skyline College",
-          "Solano Community College",
-          "Woodland Community College"
-         ]
-        },
         {
          "credential": "Introduction to Administration of Justice",
          "colleges": [
@@ -12202,15 +12692,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      },
-      "consider": [
-       {
-        "credential": "POST Basic Academy",
-        "credit": "3 hours in Intro to Administration of Justice",
-        "cid": "AJ 110",
-        "colleges_n": 32
-       }
-      ]
+      }
      },
      "ADJ-1H": {
       "title": "Honors Introduction to the Administration of Justice",
@@ -13752,7 +14234,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -14103,7 +14585,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -14862,7 +15344,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -16505,7 +16987,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -17320,7 +17802,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -18364,7 +18846,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -19142,7 +19624,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   },
@@ -19310,7 +19792,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "5b80d4de75e9",
+    "build": "229a759101f7",
     "built": "2026-11-13"
    }
   }

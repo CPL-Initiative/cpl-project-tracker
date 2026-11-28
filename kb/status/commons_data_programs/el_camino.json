@@ -1,4 +1,4 @@
-{"schema":1,"college":"El Camino College","slug":"el_camino","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
+{"schema":1,"college":"El Camino College","slug":"el_camino","basis":"live","census_at":"2026-11-28 00:44Z","correction_rules":true,"programs":[
 {"cn":"02533","title":"Administration of Justice","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19890","title":"Administration of Justice","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"02537","title":"Anthropology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -62,10 +62,5 @@
 {"cn":"39004","title":"ESL Listening and Speaking","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"40635","title":"Fundamentals of Construction","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"15492","title":"Retail Management (WAFC)","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"38948","title":"Entrepreneurial Studies","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print"},
-{"cn":"43993","title":"Hybrid, Electric, and Alternative Fuels","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print"},
-{"cn":"19866","title":"Journalism","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print"},
-{"cn":"19861","title":"Marketing","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"places_none","lever":"reader_page_assignment","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print"},
-{"cn":"19857","title":"Architecture","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print","units":{"sum":[33.0,33.0],"printed":[36.0,36.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"19883","title":"Photography","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3640&print","units":{"sum":[25.0,25.0],"printed":[26.0,27.0],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"19857","title":"Architecture","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print","units":{"sum":[33.0,33.0],"printed":[36.0,36.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

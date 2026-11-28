@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-27T09:42:51Z",
-  "session": 741,
-  "moniker": "SkyWillet",
+  "written_at": "2026-11-28T02:20:38Z",
+  "session": 742,
+  "moniker": "SkyGodwit",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_742_handoff.md",
+  "handoff": "docs/session_743_handoff.md",
   "next_step": {
     "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying S741's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: review the Cuyamaca plural fold and Cosumnes River's parked filing, read the pinned programs at Butte, Orange Coast and El Camino once their free captures bind, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
+    "text": "Build the display page carrying S742's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: finish the Cuyamaca and Cabrillo reconciles, review Coastline's staging fix and run its read, run Orange Coast's paid read, plan the gaps at Butte, Santa Barbara City and East Los Angeles, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
   },
   "calls": [
     {
@@ -337,6 +337,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-27T21:30:00Z",
+      "text": "CPL Pathways: a program card shows an Industry certs chip, for 1,326 programs at 76 colleges that earn CPL on an industry certification and 634 that prepare for one. The Credentials list opens a bottom bar on the college's own exhibits or the Credential Catalog."
+    },
     {
       "at": "2026-11-26T06:37:00Z",
       "text": "The display page now carries every filed record: 18,727 programs at build 3a699eddc8c9, after a first apply at Glendale. The four programs that had no display now have one."
@@ -912,6 +916,22 @@
     {
       "at": "2026-11-27T09:36:00Z",
       "text": "San Diego City 22367 passes: 24 units against 24 from its own entry. 52 program records collected tonight: 28 passing and 24 with a named gap."
+    },
+    {
+      "at": "2026-11-27T12:59:00Z",
+      "text": "The display page now carries every filed record at build 5b80d4de75e9: 18,747 programs, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-27T13:04:00Z",
+      "text": "The census on main after the display build: 15,669 of 20,282 programs pass, 3,950 have no passing record and 663 are collected with a named gap."
+    },
+    {
+      "at": "2026-11-27T14:39:00Z",
+      "text": "21 program records collected since noon: 8 passing and 13 with a named gap. San Jose City, El Camino, East Los Angeles, Santa Barbara City and Fullerton pass; Cuesta, San Bernardino Valley, Modesto, Santa Monica, Butte, Cabrillo and Gavilan carry a named gap."
+    },
+    {
+      "at": "2026-11-28T01:29:00Z",
+      "text": "CPL Pathways' display build now reads MAP's live view of articulated exhibits beside the dated feed: 2,395 programs gained CPL here, 1,573 of them from none, and Cerritos's Field Ironworkers A.S. reads 24 of 24 courses and up to 38 units. Applied to the program records Sierra reads (build 229a759101f7, 18,751 records)."
     }
   ],
   "headline": [
@@ -1220,16 +1240,22 @@
       "active": 20282,
       "complete": 15669,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-28",
+      "active": 20282,
+      "complete": 15680,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-26T18:12:00Z"
+    "at": "2026-11-28T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-27",
-    "gaps": 3392,
+    "day": "2026-11-28",
+    "gaps": 3398,
     "parts": {
       "links": {
         "catalog": [
@@ -1250,7 +1276,7 @@
         20282
       ],
       "coci": [
-        17261,
+        17265,
         20282
       ],
       "outcomes": {
@@ -1259,12 +1285,12 @@
           88736
         ],
         "plo": [
-          17261,
+          17265,
           20282
         ]
       },
       "careers": [
-        16294,
+        16298,
         20282
       ]
     }

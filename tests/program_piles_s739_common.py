@@ -54,7 +54,7 @@ class Checks:
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
         own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None,
         refiled: dict | None = None, later_flags: dict | None = None, receipt_own: dict | None = None,
-        read_since: dict | None = None) -> Checks:
+        read_since: dict | None = None, batch_rows: int | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
     from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
@@ -67,7 +67,9 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     at the plan (S741's pins at American River: default, own); read_since: {key: a later read's run} for a row a
     later read replaced on its own page (S741's pin and read of American River 39341): where the committed record
     holds that run it is the newer read's, it must pass with no gap, and the row's own checks (its kind, its live
-    run, its images) are the receipt's history, no longer the record's."""
+    run, its images) are the receipt's history, no longer the record's; batch_rows: the rows of the whole batch,
+    where one plan runs over several colleges' piles (S742, kb/_program_piles_s742.py Batch): the one guarded
+    UPDATE then expects the batch's rows, and this college's receipt names its own."""
     t = t or Checks()
     check = t.check
     receipt_own = own if receipt_own is None else receipt_own
@@ -157,7 +159,7 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
         check(all("'%s'" % cn in sql for cn in named) and not any("'%s'" % cn in sql for cn in held if cn not in rolled),
               "%s names exactly the %d" % (part, len(named)))
         if part == "apply":
-            check("confirm guard" in sql and "e(expect) as (values (%d))" % len(named) in sql,
+            check("confirm guard" in sql and "e(expect) as (values (%d))" % (batch_rows or len(named)) in sql,
                   "the apply guards a confirm")
         body = rec["pre_read_md5" if part == "preread_md5" else "pre_read" if part == "preread" else part]
         check(sql.endswith(body + "\n"), "%s is the receipt's own SQL, md5s and all" % part)

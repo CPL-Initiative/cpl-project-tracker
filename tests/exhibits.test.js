@@ -256,6 +256,13 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   const tiles = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
   check("the Names tile reads 5,030 of 5,480 with its meter", /Names5,030 of 5,480/.test(tiles[0]) && t.d.querySelector('.exh-bar[aria-label="91.8 percent"]'));
   check("the Aligned course tile reads 209 of 468", /209 of 468/.test(tiles[1]));
+  {
+    /* S747 (Sam's Commons Clarity list): with no title held, the tile reads in words, never "0 of 0". */
+    const none = JSON.parse(JSON.stringify(REVIEW)); none.tiles.aligned = { n: 0, of: 0 };
+    const z = load({ review: none }); await z.M.boot(); await settle();
+    const al = Array.from(z.d.querySelectorAll(".exh-tile")).map(txt)[1] || "";
+    check("with no title held, Aligned course reads None held, not 0 of 0", /Aligned courseNone held/.test(al) && !/0 of 0/.test(al), al);
+  }
   check("signed out, the Students tile says reviewers only and asks for a sign-in", /Reviewers only/.test(tiles[2]) && /Sign in as a reviewer to see them/.test(tiles[2]));
   /* #3566 item 6: the stamps read in Pacific time and words, never a UTC code. */
   check("the stamps read in Pacific time, in words", /The nightly procedures ran at 12:47 AM PT on October 31, and the queue was built at 1:00 AM PT on October 31\./.test(txt(t.d.querySelector(".exh-titlebar")))
@@ -266,8 +273,10 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("each step tile carries its plain hover", /keep, change or edit it/.test(stepTile(t.d, "Proposed").getAttribute("data-tip"))
     && /Proposed, 1\./.test(stepTile(t.d, "Proposed").getAttribute("aria-label")));
   /* #3566: the step reads in plain words, as saved and waiting for the fold, never as work. */
-  check("Saved, waiting for the nightly run shows and cannot filter", stepTile(t.d, "Saved, waiting for the nightly run").disabled === true
-    && /no one needs to act/.test(stepTile(t.d, "Saved, waiting for the nightly run").getAttribute("data-tip")));
+  /* #3566 worded the step as saved and waiting for the fold; S747 (Sam's Commons Clarity list) shows it only while a
+     save waits, so this queue, with none saved, has no such tile. exhibits_review_reconcile.test.js covers it at 2. */
+  check("Saved, waiting for the nightly run is absent while nothing waits",
+    !Array.from(t.d.querySelectorAll(".exh-steps button")).some(function (b) { return /Saved, waiting for the nightly run/.test(txt(b)); }));
   check("without students the builder's order stands", current(t.d) === JUV);
   check("the footer says most colleges first", /1 of 4 · most colleges first/.test(txt(t.d.querySelector(".exh-foot"))));
   check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.getElementById("exh-chip-step")))

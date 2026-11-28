@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-25
+updated: 2026-11-27
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,9 +28,11 @@ card-drafted revision, so a piece built in a session and copied with `library_pa
 **RULED (Sam, 2026-11-25):** *"can you have library auto add a summary I can edit so if I forget and click publish,
 we'll still have a summary?"* (`r-library-publish-prefills-public-summary-sam-2026-11-25`) and *"the libraries sidebar
 should be same height as the listview and use same font type and size. height should be optimized to window hight"*
-(`r-library-sidebar-matches-list-sam-2026-11-25`). Both, with the top Publish button's form drawn in sight for an
-uncertified piece, are in draft **#3865** (`claude/library-pubtop-fix`). A page under `library/` carries the vault's
-canonical header (`public-header/apply.py --tracker-logos ../../sierra/`), never the Catalog's adapted copy
+(`r-library-sidebar-matches-list-sam-2026-11-25`). **LIVE (#3865, S736):** the top *Publish to Public Library* opens
+the form, prefilled from the internal summary; the sidebar matches the list's height and type; a waiting piece shows its
+progress (steps, a bar, and the next `library-publish.yml` run, cron `41 */3 * * *` UTC, a check waits up to three
+hours: `f-library-check-runs-every-3h-s736`) and offers *Add its public summary* while it waits. *File a new version* is
+gone (Sam: *"the file feature is not needed"*). A page under `library/` carries the vault's canonical header (`public-header/apply.py --tracker-logos ../../sierra/`), never the Catalog's adapted copy
 (`tests/library_pages.test.js`).
 
 **PITFALL (S735): a session cannot write `public_summary` or any other public field.** `cpl_library_guard_public`
@@ -40,17 +42,19 @@ needs the team phrase or a reviewer sign-in"*). The S735 summary migration was w
 `adult-ed-cpl-starting-points` holds `public_summary` NULL; a person signed in adds it from the card's *Publish to
 Public Library* form, which #3865 prefills from the internal summary.
 
-**NEXT (S735):** review and merge #3865; merge #3864 (filter, search, 25 more credentials, the record's url on Pages),
-then dispatch `library-publish.yml` so the piece gets its check row; once the check passes, Sam (or anyone signed in)
-types or accepts the public summary in the card's Publish to Public Library form, which lists it.
+**Adult Ed CPL Starting Points failed its first check** (19 findings: target size, the eyebrow's contrast, the column
+grip's aria); #3868 fixed them and the re-check passed at 01:13Z 2026-11-26 with 0 findings. A card must say a failed
+first check plainly, since the piece looks finished. **NEXT:** Sam adds its public summary with *Publish to Public
+Library* on the card (`public_summary` is still NULL), then the next library-publish run lists it; CPLBrain#870 (the
+page's vault source) needs #3868's edits.
 
 **LIVE: Publish now shows one status line (#3562, `0159aacb`; Sam's test of Nov 19, COBIx on #3560).** Publishing,
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
 `token_refused` named). Guard `tests/library_publish_now.test.js`.
 
-**LIVE: the publishing model and the check run (#3560 parts 1 and 2).** Part 1 (#3572, S687; three migrations applied, runs 44621258767, 44624282220, 44628207752): a new piece's ready draft offers *Publish to Internal Library* and *Publish to Public Library*, and a listing needs a passing check at the page's current version key and url (`cpl_library_set_public()` refuses one without it; the service role is exempt). Part 2 (#3577 `45af74fd` and #3581 `ac093582`, S688; applied from trigger branches, runs 44653210148 and 44673522564): after `--finish`, `library-publish.yml` checks each page it plans (`scripts/library_check.py`, `scripts/a11y.js`), writes one `cpl_library_checks` row per page with its receipt and a content-hash proof, lists a passing piece that holds a typed public summary, and stamps each page's accessibility line from the rows; a pass line prints only while the page on disk matches its proof. The first real run (2026-11-20 12:10Z, run 44733588776, success): 8 check rows, 7 pass and 1 fail. The 21 pieces listed before the checks stay listed as Not yet certified while their findings are fixed (RULED `r-library-legacy-listings-stay-sam-2026-11-19`). Known limit: between runs, a team press of Public can list a page changed at the same url and version on the earlier pass; the next run closes it. Every DECIDED line of parts 1 and 2, in the paragraphs as they stood ([`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*): `d-library-check-per-version-key-s687`, `d-library-new-page-unlists-s687`, `d-library-internal-one-press-s687`, `d-library-3560-in-four-prs-s687`, `d-library-check-binds-url-s688`, `d-library-check-run-on-publish-s688`, `d-library-legacy-listings-stay-s688`, `d-library-run-lists-by-guarded-update-s688`, `d-library-list-needs-typed-summary-s688`, `d-library-footer-from-check-s688`, `d-library-footer-binds-page-hash-s688`, `d-library-check-after-page-change-s688`, `d-library-tab-precheck-url-s688`. Guards: `tests/library_publishing_model.test.js`, `tests/public_library.test.js`, `tests/library_publishing_sql_proof.py`, `tests/library_check_test.py`, `tests/library_check_footer.test.js`.
+**LIVE: the publishing model and the check run (#3560 parts 1 and 2; #3572, #3577, #3581):** a listing needs a passing check at the page's current version key and url; the paragraph as it stood, with its DECIDED lines and guards: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S744 checkpoint)*.
 
-**#3600 (S690, `9fc88a07`; DECIDED `d-main-red-check-line-stays-out-s690`): the check line stays out of the reading text and out of new pieces.** The first run stamped every page's line, the starter page's included (653864b7), so ELL IET's reading text passed Sierra's `LIBRARY_TEXT_MAX` (33,996 to 34,078 of 34,000 characters) and `buildNewPage` copied the starter's line into new pieces; `main` stayed red until the merge. `cpl-chat`'s `libraryPageText`, the drafter's `readingText` and the card's `sierraText` now skip the `cpl-library-check` block, and `buildNewPage` drops it (`sierra_library` 31, `library_revise_draft` 120, `library_qualify_draft` 40 and the footer's 11 pass, with `library_check_test`). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
+**#3600 (S690, `9fc88a07`): the check line stays out of the reading text and out of new pieces** (the paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S736 checkpoint)*). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
 
 **NEXT (#3560):** deploy #3600 (a plain session); read the failing piece's findings on its card; then part 4 (Publish all, Add existing, redraft and republish), then part 3 (the progress bar). A plain session's work; conductor runs stay on collection.
 
@@ -76,9 +80,26 @@ choices, and only on a matching working title and occasion. Start drafts at once
 offers Change what you asked. The drafter reads any COBI table or published file (`cobi_data.mjs`); a student count
 under 10 reads `<10`; buttons open the college's MAP landing page (`reference_data.mjs`). Deployed (cpl-chat-deploy runs
 107, 108). The full record: [`library_lessons.md`](../../library_lessons.md), *Moved from the lane (S683 Library side
-job)*. **Waiting on MAP:** `?Exhibit=<MAP ID>` on the landing-page template (Sam asked Malone and Pedro); when it ships,
-`landingButton` is the one line that changes. **NEXT:** Ashley's first new pieces through Start; read the logged usage
-of a tool-reading draft (`library-revise-draft usage`) to see what one costs.
+job)*.
+
+**LIVE (#3909, S744): a Library button opens the landing page on its exhibit.** MAP's landing page takes
+`?Exhibit=<MAP ID>` (Pedro, relayed by COBIx, 2026-11-27; `f-map-landing-exhibit-param-pattern-s744`): the code fills the page's search box and lists that exhibit's
+courses; Possible Qualifications stays unpicked. `reference_data.mjs` `landingButton`/`exhibitParam` pass only codes
+MAP accepts (the pattern and its limits: [`reference-map-landing-page-exhibit-parameter`](../../kb-notes/reference-map-landing-page-exhibit-parameter.md));
+the pick instruction is gone and the drafter is told in `cobi_data.mjs`. Four codes MAP itself refuses (Chaffey
+MAPICI-BP&C-1-001, Laney MAPICI-E&ET-1-001, Modesto Junior MAPICI-E3S--1-001, Cerritos MAPCXA-E&R-1-001) open the page
+alone; renamed, they would work, which is worth passing to Pedro. Cerritos's landing slug on file is `/www.cerritos.edu`.
+
+**The Cable Splicer flyer waits on Sam's press** (`cable-splicer-cpl-opportunities-mwmo31a1`, Apprenticeship Sprint, for
+San Joaquin Adult School; draft, not publicly listed, has a Pages copy). Its five college buttons go to bare landing
+pages. The re-point is *Revise* on its card with the ask *"Point each college's Request CPL button at its exhibit on
+the landing page."*; a session cannot call the revise function. Expected buttons: Cabrillo `CABC?Exhibit=MAPICP-GEC-1-001`
+(all 4 courses, live-checked); Chaffey `CHC?Exhibit=MAPCXS-ITE1-1-001,MAPCXS-OST-1-001` (not live-checked); Laney the
+landing page alone (only a `&` code); Modesto Junior `MJC?Exhibit=MAPCXS-E2OE-1-001,MAPPRA-E2RF-1-001` (2 of 3; ELTEC 320
+has only `--` codes); Norco its IBEW codes (6 of 10). **Open question:** no record exists for "Foothill Sheet Metal"
+(Sam named it); is it filed under another title? **NEXT:** the re-point (Sam's press); Ashley's remaining flyers through
+Start (her press or Sam's); read the logged usage of a tool-reading draft (`library-revise-draft usage`) to see what one
+costs.
 
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
@@ -126,6 +147,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Library records for the S745 sketches (CPLBrain CLAUDE.md: an artifact made to share gets a record).** PPM
+  https://claude.ai/artifact/4rRKYwJaeTwXmfiYQ6DW7v and ASSIST https://claude.ai/artifact/Vi6yN9NUH2cckKJYqt7KxQ, home
+  `web`, sources in `CPLBrain/04-projects/cpl-initiative/connections/`, through a committed receipt; private until Sam
+  shares them. **NEXT:** write the records, with Trained by (https://claude.ai/artifact/VbgjS2qtA86E8CUDHJvQxe); CVC joins when built.
 - **DECIDED (S669, 2026-11-16): the Credential Catalog (`library/adopt/`), #3405 built.** #3406: the Statewide and
   CPL-AI figures are header boxes that still filter; the introduction starts closed, review cards are short until
   opened, field groups fold (`cpl_catalog_folds`, layout only); Clear all filters sits by the chips. #3407: 16
@@ -140,7 +165,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
   served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
   run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
-- **The Veteran map and the Fact Sheet carry the public header** (S653b; `sam-fact-sheet-no-header-logo-2026-11-14`, `sam-fact-sheet-controls-into-header-2026-11-14`; guards `tests/veteran_map_public_header.test.js`, `tests/factsheet_public_header.test.js`). **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own *CPL Fact Sheet* link opens a second copy, and that test checks the links against the Veteran map's copy. The bullet as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
+- **The Veteran map and the Fact Sheet's public header** (minor NEXT: the vault's `header.html` lacks `aria-current`): verbatim in [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S745 checkpoint)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **Four open rows, each waiting on a person (S650; DECIDED `d-library-four-wait-on-people-s650`).** Ally Barker's

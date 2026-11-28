@@ -130,3 +130,152 @@ The Subjects paragraph's S722 state, verbatim:
 - 2026-11-24 (S722 SkyCormorant, Sam's plain session, full checkpoint): #3768 (a Courses count reads its code's own course file, never the 17 MB state list), #3771 (Titles to check: a derived title stands at 80+, Accept on the row and per title, the 0-100 confidence bar as one component, sidebars never cover the view, quick links land on a link, the Commons names COBI, never Sky); #3770 withdrawn in #3771. KB note: `methodology-a-source-that-only-checks-the-winner-never-wins`.
 - 2026-11-24 (S721 SkySkua, the CPL Queue routine's collection run, conductor, full checkpoint): #3761 (display build `6de40ebdf2fd`, 18,699 rows live), #3765 (Orange Coast's 3 collected with named gaps), #3769 (Palo Verde 15, Porterville 15, Gavilan 7 and Butte 5; three new gap kinds), #3763 (the reader-page lever: 12 loaded, 11 passing; 14 named gaps) and #3764 (the pooled reading, applied: 8 at Modesto, 7 named gaps to passing); 65 records collected; the test kb-note's section on a test that reads its own plan's receipt; 23 memory rows drafted; handoff 722.
 - 2026-11-24 (S720 SkyEider, the CPL Queue routine's collection run, conductor, full checkpoint): #3754 (display build `abf1f6396156`, 18,665 rows live), #3753 (Fullerton's 6 collected with named gaps), #3756 (no electives fill over a cut-off window; a reconcile keeps named gaps); applied and live in open PRs: #3758 (ten colleges' piles, 95 named-gap records), #3759 (American River 04544 corrected; nine `section_cut_off` gaps at Los Rios), #3752 (the reader-page lever, 16 passing at Mendocino, Los Angeles Southwest and American River). Handoff 721; the harvest lane rebuilt under 20,000 bytes; lessons S691 and S697 moved to archive 8.
+
+## Moved from lanes/common-subjects-reference.md (S736 checkpoint)
+
+**For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
+BRDC M10AV into JOUR M1016 *Broadcast Journalism*, BRDC M10BF into FTVE M1144, and three noncredit drawing and painting
+courses into BIOL M9004 (*Fundamentals of Drawing for Commercial Artists*, filed under Biological Sciences), FCSH M9055
+and OLAD M9054. The re-key changed no merge; the BIOL parent reads misfiled.
+
+**The two ENVR merge candidates wait for a faculty reviewer (S433, #2278).** `kb/_merge_candidate_queue.py` carries
+them as `surfaced` pairs (`kb/merge_candidates/2026-10-20-forestry/report.md`), survivors proposed by the rule: ENVR
+M1009 *Dendrology* over M1064 (4 colleges to 3), ENVR M1025 *Silviculture* over M10OP (2 to 1), no articulations on
+any. The merge is a curriculum judgment made in the curation UI (ruling 6, 2026-09-05).
+
+**The quarterly routine compares on a cron (S433, #2279).** `csr-quarterly.yml` runs
+`kb/_csr_quarterly_probe.py --compare` at 13:17Z on the 1st of January, April, July and October, and on dispatch. It
+reads each source against `kb/reference/csr_quarterly_baseline.json`, prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
+`changed`; a session then diffs the Disciplines Index and opens a card. **LIVE (#3744, S719): the baseline is the 20th
+edition** (the address and sha256 `kb/reference/mq_handbook_20th.json` was read from); dispatch run 45311236371 printed
+COMPARE `same`, 2,983,718 bytes. `tests/csr_quarterly_probe_test.py` ties the baseline to that file rather than to an
+edition number (**DECIDED** `d-csr-baseline-20th-s719`). **The C-ID source a runner reaches (S437,
+#2289):** the site moved to c-idsystem.org (ASCCC), and its search pages live on data-c-idsystem.org with no `www`
+(the probe had asked c-id.net, a runner 403, and www.data-c-idsystem.org, no such host). `/descriptors/final` links its
+own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe follows and hashes it, and two runs (13:16Z
+and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-courses` answers 200 with no export link, so
+`cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
+(495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
+
+(From the RULED schedule-tool paragraph, as it stood before #3894:) and ahead of any guess. **Measured 2026-11-26 (S736):** no run has read one. Every one of the 7,102 filed titles came
+from a catalog (`kb/subject_title_hunt/found/`); `kb/status/subject_sources.json` marks the schedule way not needed at
+116 colleges only because the catalog was read; 1,431 college and code pairs still print no title, at 114 colleges.
+Only two systems are on file: LACCD's PeopleSoft guest search (nine colleges, 212 codes with no printed title;
+[`data_sources`](../data_sources.md)) and Riverside's Colleague. The lightning round's codes come first; the
+LACCD read runs on the runners, since a session's network refuses the host.
+
+**LIVE: the Progress view (S425, 2026-10-19).** `#canonical-subj4` opens on Progress, the Commons' dash
+for this reference, drawn by the shared `commons_progress.js` from `canonical_subj4.js`'s definitions: the
+run status from `kb/status/subjects.json`, the headline pair, five milestones with You are here, a card for
+each of Sam's eight steps (consolidated to eight: the MQ list, the C-ID and CCN tables, the authority rule,
+the identity codes, one code one MQ discipline, the cross-listings, confirmation, the scan), the procedures
+under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. A count opens the List on
+its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
+step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
+
+**The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
+and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
+minted identity's code under `_mid_codes`); a session's run without the flag writes the dated receipt too.
+Its missed-alignment rule honors a recorded note (CMUS, HIT). `kb/_apply_canonical_subj4.py` and the tab's
+overlay read the pick's reviewer from the code row (a cohort's later note had been read as the pick's
+reviewer on eleven entries; the next daily sync rewrites the seed). The tab's SUBJ check reads a code both
+agriculture umbrellas declare, and a fan-in pair both entries declare, as shared by design. The tab's C-ID index
+now takes a descriptor ending in X (172 of the 495, in 17 subjects: ADS, the three agriculture families, ALTF, AUTO,
+BIOT, BSOT, CMUS, DENA, DMGR, EET, EMS, FIRE, HIT, WELD, WWTR), which it had skipped since May, so its chips and
+suggestions saw 48 of the 65 C-ID subjects.
+
+**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08):** 20 anchor keys onto their Common SUBJ, receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`); held, the three dead-format HOSP keys (the curator worklist). The paragraph as it stood: [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/common-subjects-reference.md (plain session, 2026-11-20)*.
+
+**The Commons row** (`kb/_build_commons_status.py` `row_subjects`) reads the same files: the settled pair,
+four known issues with owners, the procedures in force, and deep links into the List.
+
+## Moved from lanes/commons.md (S736 checkpoint)
+
+**LIVE (S723 to S726): the Commons top, the Courses List's Common subject in doubt and its bottom bar of tabs, Gather and its saved filters:** the paragraph as it stood, [`docs/roadmap_archive_8.md`](../../roadmap_archive_8.md), *Moved from lanes/commons.md (S729 checkpoint)*, with S724's five rulings and the guards. **DECIDED** `d-gather-first-slice-s725`, `d-gather-saved-filters-s726`. **LANDED (S729): the adapt gather** (34 merges and 133 moves, 167 insert-only rows under `gather-adapt-s726@bot`; plan and receipt `kb/gather_out/2026-11-25_adapt/`) published in the 06:24Z daily run of 2026-11-25: none of the 34 merged M-IDs keeps its own member list, and PEDS M1029 holds 293 local courses at 0 to 4 units. **FACT** `f-adapt-gather-landed-s729`. **ESL:** 10 common courses over about 2,439 local courses; the monthly pass after 2026-11-29 is the ESL work. **NEXT:** the nightly auto combining that reads saved filters (its confidence score first); the SLOs and objectives look-in and the add bars (each a new write surface, Rule 10 a3). **Then the anchor-page build Sam approved on the mock https://claude.ai/artifact/35uJsJ2ahLQ6XcrvfMS8YE (*"looks great, let's go with it"*):** 2 the Common courses / Local courses toggle on the Courses List (**LIVE S726**: Rows on the Courses view, `#coci-lookup/courses/common`; one row per common course on the List's own engine, the job and Browse filters counting common courses, a row opening the bar of Local courses, Common subject and History; guard `tests/coci_list_common_rows.test.js`; **DECIDED** `d-courses-rows-common-s726`); 3 the Commons page as home base, a card's title folding the cards into that card's list with its tabs (**LIVE S726, first slice**: each card with a list of its own opens it from its title, `card({ list })` in `commons_front.js`, Courses data at `#coci-lookup/courses/common`; **LIVE S729, the fold in place**: a card's title folds the page to a trail, *CPL Commons: all cards / <card>*, and that card whole, at `#commons/card/<key>`; the trail's first link unfolds every card, browser Back too; guard `tests/commons_cards_checks.test.js` (6, 7); **DECIDED** `d-commons-fold-link-not-mount-s729`: every card folds with *Open the full list* to its own tab, none mounts its list in place, since each list is a tab of its own (Courses data's is the 17 MB COCI tab with its own root and addresses); **NEXT** mount a list under the trail once one renders into a given container); 4 Needs you as the one ranked queue (**LIVE S730, first slice**: a Needs you link folds the page to the card holding its item, the item's link focused; a doubt ruling saved in the Courses List moves the in-doubt count, Needs you and Rulings to find at once, `doubtLive`; guard `tests/commons_needs_you_queue.test.js`; **DECIDED** `d-needs-you-folds-and-doubt-live-s730`; `npm run a11y` measures the fold, `commons-fold` and `-dark`); then Subjects, Credit Recommendations, Exhibits. Beside it: Sam's remaining doubt rulings; common and local subject labels in the other tabs at their UI pass. **Still on a snapshot:** the ASKED figures, the Unblock catalogs chip (Nov 13) and `commons.json`. **NEXT:** "Noncredit Course for MUS 15" into the review file's held list; "2 Rename batch" moves to curator work, off Sam's list.
+
+## INDEX update history, moved (S744 checkpoint)
+
+- 2026-11-25 (the funding page side job beside S733, light checkpoint): #3844 and #3849 (Simple view switch visible again, row caret, # and District off in Simple view, As of / Ver. hidden from readers not signed in, the college landing page in a bottom bar), #3845 (the NC lead from MAP's College Contacts report: 27 colleges meet it, was 2), #3852 (How to maximize funding). Funding lessons' S439 to S466 sections moved to archive 5. Side section in handoff 734.
+- 2026-11-25 (S733 SkyGodwit, second checkpoint): #3851 (Local subjects course-move sidebar), #3853 (the stray-code re-mint applied: 60 retired, 20 aliased, 35 held), #3857 (seeder keeps assigned codes), #3858, #3859 (recommender 0 to 100). Handoff 734 refreshed.
+
+## Moved from lanes/commons.md (S745 checkpoint)
+
+**M-ID re-clustering Step 1 (S642; `d-six-cases-settled-s667`), the identities map (S652) and Honors steps 1 and 2 (S653, S666):** the lines as they stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S694 start)*, with the undo order. **Step 2 applied** (380 rows, 2026-11-16, run 43889173474); S733's stray-code re-mint retired FTVM M10AS and M10AF and deleted that row, so 379 stand (live read S737). **Step 4's plan is the redraw** (#3870): `python3 kb/_honors_of_s653_dryrun.py --redraw` writes `kb/honors_mints_out/<date>/` (128 mints on 2026-11-26) and lists each pair that left, arrived or changed action against the applied 2026-11-15 plan; `--plan` refuses once step 2's receipt stands; redraw after every alias map. **NEXT:** (1) the reader's minors after the apply (341 `honors_of` entries, `fetchHonorsOf`'s six hops), *Before the mints*, HUMA M10OI into M1110 (`d-huma-m10oi-into-m1110-s652`), LIBR M10CJ in `kb/coci_minted_courses.json`; (2) FIRE 130 X's row-audit card; (3) price the model pass (to Sam first); (4) a potential-CPL column; (5) the Leadership outlines; (6) the #3298 and #3302 follow-ups.
+
+## Moved from lanes/program-requirements-harvest.md (S745 checkpoint)
+
+**S742's posts** (`m-collection-s742`; #3904 `1a3e3be8` merged, the display build `5b80d4de75e9`; the land PR carries `keys`, `readers`, `piles` and the sibling branches): 21 records collected and live at the 14:44Z count (8 passing, 13 named gaps by guarded plans), no outline rows, about $1.10 of paid reads on their estimates. Passing: San Jose City 38499 (the cited `JOURN138` renumber), El Camino 19861, 19866, 43993, East Los Angeles 37510 (`plan_code_own`), Santa Barbara City 32775, Fullerton 33680 and 42143. Named gaps: Cuesta 2, San Bernardino Valley 3, Modesto 1, El Camino 2, Santa Monica 1, Butte 1, Cabrillo 1, Gavilan 1, East Los Angeles 1. Upgrades, not counted: Cosumnes River 33542 (gap to passing), Butte 14583, Santa Barbara City 43553 (still failing). Census after the display build, run 46003215768 (`3502e99c`): 15,669 of 20,282 pass, 3,950 have no passing record, 663 are collected with a named gap. New code: keep-better's `plural_longer` and `plan_code_own`; the Acalog road reading `site_pages` pins; Coastline's pin and `site_heading_plural`; San Jose City's `JOURN138` renumber; Cuyamaca's `electives_fill_words`; Cabrillo's `recommended_counts`; `kb/_program_piles_s742*.py`; the compact live read `kb/_live_read_expand.py`. Each run id and hold: handoff 743's log and lessons, *S742*; the closing count: handoff 743.
+
+**Decisions of S742** (the conductor's, each reversible; rows in `cpl_memory`, one line each in handoff 743): **DECIDED** `d-applies-on-own-branch-s742`; **DECIDED** `d-coastline-stage-fix-parked-s742`; **DECIDED** `d-orange-coast-read-parked-s742`. S741's and the older decisions stand: lessons, *Moved from the lane (S742 checkpoint)*, *(S741 checkpoint)*, *(S740 checkpoint)*, *(S739 checkpoint)*, *(S731 checkpoint)*, *(S727 checkpoint)*, *(S721 checkpoint)* and *(S720 checkpoint)*, and lessons archive 9, *(S714 checkpoint)*.
+
+## Moved from lanes/common-subjects-reference.md (S745 checkpoint)
+
+**DECIDED** `d-step-b-owner-courses-bot-2026-11-20` (the plain session of 2026-11-20, under Sam's delegation: *"want you to go with your recommendation"*): the Courses bot owns curation step b, the local subject title. It drafts each title from the state subject code and the catalog's subject heading, as COBIx suggested on #3584; a curator settles the ones that disagree. No view builds step b yet. His to revise.
+
+**Correction:** commit `8afaa532` says "LING now calls LING"; it does not. The statewide calls still read BUSI for
+ACCT, ACCTG, ACC and ACTG (1,012 courses), ANTH for LING, CULN for HOSP, REAL, HUMA or HIST for the religion codes,
+JOUR for MCOM and AVIA for AERO: the model votes from where the M-IDs sit. They move at the re-point re-mint.
+
+From the campus letter fold paragraph (#3908): The consumer dry run: closest-M-ID scores move under 0.01, 3 rows change candidates, 3 gain one; CPL Pathways' retired-course filter unchanged at both colleges.
+
+## INDEX update history, moved (S745 checkpoint)
+
+- 2026-11-25 (S735 SkyAlvord, a side session beside the main queue, checkpoint with the lanes moved): Adult Education CPL Starting Points, the CAEP noncredit inventory read against MAP (#3861 merged: Library record, memory rows and the Pages copy; #3864 open: filter, search, 25 more credentials, the record's url on Pages; the public summary migration was refused by the public-field guard and withdrawn). Library findings: the check run checks a piece only at its own Pages address; Publish now's scope; #3865 drafts the prefilled summary and the sidebar height. Library lessons' S511 to S518 and four lane paragraphs moved to archive 3. Handoff 735 (SkyBrant).
+
+## Moved from lanes/commons.md (S746 checkpoint)
+
+Three paragraphs, verbatim as they stood; each kept its NEXT in the lane.
+
+**LIVE: Subjects, by confidence (#3620 to #3771; #3655 is the brief).** The paragraph as it stood after #3771, with S719's and S722's reads, guards and Sam's words verbatim: [`docs/roadmap_archive_8.md`](../../roadmap_archive_8.md), *Moved from lanes/commons.md (S722 checkpoint)*. **RULED** `r-confidence-not-person-settled-sam-2026-11-23`, `r-statewide-codes-every-college-sam-2026-11-23`, `r-sidebar-beside-view-sam-2026-11-23`, `r-sidebar-tables-sort-resize-and-stack-sam-2026-11-23`, and S722's (2026-11-24): `r-confidence-is-a-0-100-bar-sam-2026-11-24`, `r-sidebar-resize-leaves-the-view-sam-2026-11-24`, `r-sky-titles-stand-flag-below-80-sam-2026-11-24`, `r-sky-never-rendered-sam-2026-11-24`. **LIVE (S722):** Titles to check, derived titles and the web-search weight, verbatim in [`docs/roadmap_archive_8.md`](../../roadmap_archive_8.md), *Moved from lanes/commons.md (S724 checkpoint)*. **DECIDED** `d-web-search-weight-set-not-measured-s722`, `d-accept-writes-the-edit-save-s722`, `d-pair-narrows-never-covers-s722`, `d-no-number-no-stand-s722`, `d-derived-title-word-s722`. **NEXT, in order:** (1) carry derived titles into `kb/status/local_subject_titles.json` as their own column (never `printed_name`, which the recommender votes from), so the committed totals agree with the page; (2) measure `WEB_SHARE` once titled codes have searches; (3) the bar on every other confidence display (CLAUDE.md rule; each view at its UI pass); (4) Southwestern PE/A, PE/I, PE/T, PE/L and PE/D to ES/A, ES/I, ES/T, ES/S and DANC on Sam's word or a printed source; (5) the printed MICROTK to IT line (LATTC) and DSPS to ACCS (Mt. San Antonio); (6) the code history's next readers, probe round 2 and the filers; the mint takes Confident calls; the 787 Unsure codes; Sam's FLNG and Athletics-into-KINE rulings; his twelve AED titles, then one re-mint (`r-fix-twelve-then-one-remint-sam-2026-11-23`).
+
+**LIVE, first record: the pile mint (S694 #3621, S695 #3626; plans `kb/pile_mint_out/`):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S700 checkpoint)*. Bare Supervised Tutoring minted under `LSKL M9004` (receipt `kb/pile_mint_out/2026-11-21_v3/apply_receipt.json`); the apply `kb/_pile_mint_apply.py` is dry by default and mints only where a route meets the 98% floor. **DECIDED** `d-pile-mint-first-wave-scope-2026-11-20`, `d-links-count-through-folds-2026-11-20`, `d-assign-never-replaces-a-row-2026-11-21`, `d-pile-mint-floor-98-2026-11-21`, `d-tutoring-under-lskl-2026-11-21`, `d-pile-mint-source-value-2026-11-21`. **NEXT:** (1) the 168 other tutoring titles: 76 that name a subject to Assign under `LSKL M9004`, 70 that prepare tutors as a later LSKL mint, 22 for a person; (2) a Common SUBJ per local subject code for the rest, worked from `#commons/subjects/held`, saved in `kb/reference/subject_discipline_map.json`; (3) *Propose a new M-ID* in the panel, on this apply; (4) the state course list is a May export that no workflow rebuilds.
+
+**Older records, all standing:** College Data Collection reaches the words (S669), the first view's batch (S604), the Docket and the older records (S417 to S624), every credential gets a Common SUBJ (S638), the ASE slice (S641; guard `tests/commons_ase.test.js`), the List's one engine (S542) and the Clarity units findings (S678): their pointer lines as they stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S694 start)*, each naming where its paragraph went. **DECIDED** `d-commons-data-coming-next-s647`, `d-data-collection-two-bases-s648`, `d-course-key-normalized-s648`, `d-cdc-four-prs-and-classes-s653`, `d-cdc-held-means-not-shared-s654`, `d-cdc-restricted-class-s654`, `d-data-collection-one-base-per-card-s649`, `d-data-collection-links-open-in-panel-s649`, `d-course-flags-s683` (flag and hide, never delete; [`kb/_flags.py`](../../kb/_flags.py)). **NEXT:** on the deployed tab, check that a college's `course_outcomes` rows carry its college name; Subjects' 93 stray codes stay with the curator.
+
+## INDEX update history, moved (S746 checkpoint)
+
+- 2026-11-26 (S737 SkyWhimbrel, light checkpoint): #3870 (the Honors step-4 redraw; `--plan` refuses once step 2 applied; 128 mints), #3873 (suite durations re-measured, six lint shards: the check 10.3 to 7.7 min), #3874 open (the docs-only lint skip for 35 traced steps). Handoff 738.
+
+## Moved from lanes/program-requirements-harvest (S746 checkpoint)
+
+**CPL Pathways (S744, S745; the record: [`cpl_pathways_lessons`](../../cpl_pathways_lessons.md)).** **LIVE:** #3911
+`kb/_build_program_ladders.py` tops a record with its stackable programs (`r-stackable-programs-top-row-sam-2026-11-27`;
+[`methodology-stackable-programs-by-course-containment`](../../kb-notes/methodology-stackable-programs-by-course-containment.md));
+#3913 the compact course cards (the CPL control opens a bottom bar framing the landing page; its MAP pointer is the
+27th ruled mark, kept by an a11y sweep); #3919 the Credentials list's titles in the Programs blue (`.cplpwc-open`),
+opening a bottom bar: *earns credit here* to the landing page on the college's own exhibits (`adopt_data` `m`), *could
+add* to the Credential Catalog, framed (`openGetCreditBar` takes `o.url`, `o.heading`, `o.via`; Sam: *"the credential
+names and links should be the same blue as the programs listview"*, *"they should open to a bottom bar rather than a new
+tab"*); #3920 the *Industry certs* chip on a program card (`kb/_build_program_certs.py`, `kb/status/program_certs/`):
+*earns CPL here* on 1,326 programs at 76 colleges (3,432 entries, 1,551 with a college-built exhibit code), *prepares
+for* on 634 programs (707 entries), both on 45; the matcher's precision 93% and 90%, recall about 77% (`kb/status/program_certs/_measure.md`). **LIVE:** #3922 the live CPL chip
+(`r-cpl-chip-white-tile-sam-2026-11-27`, refining the pointer ruling: a white tile, the pointer pre-rotated 30 degrees on
+the baseline, no underline; on open it turns toward what it opened, down for a list or bottom bar, right for a sidebar,
+200 ms, snapping under reduced motion; Sam: *"that's cool!"*). **APPLIED:** Trained by on a credential (Sam: *"yes,
+this is what we could want to show: Trained by Ironworker JATC"*): `kb/credentials.json` names a training agency on 348
+of 2,970 (Carpenters CTCNC 93, CAL FIRE 31, U.S. Armed Forces 26, UA Local 342 JATC 23, Ironworker committees about 50);
+the 16 Cerritos Ironworker Period credentials took the Ironworker JATC through `kb_curation`
+`training_agency_override` (`credentials-s745@bot`; receipt `kb/receipts/credential_trainer_fill_s745_2026-11-27.sql`).
+
+From the same lane, S746 compaction (superseded wording of the S746 LIVE lines, kept verbatim):
+
+**LIVE (S746):** the display build reads MAP's live view, `kb/exhibits_adoption.json` (rebuilt each morning), as a
+third CPL-here source beside MAP's CR read and the dated feed (`adoption_index` in `kb/_build_roep_display.py`):
+2,395 programs gain CPL here, 1,573 from none, 8,264 course entries, nothing drops; Cerritos Field Ironworkers reads
+24 of 24 and up to 38 units (was 15 and 31.5), its certificates 34 of 34 and 38 of 38 (`f-cerritos-ironworkers-all-24-cpl-s744`
+closed). Largest gains: AP exams and the UA and Carpenters apprenticeships. The feed's stamp was 2026-09-03. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
+carries `_x000D_` and cp1252 mojibake. MAP at Bakersfield: 6 Welding A.S. courses carry CPL (NCCER Levels 1-4, AWS
+D1.1/D1.5/D1.8, ASME IX, LA City Certified Welder, credit by exam); Cerritos Business Administration 2.0 A.S.-T has none
+and could adopt on 10 of 11 courses (AP, CLEP, IB calculus, statistics, economics). **LIVE (S746):** *Trained by* on the
+program card (`kb/_build_program_certs.py` `trained_by`, `tests/cpl_pathways_trained_by.test.js`): an underlined-word
+control per training committee, *Trained by Ironworker JATC*, opening the sidebar with the committee's full name and
+each credential with its courses. **DECIDED** `d-trained-by-committees-only-s746`: training committees only (a name
+saying apprenticeship, training committee or JATC); a bare *Joint Apprenticeship Training Committee (JATC)* takes its
+issuer's acronym (*IBEW JATC*) or the issuer when that is a committee (*Carpenters Training Committee*). 19 programs at
+American River, Cabrillo, Cerritos and Santiago Canyon before the sync folds the 15 Cerritos Period trainers (06:17Z
+cron, the sync runs before the build). **FINDING** `f-trainer-field-names-one-site-s746`: `training_agency` names one
+college's site on credentials many colleges articulate (AP Biology by Mater Dei High School at Glendale; Microsoft
+Office Specialist Excel by the U.S. Armed Forces), and neither `confidence_trainer` nor `classified_by` separates those;
+widening the chip waits on a cleaned field. **LIVE (S746):** a featured program's course rows (the Field Ironworker Supervisor B.S. and the other `cpl_pathways_data.js` programs) carry the one Adopt chip from `adopt_panel.js` (`featuredAdoptChip`), opening the tab's side panel with each exhibit, its MAP link and one request, in place of the inline college list and a chip per college (Sam, 2026-11-28: *"That looks good. please use it"*; mock https://claude.ai/artifact/HNTRY9Rjymb9pTkZbdJfsp). The B.S. directory's "Adoption opportunities" section has one *Request Adopt (N)* on its heading and a *Request Adopt* per row, both opening the same sidebar (the row's credential checked), each row saying *Articulated at N colleges*. **DECIDED** (Sam, 2026-11-28, *"yes, that's the way to go. please roll with it"*; mock https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf): where a caller names the adopting college, each credential's MAP line is ONE link, the nearest college's exhibit (`map_links.js` `nearest()`: home's Strong Workforce region first, then most exhibits, ties alphabetical, home's own never) with "N more colleges built one"; the adopt sidebar and CPL Pathways' recommendations take it. **NEXT (CPL Pathways):** (1) after the 2026-11-28 cron, confirm Cerritos
+Field Ironworkers' Trained by lists the Period credentials; (2) look at the live cards; (3) after the display PR merges, dispatch `program-requirements-college.yml` with `step=display` so
+`program_requirement_records.display` (Sierra, college views) carries the build; (4) clean the description shards at build in `kb/_build_coci_lookup.py`.

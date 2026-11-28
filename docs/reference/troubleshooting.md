@@ -34,6 +34,9 @@ related:
    `rerun_failed_jobs` — re-running the job re-runs the upload step, leaving TWO
    `github-pages` artifacts → `deploy-pages` fails with *"Multiple artifacts named
    github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
+3a. **`Found 0 artifact(s)`** in `deploy-pages`, 0.3 s after the upload finalized (three runs, S745): the site keeps
+   serving the previous build while the run reads red. Since #3916, `pages.yml` waits 20 s before `deploy-pages` and
+   retries once after 60 s (live from run 46063125125). If it still fails, dispatch a fresh run as in step 3.
 4. **`allowlisted path is not in the commit: <path>`** in "Assemble lean site" (the
    Pages allowlist, #3104): a file or folder with a `publish` line in
    `.github/pages_allowlist.txt` was renamed or deleted. The site stays on its last

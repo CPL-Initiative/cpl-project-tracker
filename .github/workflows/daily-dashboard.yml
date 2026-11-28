@@ -180,6 +180,10 @@ jobs:
             git add kb/status/local_subject_recommendations.json 2>/dev/null || true
             # The Subjects page's courses by code (kb/_build_subject_courses.py, S700, #3655).
             git add kb/status/subject_courses 2>/dev/null || true
+            # CPL Pathways' program ladders (kb/_build_program_ladders.py, Sam 2026-11-27).
+            git add kb/status/program_ladders 2>/dev/null || true
+            # CPL Pathways' industry certifications (kb/_build_program_certs.py, Sam 2026-11-27).
+            git add kb/status/program_certs 2>/dev/null || true
             # The noncredit subject title list (kb/_build_noncredit_subject_titles.py, S700, #3655).
             git add kb/status/noncredit_subject_titles.json 2>/dev/null || true
             # The re-mint readiness count by the draft gate (kb/_mid_readiness.py, S709, #3655).

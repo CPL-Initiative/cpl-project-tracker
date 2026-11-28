@@ -50,7 +50,8 @@
   var STATES = {
     not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. The nightly data collection clears it with a re-read." },
     blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
-    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. COBI recommends a title, and a person’s save confirms it." }
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. COBI recommends a title, and a person’s save confirms it." },
+    not_a_subject: { word: "Not a subject", tip: "This code is not a real subject (a placeholder or a parse leftover). It stays off the untitled list." }
   };
   /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them), and noncredit and
      noncredit enhanced apart (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). */
@@ -538,7 +539,7 @@
   }
   /* A person's Not a subject (Sam, 2026-11-26: TEST "stays on the list as not having been acted upon...needs to pop off
      the list") takes a code off the untitled list for good, like a title would. */
-  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && !(sv && (sv.title || sv.notSubject)) && !(sk && sk.stands); }
+  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && r.title_state !== "not_a_subject" && !(sv && (sv.title || sv.notSubject)) && !(sk && sk.stands); }
   function figures(M) {
     var F = { named: 0, withCommon: 0, untitled: 0, notInCatalog: 0, notRead: 0, blocked: 0, saved: 0, colleges: 0, collegesNamed: 0, by: {} };
     ((M && M.list) || []).forEach(function (x) {
@@ -1317,7 +1318,7 @@
       + ".csb-bar-why{font-size:.8rem;color:var(--text-muted);padding:0 16px 6px;margin:0;flex:0 0 auto;}"
       + ".csb-bar iframe{flex:1 1 auto;width:100%;border:0;background:var(--surface-1);}"
       + ".csb-rapid-more summary{cursor:pointer;min-height:24px;text-decoration:underline;}"
-      + ".csb-rapid-note textarea{width:100%;box-sizing:border-box;min-height:4.5em;font:inherit;}";
+      + ".csb-rapid-note textarea{width:100%;box-sizing:border-box;min-height:4.5em;font:inherit;}.csb-rapid-act-lab{display:flex;align-items:center;gap:0.4em;margin:0.4em 0;cursor:pointer;}";
     document.head.appendChild(st);
   }
   function rapidBarClose() {
@@ -1361,24 +1362,30 @@
   /* ── A training note for the procedure (Sam, 2026-11-26: "add a place for me to add a training note for our
      procedures"): a person's own words on how this procedure should run, saved as kb_curation field procedure_note,
      course_id NOTE:<view>|<time>, value { note, view, code }, under the reviewer's own email. Sessions and procedures
-     read them; nothing applies them. Each note is its own row, so a note never overwrites another. ── */
+     read them; nothing applies them. Each note is its own row, so a note never overwrites another. Since 2026-11-27
+     (Sam: "there should be a way to ask you to run a routine to reparse based on the note"; S745 open work 5, shipped
+     by COBIx) an Ask COBI to act on this checkbox sets value.act = true so the next session can pick the note up. ── */
   var NOTE_FIELD = "procedure_note", NOTE_VIEW = "commons/subjects/rapid";
   function rapidNoteBox(r) {
     var ta = el("textarea", { id: "csb-rapid-note-in", rows: "3", maxlength: "2000", placeholder: "What should COBI or the next person know about this step?" });
+    var act = el("input", { type: "checkbox", id: "csb-rapid-note-act" });
+    var actLab = el("label", { "for": "csb-rapid-note-act", cls: "csb-rapid-act-lab" }, [act, " Ask COBI to act on this"]);
     var btn = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-note-save", text: "Save the note" });
     var said = el("p", { cls: "csb-ed-msg", id: "csb-rapid-note-msg", role: "status" });
     btn.addEventListener("click", function () {
       var t = String(ta.value || "").trim();
       if (!t) { said.textContent = "Type a note first."; return; }
       btn.disabled = true; said.textContent = "Saving…";
-      writeSave("NOTE:" + NOTE_VIEW + "|" + new Date().toISOString(), { note: t, view: NOTE_VIEW, code: r.slug + "|" + r.code }, NOTE_FIELD).then(function (res) {
+      var val = { note: t, view: NOTE_VIEW, code: r.slug + "|" + r.code };
+      if (act.checked) val.act = true;
+      writeSave("NOTE:" + NOTE_VIEW + "|" + new Date().toISOString(), val, NOTE_FIELD).then(function (res) {
         btn.disabled = false;
         if (!res.ok) { said.textContent = res.lapsed ? "Not saved: sign in as a reviewer, then save." : "Not saved: the server answered " + res.status + "."; return; }
-        ta.value = ""; said.textContent = "Saved. The next session reads it with the procedure.";
+        ta.value = ""; act.checked = false; said.textContent = "Saved. The next session reads it with the procedure.";
       }, function (er) { btn.disabled = false; said.textContent = "Not saved: " + ((er && er.message) || "the network failed") + "."; });
     });
     return el("details", { cls: "csb-rapid-note", id: "csb-rapid-note" }, [el("summary", { text: "Add a training note for this procedure" }),
-      el("label", { "for": "csb-rapid-note-in", cls: "csb-vh", text: "Training note" }), ta, el("p", { cls: "csb-rapid-acts" }, [btn]), said]);
+      el("label", { "for": "csb-rapid-note-in", cls: "csb-vh", text: "Training note" }), ta, actLab, el("p", { cls: "csb-rapid-acts" }, [btn]), said]);
   }
   function rapidView(M) {
     var q = rapidQueue(M), box = el("div", { cls: "csb-rapid", id: "csb-rapid" });

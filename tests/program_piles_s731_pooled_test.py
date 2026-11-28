@@ -116,11 +116,11 @@ check(cj["right"] == 4 and not cj["wrong"] and cj["refused"] == 27,
       "a continued heading joins only a heading with its first word: 4 right, 0 wrong, 27 refused (%s)" % cj)
 check(not rc["pass_to_fail"] and not rc["moved_outside"], "no pass-to-fail, no move outside the plan: %s"
       % rc["moved_outside"])
-# Either state: S741's free reconcile 45966682528 filed the degree's floor on Cuyamaca 18634, 18635 and 18636, so the
+# Either state: S741's free reconcile 45966682528 filed the degree's floor on Cuyamaca 18634, 18635 and 18636 (and S742's reread 18637), so the
 # pooled major is now all that stands between failing and passing there and the reading moves their verdicts too.
 _plan_moves = {(M.CUY, "18628"), (M.MODESTO, "38869"), (M.MODESTO, "43164"), (M.POR, "06773"), (M.POR, "30235")}
 _moved = {(c, cn) for c, cn, _, _ in rc["moved"]}
-check(_plan_moves <= _moved and _moved - _plan_moves <= {(M.CUY, cn) for cn in ("18634", "18635", "18636")},
+check(_plan_moves <= _moved and _moved - _plan_moves <= {(M.CUY, cn) for cn in ("18634", "18635", "18636", "18637")},
       "the verdicts it moves are the plan's (and S741's three Cuyamaca degrees once their floor is filed): %s"
       % sorted(_moved))
 for k in (("Grossmont College", "19608"), ("Grossmont College", "19822"), ("Grossmont College", "19824")):

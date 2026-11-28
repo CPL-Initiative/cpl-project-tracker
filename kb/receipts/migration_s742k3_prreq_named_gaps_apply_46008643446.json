@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-27_s742k3_prreq_named_gaps_apply.sql",
+ "name": "s742k3_prreq_named_gaps_apply",
+ "version": "20261127133804",
+ "sha256": "29f8bf2813e579ac68561ec0a962808002ae72a8021dff09bedbfedcbb504909",
+ "run": "46008643446",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":1,\"keys\":[1],\"skipped_checked\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

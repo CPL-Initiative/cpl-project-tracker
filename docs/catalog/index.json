@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 605,
+   "count": 608,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9233,6 +9233,25 @@
      "updated": "2026-06-28"
     },
     {
+     "created": "2026-11-27",
+     "governs": [
+      "kb/_build_program_ladders.py",
+      "kb/status/program_ladders/index.json"
+     ],
+     "path": "docs/kb-notes/methodology-stackable-programs-by-course-containment.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cpl-pathways",
+      "programs",
+      "stackable-credentials",
+      "cip"
+     ],
+     "title": "Stackable programs are found by course containment, not by CIP",
+     "type": "methodology",
+     "updated": "2026-11-27"
+    },
+    {
      "created": "2026-06-01",
      "governs": [
       "statewide_interactive.js"
@@ -10820,7 +10839,7 @@
      ],
      "title": "Playbook \u2014 where a college's local subject title comes from",
      "type": "playbook",
-     "updated": "2026-11-22"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-06-12",
@@ -11398,6 +11417,26 @@
      "updated": ""
     },
     {
+     "created": "2026-11-27",
+     "governs": [
+      "chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
+      "chatbox/supabase/functions/library-revise-draft/cobi_data.mjs",
+      "cpl_pathways.js"
+     ],
+     "path": "docs/kb-notes/reference-map-landing-page-exhibit-parameter.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "map-platform",
+      "landing-pages",
+      "exhibits",
+      "deep-link"
+     ],
+     "title": "MAP's landing page takes an exhibit code in its address",
+     "type": "reference",
+     "updated": "2026-11-27"
+    },
+    {
      "created": "2026-08-06",
      "governs": [
       "chatbox/supabase_search_exhibits_by_topic_v2.sql",
@@ -11864,6 +11903,28 @@
      "title": "Untangling KIN, PE and Athletics costs two identifiers",
      "type": "reference",
      "updated": "2026-09-22"
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [
+      "kb/_college_page_read.py",
+      "kb/college_reads/outside_tools_frame_check.json",
+      "tests/college_page_read_frame_test.py"
+     ],
+     "path": "docs/kb-notes/reference-outside-tools-framing-and-reading.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "connections",
+      "ppm",
+      "cvc",
+      "assist",
+      "cpl-pathways",
+      "data-sources"
+     ],
+     "title": "What PPM, CVC and ASSIST allow a page to frame or read",
+     "type": "reference",
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-06-19",
@@ -16594,7 +16655,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-28"
     },
     {
      "created": "2026-08-28",
@@ -16778,7 +16839,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-28",
@@ -17063,7 +17124,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-28"
     },
     {
      "created": "2026-08-28",
@@ -17589,8 +17650,78 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 693,
+   "count": 698,
    "docs": [
+    {
+     "created": "2026-11-28",
+     "governs": [],
+     "n": 747,
+     "path": "docs/session_747_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 747 handoff (from SkyPetrel, S746, Sam's plain session of 2026-11-27 to 11-28: Trained by, MAP's live view, the click-through, COBIx's bundle, Request Adopt)",
+     "type": null,
+     "updated": "2026-11-28"
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 746,
+     "path": "docs/session_746_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 746 handoff (from SkyTattler, S745, Sam's plain session of 2026-11-27: the Chabot fold, the credentials bar, industry certs, the CPL chip, PPM, CVC and ASSIST)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 745,
+     "path": "docs/session_745_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 745 handoff (from SkyCurlew, S744, Sam's plain session of 2026-11-27: the campus letter fold, exhibit deep links, stackable programs, the compact cards)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 744,
+     "path": "docs/session_744_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 744 handoff (from SkyBrant, S736, Sam's plain session of 2026-11-26 to 11-27: Library publish fixes, the lightning round, LACCD schedule titles, the Accounting dry run)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 743,
+     "path": "docs/session_743_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 743 handoff (from SkyGodwit, S742, the CPL Queue routine's collection run of 2026-11-27, from 12:12Z)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
     {
      "created": "2026-11-27",
      "governs": [],
@@ -29065,5 +29196,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1588
+ "total": 1596
 }

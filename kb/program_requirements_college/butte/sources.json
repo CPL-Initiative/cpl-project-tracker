@@ -1612,20 +1612,22 @@
    "FN2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
-   "title": "AS Degree in Accelerated Track Registered Nursing",
-   "h1": "AS Degree in Accelerated Track Registered Nursing",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28324",
+   "title": "AS Degree in Registered Nursing",
+   "h1": "AS Degree in Registered Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
-   }
+    "section_fit": 0.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 1,
-  "text_chars": 2939
+  "text_chars": 3285
  },
  {
   "control_number": "15151",

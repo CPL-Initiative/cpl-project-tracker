@@ -100,6 +100,22 @@
  ],
  "rows": [
   {
+   "code": "ADPE",
+   "heading": "Adaptive Physical Education",
+   "heading_printed": "Adaptive Physical Education",
+   "rule": "index",
+   "codes": [
+    "ADPE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI course ADPE 40A/41A Physical Fitness",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "AENG",
    "heading": "English as a Second Language Noncredit",
    "heading_printed": "English as a Second Language Noncredit",
@@ -210,6 +226,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ANUR",
+   "heading": "Allied Health Nursing",
+   "heading_printed": "Allied Health Nursing",
+   "rule": "index",
+   "codes": [
+    "ANUR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI course ANUR 11 Nursing Update",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "APE",
@@ -674,6 +706,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "DEAC",
+   "heading": "Distance Education Advisory Committee",
+   "heading_printed": "Distance Education Advisory Committee",
+   "rule": "index",
+   "codes": [
+    "DEAC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI course DEAC 50 Distance Education Certification in Canvas",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "DVST",
@@ -1572,6 +1620,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 92,
- "with_heading": 92
+ "subjects": 95,
+ "with_heading": 95
 }

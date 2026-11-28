@@ -888,3 +888,89 @@ main before merging an apply. An apply's audit step can write a file over the 5 
 to the cron. A new alias map changes the honors payload, so a test pinned to "rows unchanged" must tolerate a moved
 payload. The repo's Supabase guard refuses `DO` blocks: write a guarded delete as a CTE that deletes only when the
 match count is exact.
+
+## S736 (SkyBrant, 2026-11-26 to 11-27): the schedule search, the lightning round, COCI's glued letters
+
+- **Read the college's schedule search before guessing a subject title** (Sam, 2026-11-26,
+  `r-schedule-tool-first-for-subject-titles-sam-2026-11-26`: *"search each college's website for their schedule tool,
+  which is almost always listed by subject and title"*, and *"add these titles instead of guessing"*). Every title
+  filed before this run came from a catalog. The schedule lists each code it runs beside the title it prints, which is
+  the second source after the catalog's subject index.
+- **LACCD answers in one table.** The district's PeopleSoft class search has a select-subject lookup per term that lists
+  all 216 subjects of its nine colleges (term 2268); one read titled 171 of 212 untitled codes (#3894,
+  `f-laccd-schedule-subject-lookup-s736`). 87 schedule titles differ from the catalog's; the catalog stands, and the
+  differences are a list for Sam. A course description costs a page load per class, so none was read.
+- **COCI glues a campus letter to the subject.** Cerro Coso numbers courses C-something and Porterville P-something;
+  COCI stores some as `PHEDC 103` and others as `PHED C276`, so 26 Cerro Coso codes ending in C and 6 Porterville codes
+  ending in P are fake subjects (`f-cerro-coso-porterville-letter-glued-to-subject-s736`). Titling them would file a
+  fake code; the fix is in the COCI lookup builder. A real code can end in the letter (PSYC, MUSC, EDUC, PHSC, SOSC,
+  PTEC, FRCC, EMTC), so the fold needs the base code to exist and the code to be state-only.
+- **Cerro Coso's long-term schedule confirms it** (Sam shared the PDF 2026-11-27; *Long-Term Schedule Effective Fall
+  2024, Active and Inactive Courses*, course list of July 17, 2024; vault
+  `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`). It prints 459 courses under 53 subjects, every one SUBJ
+  plus a C-number (ACAD C070, EMTC C070, BIOL C101). 24 of the 26 fake codes' bases appear; HMSV does not, and PHED is
+  printed as KINS (KINS C101 Foundations of Physical Education), so the fold targets COCI's own PHED and the schedule
+  does not title it. Since it lists inactive courses, it is a second signal for the codes, not a title source.
+- **The lightning round grew from Sam's use of it** (#3893): *Not a subject*, *Skip* for the visit, the example
+  course's description on hover or a web search, the catalog in a bottom bar, a folded explanation and a training note
+  in `kb_curation` (`procedure_note`). His next ask, 2026-11-27: *"there should be a way to ask you to run a routine to
+  reparse based on the note and perhaps all the cerro coso items could be resolved quickly"*.
+
+## S744 (SkyCurlew, Sam's plain session, 2026-11-27): the campus letter fold
+
+- **#3908 (`c66c805b`).** `kb/coci_campus_letter.py` holds explicit lists, never a rule: 26 Cerro Coso codes (ADMJC to
+  SPANC) and 6 Porterville (BIOLP CMRTP ENGLP FIREP HLEDP MATHP). A suffix rule would have folded real codes: PSYC MUSC
+  EDUC PHSC SOSC PTEC FRCC EMTC and HOSP all end in the letter. ICC is not folded (no IC subject, and the schedule does
+  not print it; `d-icc-not-folded-s744`).
+- **Folding exposes twins.** `kb/_build_coci_lookup.py` folds 130 rows and drops 20 where COCI lists one control number
+  both glued and lettered. The older duplicates at De Anza, Cerritos and Victor Valley (25 rows) are a different cause
+  and stand.
+- **A person's save follows the fold.** `kb/subject_decisions.py` carries a save on a glued code to the folded code, so
+  Sam's ADMJC "Administration of Justice" save of 2026-11-26 lands on ADMJ; a direct save on the base wins. Statewide
+  subject codes 2,924 to 2,896, and no person's decision lost.
+- **Measure the consumers before the fold, and refresh the input alone first.** The first commit rebuilt the lookup's
+  M-ID chips on their own (20,218 rows), because memberships had moved since the last build; otherwise the fold's diff
+  would have carried that drift. The dry run: closest-M-ID scores shift under 0.01 (corpus size), 3 rows change
+  candidates and 3 gain one; the retired and not-applicable cards change only their input hash; CPL Pathways'
+  retired-course filter is unchanged at both colleges. CI then needed `kb/status/subject_courses` rebuilt (19 colleges)
+  and the stray-code rescore rerun (Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT).
+
+## Moved from the lane (S746)
+
+The campus letter fold and the Chabot glue fold, verbatim from `docs/reference/lanes/common-subjects-reference.md` as they stood at the S746 checkpoint.
+
+**LIVE (#3908, S744, `c66c805b`): the campus letter fold.** Cerro Coso and Porterville number courses with a campus
+letter, and COCI stored some as `PHEDC 103` (`f-cerro-coso-porterville-letter-glued-to-subject-s736`; Sam's training
+note on EMTCC). `kb/coci_campus_letter.py` holds explicit lists: 26 Cerro Coso codes (ADMJC to SPANC) and 6 Porterville
+(BIOLP CMRTP ENGLP FIREP HLEDP MATHP); the real codes stay (PSYC MUSC EDUC PHSC SOSC PTEC FRCC EMTC; HOSP). **DECIDED**
+`d-icc-not-folded-s744`: ICC stays (no IC subject, not on the schedule). `kb/_build_coci_lookup.py` folds 130 rows and
+drops 20 twins (one control number listed glued and lettered); the older duplicates at De Anza, Cerritos and Victor
+Valley (25 rows) stand. `kb/subject_decisions.py` carries a save on a glued code to the folded code (Sam's ADMJC
+"Administration of Justice" save of 2026-11-26 lands on ADMJ); a direct save on the base wins. Statewide subject codes
+2,924 to 2,896; no person's decision lost. The stray-code rescore reran
+(Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
+Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
+
+**LIVE (#3918, S745): the Chabot glue fold.** Sam's Chabot training note: `kb/coci_campus_letter.py` `GLUED` maps a code
+to (base, letters), 25 explicit Chabot codes (ATHL 7, DANC 1, HEAG 6, PEAC 11); PHEACJUD, MICR, PHSI and PHEA stay. 159
+rows fold (29 at Chabot), 20 twins unchanged; Chabot's codes 131 to 106, its untitled 31 to 4; statewide subject codes
+2,896 to 2,871; 47 decisions applied, none lost (the PEACBTC save carries to PEAC). ART Art, FILM Film and PLBG
+Apprenticeship: Plumbing filed from the Chabot catalog (runs 46060688269, 46061067072; rule `code_address` in
+`kb/_file_found_subject_titles.py`). **DECIDED:** the wider `code_address` exception (11 more titles at five colleges:
+Allan Hancock ART FILM; Berkeley City MUSIC; Chaffey ARABIC ART CINEMA DENTAL MUSIC THEATRE; Palomar ART; Rio Hondo ART)
+is held for its own measured change.
+
+## S746 (SkyPetrel, Sam's plain session, 2026-11-27 to 11-28): COBIx's bundle on main, the college's own codes
+
+- **Rebuild a contributor's stale PR on main rather than merging it.** COBIx's #3917 and #3926 were cut before #3918's
+  Chabot fold; #3929 and #3932 rebuilt them on main, dropped what #3918 had already done (the Chabot duplicates,
+  PHEACJUD), and left the originals open for Sam or COBIx to close.
+- **A fold lands on the code the college prints today** (`r-folds-take-the-colleges-own-codes-sam-2026-11-28`). Sam
+  asked before the merge that Hancock's truncated labels fold to Hancock's own codes (APPREN to APRN, COM SC to CS, OA to
+  CBOT) rather than to a statewide code; a label with no current code (INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS,
+  IT) stays as printed. The lightning round fell 494 to 416 on the committed files.
+- **A save keyed to a folded code goes unseen** (`f-saves-on-a-folded-code-go-unseen-s746`). Sam's four Chabot *Not a
+  subject* saves sat on codes #3918 folded, so the queue never showed them. #3908 carries a save on a glued code to its
+  base; any new fold must carry saves the same way or name the ones it strands.
+- **A person's `not_a_subject` is terminal for the queue.** Cabrillo TEST and Fullerton F left once the builder honored
+  the save, which is the Commons rule that a person's save wins over a rebuild.

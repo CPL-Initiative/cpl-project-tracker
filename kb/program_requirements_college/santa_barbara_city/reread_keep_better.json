@@ -1,8 +1,8 @@
 {
  "college": "Santa Barbara City College",
- "run": "44519697720",
- "written": "2026-11-19T12:32:16Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); first of all, a checked live row restores, or is held where the base files none, and a supplied live run other than the filed record's is held for a person (d-reread-keep-the-better-s683; COBIx on #3544)",
+ "run": "46010148668",
+ "written": "2026-11-27T14:22:39Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
   "05902": "38670933359",
@@ -118,15 +118,13 @@
   "31393": "38670933359",
   "31415": "38670933359",
   "31416": "38670933359",
-  "31417": "38670933359",
   "31450": "38670933359",
   "31464": "38670933359",
   "31687": "38670933359",
   "31787": "38670933359",
   "32450": "38670933359",
-  "32513": "38670933359",
   "32603": "38670933359",
-  "32629": "39782741424",
+  "32629": "44519697720",
   "32650": "38670933359",
   "32687": "38670933359",
   "32698": "38670933359",
@@ -183,8 +181,6 @@
   "36905": "38670933359",
   "36907": "38670933359",
   "36918": "38670933359",
-  "36970": "38670933359",
-  "36971": "38670933359",
   "37183": "38670933359",
   "37250": "38670933359",
   "37272": "38670933359",
@@ -196,12 +192,12 @@
   "38188": "38670933359",
   "38189": "38670933359",
   "38190": "38670933359",
-  "38315": "38670933359",
   "38526": "38670933359",
   "38595": "38670933359",
   "38713": "38670933359",
   "39372": "38670933359",
   "39373": "38670933359",
+  "39376": "44519697720",
   "39488": "38670933359",
   "39496": "38670933359",
   "39563": "38670933359",
@@ -220,7 +216,7 @@
   "40829": "38670933359",
   "40958": "38670933359",
   "40959": "38670933359",
-  "41281": "38670933359",
+  "41281": "44519697720",
   "41282": "38670933359",
   "41283": "38670933359",
   "41363": "38670933359",
@@ -245,6 +241,7 @@
   "43553": "38670933359",
   "43772": "38670933359",
   "44222": "39782741424",
+  "44675": "44519697720",
   "44918": "38670933359",
   "44919": "38670933359",
   "44920": "38670933359",
@@ -260,27 +257,37 @@
   "46520": "38670933359",
   "46521": "38670933359"
  },
+ "live_read_at": "2026-11-27T13:44:16Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s684-c",
+   "ref": "claude/s742-piles-sbcc",
    "inputs": {
     "college": "Santa Barbara City College",
     "step": "reread",
-    "force": "44519697720"
+    "force": "46010148668"
    },
-   "posts": 4,
+   "posts": 2,
    "control_numbers": [
-    "32629",
-    "39376",
-    "41281",
-    "44675"
+    "32775",
+    "43553"
+   ],
+   "not_live_at_run": [
+    "32775",
+    "43553"
    ]
   }
  ],
- "carried_runs": {},
+ "carried_runs": {
+  "44519697720": [
+   "32629",
+   "39376",
+   "41281",
+   "44675"
+  ]
+ },
  "counts": {
-  "reread": 4,
+  "reread": 2,
   "kept": 2,
   "restored": 0,
   "restored_filed_pass": 0,
@@ -288,13 +295,15 @@
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 2,
+  "new": 0,
+  "already_live": 0,
+  "kept_on_own_page": 1,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
   "records_after": 251,
-  "dropped_by_filing": 5,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
@@ -450,6 +459,105 @@
      "live_run": null,
      "outcome": "new",
      "why": "no filed record on origin/main"
+    }
+   ]
+  },
+  "46010148668": {
+   "base": "HEAD~1",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T14:22:39Z",
+   "counts": {
+    "reread": 2,
+    "kept": 2,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 1,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 251,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "32775",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.sbcc.edu/academic-departments/anthropology/anthropology-transfer-aat/",
+     "filed_source_url": "https://catalog.sbcc.edu/academic-departments/anthropology/anthropology-transfer-aat/",
+     "filed_run": "39782741424",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 68,
+      "listed": 68,
+      "arithmetic": "equal"
+     },
+     "own_page": "the address's last segment 'anthropology-transfer-aat' names the program",
+     "award_tail": "-transfer-aat",
+     "shared_title": [
+      "05937"
+     ],
+     "live_run": "39782741424",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 68,
+      "listed": 68,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "43553",
+     "title": "Law, Public Policy, and Society",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+     "filed_source_url": "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+     "filed_run": "38670933359",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 92,
+      "listed": 92,
+      "arithmetic": "unequal"
+     },
+     "live_run": "38670933359",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 92,
+      "listed": 92,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     }
    ]
   }

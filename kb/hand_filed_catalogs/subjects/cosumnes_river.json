@@ -1003,6 +1003,22 @@
    "run": "45625671325"
   },
   {
+   "code": "HMONG",
+   "heading": "Hmong",
+   "heading_printed": "Hmong",
+   "rule": "index",
+   "codes": [
+    "HMONG"
+   ],
+   "candidate": null,
+   "address": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625671325)",
+   "run": "45625671325"
+  },
+  {
    "code": "HORT",
    "heading": "Horticulture",
    "heading_printed": "Horticulture",
@@ -1771,6 +1787,6 @@
    "run": "45625671325"
   }
  ],
- "subjects": 110,
- "with_heading": 110
+ "subjects": 111,
+ "with_heading": 111
 }

@@ -60,11 +60,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    33.0,
-    33.0
+    57.0,
+    60.0
    ],
    "stated": [
     60.0,
@@ -75,9 +75,8 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 33.0-33.0; the catalog prints 60.0-60.0 for the degree"
-   ]
+   "why": [],
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,8 +146,8 @@
   "blocks": [
    {
     "name": "Recommended Major Requirements",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -172,8 +171,8 @@
    },
    {
     "name": "Recommended Major Requirements",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -205,8 +204,8 @@
    },
    {
     "name": "Recommended Major Requirements",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 9,
     "option_group": null,
     "stated": {
      "min": 9,
@@ -259,8 +258,8 @@
    },
    {
     "name": "Recommended Major Electives",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 9,
     "option_group": null,
     "stated": {
      "min": 9,
@@ -310,44 +309,30 @@
    "Text begins mid-sentence; the start of the program description is cut off."
   ]
  },
- "extracted_run": 38639316727,
+ "extracted_run": 46015798176,
  "reconciled": [
   {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nPsychology - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 24,
-    "max": 24
-   },
-   "words": "Cabrillo College General Education\n24"
-  },
-  {
-   "field": "total_units",
+   "field": "blocks",
    "was": {
-    "min": 18,
-    "max": null
+    "rule": "recommended",
+    "lists": [
+     "Recommended Major Requirements",
+     "Recommended Major Requirements",
+     "Recommended Major Requirements",
+     "Recommended Major Electives"
+    ]
    },
    "now": {
-    "min": null,
-    "max": null
+    "rule": "choose_units",
+    "minimum": [
+     3,
+     3,
+     9,
+     9
+    ]
    },
-   "words": "at least 18 units in the major"
-  },
-  {
-   "field": "open_elective_units",
-   "was": null,
-   "now": 9,
-   "words": "General electives: any transferable or degree applicable course.\n9"
+   "words": "Recommended Major Requirements Complete the following number of credits: 3; Recommended Major Requirements Complete the following number of credits: 3-5; Recommended Major Requirements Complete the following number of credits: 9-10; Recommended Major Electives Complete the following number of credits: 9"
   }
  ],
- "read_run": "38442109713"
+ "read_run": 38639316727
 }

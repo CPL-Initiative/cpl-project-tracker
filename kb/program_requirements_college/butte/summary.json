@@ -13,10 +13,10 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
+ "cost_usd_run": 0.06,
  "cost_usd_filed": 10.69,
  "cost_per_program": 0.0648,
- "extract_calls": null,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -74,5 +74,5 @@
    "status": "Active"
   }
  ],
- "run": "45576373568"
+ "run": "46012628995"
 }

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-27_s742_cpl_memory_rows.sql",
+ "name": "s742_cpl_memory_rows_2",
+ "version": "20261127150553",
+ "sha256": "0facb53517303f4265f105cdf21e15e29747b1dd0f7b0d2c05d0278d065e89b0",
+ "run": "46021590772",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-applies-on-own-branch-s742\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":324},{\"slug\":\"d-coastline-stage-fix-parked-s742\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":350},{\"slug\":\"d-orange-coast-read-parked-s742\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":277},{\"slug\":\"f-cosumnes-pdf-unchanged-s742\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":336},{\"slug\":\"m-collection-s742\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":328},{\"slug\":\"p-compact-live-read-s742\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":332},{\"slug\":\"p-conductor-carries-ended-worker-s742\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"p-paid-read-on-sibling-avoids-cancel-s742\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":307}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

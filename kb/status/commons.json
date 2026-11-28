@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T09:38:35Z",
+ "written_at": "2026-11-28T01:03:11Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15657,
+     "n": 15667,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 1707,
+     "n": 1697,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-27T08:48:49Z",
+    "at": "2026-11-27T14:26:20Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15657,
-    "failing": 1707,
+    "complete": 15667,
+    "failing": 1697,
     "unread": 2918,
     "records": 18970,
     "colleges": 118,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-26T00:21:02+00:00",
+    "at": "2026-11-26T23:34:12-08:00",
     "every_hours": null
    },
    "facts": {
@@ -454,15 +454,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 151,
+     "n": 246,
      "of": 246,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (137 by a person, 14 by the nightly procedure or a session cohort)",
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (138 by a person, 108 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 137,
+     "n": 138,
      "of": 246,
-     "words": "confirmed by a person, 137 of them settled",
+     "words": "confirmed by a person, 138 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -522,11 +522,11 @@
    },
    "facts": {
     "disciplines": 246,
-    "confirmed": 151,
-    "person": 137,
-    "cohort": 14,
-    "person_settled": 137,
-    "settled": 151,
+    "confirmed": 246,
+    "person": 138,
+    "cohort": 108,
+    "person_settled": 138,
+    "settled": 246,
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
@@ -791,7 +791,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1707,
+    "n": 1697,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -836,8 +836,8 @@
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 597,
-    "was": 563,
-    "since": "2026-11-20",
+    "was": 574,
+    "since": "2026-11-21",
     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

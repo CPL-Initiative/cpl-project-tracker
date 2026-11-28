@@ -60,6 +60,9 @@
         "background:var(--surface-subtle);border:1px solid var(--border);text-decoration:underline;}" +
       ".cpl-mapchip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}" +
       ".cpl-mapmore{color:var(--text-muted);}" +
+      ".cpl-mapnear{position:relative;display:inline-flex;align-items:center;min-height:24px;font-weight:600;" +
+        "color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;}" +
+      ".cpl-mapnear:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}" +
       ".cpl-ml-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;" +
         "clip:rect(0 0 0 0);white-space:nowrap;border:0;}";
     document.head.appendChild(st);
@@ -158,9 +161,48 @@
       (more > 0 ? '<span class="cpl-mapmore">and ' + more + " more college" + (more === 1 ? "" : "s") + "</span>" : "");
   }
 
+  /* The nearest exhibit (Sam, 2026-11-28: "yes, that's the way to go"; mock
+   * https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf). Where a caller names the
+   * college that would adopt (home), the line is ONE link: the exhibit of the
+   * nearest college that built one, a college in home's Strong Workforce region
+   * first (the Credential Catalog's region, through adopt_panel.js's regionOf),
+   * then any; within each, the college with the most exhibits of the credential,
+   * ties alphabetical; home's own exhibit never. Then "N more colleges built one".
+   * Without home the line keeps its chip per college. */
+  function regionOf(college) {
+    var P = window.CPL_ADOPT_PANEL;
+    return P && typeof P.regionOf === "function" ? (P.regionOf(college) || "") : "";
+  }
+  function nearest(title, home) {
+    if (!index) return null;
+    var h = String(home || "").trim().toUpperCase(), by = {}, order = [];
+    (index.by_title[title] || []).forEach(function (id) {
+      var rec = index.found[String(id).toUpperCase()];
+      if (!rec || !rec.college) return;
+      if (h && String(rec.college).trim().toUpperCase() === h) return;
+      if (!by[rec.college]) { by[rec.college] = { college: rec.college, ids: [] }; order.push(rec.college); }
+      by[rec.college].ids.push(id);
+    });
+    if (!order.length) return null;
+    var r = h ? regionOf(home) : "";
+    var near = r ? order.filter(function (c) { return regionOf(c) === r; }) : [];
+    var pool = near.length ? near : order;
+    pool.sort(function (a, b) { return by[b].ids.length - by[a].ids.length || (a < b ? -1 : a > b ? 1 : 0); });
+    return { college: pool[0], id: by[pool[0]].ids[0], others: order.length - 1 };
+  }
+  function nearestHtml(title, home) {
+    var n = nearest(title, home);
+    if (!n) return "";
+    return '<a class="cpl-mapnear" href="' + esc(url(n.id)) + '" target="_blank" rel="noopener">Open ' +
+      esc(short(n.college)) + "\u2019s exhibit in MAP" +
+      '<span class="cpl-ml-sr"> (Request Quick Adopt there; opens MAP searched for ' + esc(n.id) + ")</span></a>" +
+      (n.others > 0 ? ' <span class="cpl-mapmore">' + n.others + " more college" + (n.others === 1 ? "" : "s") + " built one</span>" : "");
+  }
+
   function fill(el) {
     el.setAttribute("data-ml-done", "1");
-    el.innerHTML = lineHtml(el.getAttribute("data-ml-title") || "");
+    var t = el.getAttribute("data-ml-title") || "", home = el.getAttribute("data-ml-home");
+    el.innerHTML = home ? nearestHtml(t, home) : lineHtml(t);
   }
   function fillAll() {
     var list = document.querySelectorAll(".cpl-maplinks[data-ml-title]:not([data-ml-done])");
@@ -177,15 +219,20 @@
     }, 0);
   }
 
-  function placeholder(title) {
+  function placeholder(title, home) {
     if (!title) return "";
     schedule();
-    return '<span class="cpl-maplinks" data-ml-title="' + esc(title) + '"></span>';
+    return '<span class="cpl-maplinks" data-ml-title="' + esc(title) + '"' +
+      (home ? ' data-ml-home="' + esc(home) + '"' : "") + "></span>";
   }
-  function node(title) {
+  function node(title, home) {
     var s = document.createElement("span");
     s.className = "cpl-maplinks";
-    if (title) { s.setAttribute("data-ml-title", title); schedule(); }
+    if (title) {
+      s.setAttribute("data-ml-title", title);
+      if (home) s.setAttribute("data-ml-home", home);
+      schedule();
+    }
     return s;
   }
 
@@ -194,6 +241,8 @@
     placeholder: placeholder,
     node: node,
     lineHtml: function (title) { return lineHtml(title); },
+    nearest: function (title, home) { return nearest(title, home); },
+    nearestHtml: function (title, home) { return nearestHtml(title, home); },
     load: load,
     nowTitle: nowTitle,
     fillAll: fillAll,

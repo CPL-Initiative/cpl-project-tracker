@@ -8,7 +8,9 @@ WHAT THIS GUARDS:
   (4) a college whose catalog was not read files nothing;
   (5) the Subjects build lists a headings-only college, and never a college with a course file twice;
   (6) `--csv` (S733): a filled leftovers row with a title and its source URL files with its own method, date and finder;
-      a row with no source URL, or a `department label` row, files nothing; a college with no slug is reported.
+      a row with no source URL, or a `department label` row, files nothing; a college with no slug is reported;
+  (7) a code's own catalog page (rule code_address) that prints the code and the title apart ("FILM - Film") files the
+      title though it spells its code, with the find row's own run (S745); an index heading doing the same does not.
 Run from repo root: `python3 tests/file_found_subject_titles_test.py`.
 """
 import json
@@ -74,6 +76,24 @@ with tempfile.TemporaryDirectory() as root:
     check("(5) the build lists a headings-only college once, never one with a course file",
           [c["slug"] for c in got] == ["alpha"] and got[0]["college"] == "Alpha College" and got[0]["file"] is None, json.dumps(got))
 
+    put(os.path.join(F.FOUND, "delta.json"), {"college": "Delta College", "run": "333", "read_at": "2026-11-25T15:00:00Z", "titles": [
+        {"code": "FILM", "title": "Film", "printed": "FILM - Film", "rule": "code_address", "url": "https://delta.example/7576",
+         "run": "444", "found_on": "2026-11-27"},
+        {"code": "ART", "title": "Art", "printed": "ART - Art", "url": "u"},
+        {"code": "MUS", "title": "MUS", "printed": "MUS", "rule": "code_address", "url": "u"}]})
+    r = F.file_one(os.path.join(F.FOUND, "delta.json"), False)
+    rows = {x["code"]: x for x in json.load(open(os.path.join(F.SUBJECTS, "delta.json")))["rows"]}
+    check("(7) the code's own page that prints its code and title apart (FILM - Film) files, with its own run (S745)",
+          (rows.get("FILM") or {}).get("heading") == "Film" and rows["FILM"].get("run") == "444"
+          and "ART" not in rows and "MUS" not in rows and r["added"] == 1 and r["skipped"] == 2, json.dumps(r))
+
+    put(os.path.join(F.FOUND, "sierra.json"), {"college": "Sierra College", "run": "333", "read_at": "2026-11-27T19:00:00Z",
+        "titles": [{"code": "RISE", "title": "RISE", "url": "https://sierra.example/rise"}]})
+    r = F.file_one(os.path.join(F.FOUND, "sierra.json"), False)
+    rows = {x["code"]: x for x in json.load(open(os.path.join(F.SUBJECTS, "sierra.json")))["rows"]}
+    check("(8) an explicit allow-list code-only heading is filed; the global rule is unchanged",
+          r["added"] == 1 and rows["RISE"]["heading"] == "Rise" and r["skipped"] == 0, json.dumps(r))
+
 fail = 0
 with tempfile.TemporaryDirectory() as root:
     F.FOUND = os.path.join(root, "kb", "subject_title_hunt", "found")
@@ -85,10 +105,14 @@ with tempfile.TemporaryDirectory() as root:
                 "Beta College,FTMA,Film Television Media Arts,https://beta.example/ftma/,catalog,subject heading,2026-11-25,COBIx\n"
                 "Beta College,NOSRC,No Source,,catalog,subject heading,2026-11-25,COBIx\n"
                 "Beta College,APP,Apprenticeship,https://beta.example/courses,catalog,department label,2026-11-25,COBIx\n"
-                "Gamma College,GX,Gamma Things,https://gamma.example/,catalog,subject heading,2026-11-25,COBIx\n")
+                "Gamma College,GX,Gamma Things,https://gamma.example/,catalog,subject heading,2026-11-25,COBIx\n"
+                "Beta College,PSN,Person Named,,person,named by Sam Lee: COCI PSN 1,2026-11-27,Sam Lee\n"
+                "Beta College,NOBY,Nobody Named,,person,named by nobody,2026-11-27,\n")
     finds, unknown = F.read_csv_finds(csvp)
     check("csv: an unknown college is reported, never guessed", unknown == ["Gamma College"], unknown)
-    check("csv: a row with no source URL is not a find", [t["code"] for t in finds["beta"]["titles"]] == ["FTMA", "APP"], finds)
+    check("csv: a row with no source URL is not a find; a person-named row (S746) is, its finder the source",
+          [t["code"] for t in finds["beta"]["titles"]] == ["FTMA", "APP", "PSN"]
+          and [t for t in finds["beta"]["titles"] if t["code"] == "PSN"][0]["url"] is None, finds)
     r = F.file_doc("beta", finds["beta"], False)
     with open(os.path.join(F.SUBJECTS, "beta.json"), encoding="utf-8") as f:
         rows = {x["code"]: x for x in json.load(f)["rows"]}

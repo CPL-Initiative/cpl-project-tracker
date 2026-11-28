@@ -473,6 +473,22 @@
    "run": "45630168042"
   },
   {
+   "code": "MEDIA",
+   "heading": "Media",
+   "heading_printed": "Media",
+   "rule": "index",
+   "codes": [
+    "MEDIA"
+   ],
+   "candidate": null,
+   "address": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
    "code": "MGMT",
    "heading": "Management",
    "heading_printed": "Management",
@@ -729,6 +745,6 @@
    "run": "45630168042"
   }
  ],
- "subjects": 45,
- "with_heading": 45
+ "subjects": 46,
+ "with_heading": 46
 }

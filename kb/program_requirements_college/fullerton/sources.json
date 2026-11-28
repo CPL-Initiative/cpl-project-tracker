@@ -31,7 +31,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "nursery management associate in arts degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -194,7 +195,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -393,7 +394,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -642,7 +643,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "construction technology associate in science degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -2069,7 +2071,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2806,7 +2808,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "latin american studies latin-​american studies associate in arts degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -3522,7 +3525,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -4660,7 +4664,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -5142,7 +5147,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 23,
@@ -5176,7 +5182,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -5317,7 +5324,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -5336,7 +5344,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -5496,7 +5504,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -5690,7 +5699,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -6664,7 +6674,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "anthropology associate in arts degree anthropology associate in arts degree for transfer",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -7476,7 +7487,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "journalism associate in arts degree journalism associate in arts degree for transfer",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 23,
@@ -7680,7 +7692,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "kinesiology associate in arts degree for transfer",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 54,
@@ -8322,7 +8335,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -9278,7 +9292,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -9352,7 +9366,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -9420,7 +9434,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -9979,7 +9994,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -10725,7 +10741,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "art associate in arts degree art history associate in arts degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -10820,7 +10837,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "global studies associate in arts degree for transfer",
-    "section_fit": 0.667
+    "section_fit": 0.667,
+    "exact": 0
    }
   },
   "listed": 35,
@@ -10875,7 +10893,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -11032,7 +11051,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -11090,7 +11110,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "social justice studies social justice studies -​ ethnic studies associate in arts degree for transfer",
-    "section_fit": 0.8
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 33,
@@ -12787,7 +12808,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -12836,7 +12858,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 25,

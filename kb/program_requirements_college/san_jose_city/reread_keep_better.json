@@ -1,30 +1,31 @@
 {
  "college": "San Jose City College",
- "run": "44769778910",
- "written": "2026-11-21T07:35:50Z",
+ "run": "46011334736",
+ "written": "2026-11-27T14:24:07Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
-  "06185": "43357106423",
-  "06202": "43357106423",
+  "06185": "45840981324",
+  "06202": "45840981324",
   "06210": "43357106423",
   "06218": "43357106423",
   "06230": "43357106423",
   "06236": "43357106423",
-  "08859": "43357106423",
+  "08859": "45840981324",
   "10540": "43357106423",
   "10541": "43357106423",
   "12546": "43357106423",
   "13569": "43357106423",
   "16370": "43357106423",
   "18390": "43357106423",
-  "18449": "43357106423",
+  "18449": "45840981324",
   "18450": "43357106423",
   "18451": "43357106423",
-  "18921": "43357106423",
-  "22220": "43357106423",
+  "18921": "45840981324",
+  "22220": "45840981324",
   "22232": "43357106423",
-  "22237": "43357106423",
+  "22237": "45840981324",
+  "22239": "45840981324",
   "22241": "43357106423",
   "22242": "43357106423",
   "22991": "43357106423",
@@ -33,12 +34,12 @@
   "22994": "43357106423",
   "30403": "43357106423",
   "30443": "43357106423",
-  "32078": "43357106423",
-  "32214": "43357106423",
-  "32260": "43357106423",
+  "32078": "45840981324",
+  "32214": "45840981324",
+  "32260": "45840981324",
   "32304": "43357106423",
   "32554": "43357106423",
-  "32759": "43357106423",
+  "32759": "45840981324",
   "33073": "43357106423",
   "33766": "43357106423",
   "33857": "43357106423",
@@ -54,22 +55,23 @@
   "36929": "43357106423",
   "37492": "43357106423",
   "37604": "43357106423",
-  "38113": "43357106423",
+  "38113": "45840981324",
   "38152": "43357106423",
-  "38426": "43357106423",
+  "38426": "45840981324",
   "38463": "43357106423",
   "38485": "43357106423",
-  "38498": "43357106423",
-  "38499": "43357106423",
+  "38498": "45840981324",
+  "38499": "45840981324",
   "38726": "43357106423",
   "39247": "43357106423",
-  "39391": "43357106423",
+  "39391": "45840981324",
   "40370": "43357106423",
   "40372": "43357106423",
-  "41473": "43357106423",
+  "41473": "45840981324",
+  "41533": "44769778910",
   "41629": "43357106423",
   "41847": "43357106423",
-  "42242": "43357106423",
+  "42242": "45840981324",
   "42529": "43357106423",
   "42682": "43357106423",
   "43279": "43357106423",
@@ -78,62 +80,46 @@
   "44122": "43357106423",
   "44123": "43357106423",
   "44388": "43357106423",
-  "44596": "43357106423",
+  "44596": "45840981324",
   "44925": "43357106423",
-  "45796": "43357106423",
+  "45796": "44769778910",
   "45984": "43357106423"
  },
- "live_read_at": "2026-11-21T07:34:13Z",
+ "live_read_at": "2026-11-27T13:43:50Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s691-reread",
+   "ref": "HEAD",
    "inputs": {
     "college": "San Jose City College",
     "step": "reread",
-    "force": "44769778910"
+    "force": "46011334736"
    },
-   "posts": 4,
+   "posts": 1,
    "control_numbers": [
-    "18449",
-    "22239",
-    "41533",
-    "45796"
+    "38499"
    ],
    "not_live_at_run": [
-    "18449",
-    "45796"
-   ]
-  },
-  {
-   "workflow": "program-requirements-college.yml",
-   "ref": "claude/s691-reread",
-   "inputs": {
-    "college": "San Jose City College",
-    "step": "load"
-   },
-   "posts": 2,
-   "control_numbers": [
-    "22239",
-    "41533"
-   ],
-   "needs_load": [
-    "22239",
-    "41533"
+    "38499"
    ]
   }
  ],
- "carried_runs": {},
+ "carried_runs": {
+  "44769778910": [
+   "41533",
+   "45796"
+  ]
+ },
  "counts": {
-  "reread": 4,
-  "kept": 3,
+  "reread": 1,
+  "kept": 1,
   "restored": 0,
   "restored_filed_pass": 0,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 1,
+  "new": 0,
   "already_live": 0,
   "kept_on_own_page": 0,
   "plain_reread_would_lose_pass": 0,
@@ -141,7 +127,7 @@
   "run_places_none_after": 0,
   "folder_places_none_after": 4,
   "records_after": 83,
-  "dropped_by_filing": 2,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
@@ -298,6 +284,68 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read covers more (share 0.994 against 0.981)"
+    }
+   ]
+  },
+  "46011334736": {
+   "base": "origin/main",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T14:24:07Z",
+   "counts": {
+    "reread": 1,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 4,
+    "records_after": 83,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "38499",
+     "title": "Law, Public Policy, and Society",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+     "filed_source_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+     "filed_run": 45840981324,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.647,
+      "placed": 33,
+      "listed": 51,
+      "arithmetic": "equal"
+     },
+     "live_run": "45840981324",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.627,
+      "placed": 32,
+      "listed": 51,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     }
    ]
   }

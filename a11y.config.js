@@ -317,6 +317,37 @@ async function seedRoepRecord(page, theme, lay) {
   await page.waitForTimeout(200);
 }
 
+// CPL Pathways' Industry certs sidebar on a catalog record (Sam, 2026-11-27). Cerritos's A.S. 42158 has no entry in
+// kb/status/program_certs/, so the seed hands the tab's cache one with both groups (a certification in both marked),
+// then opens the record and the sidebar.
+const CERTS_SEED = { "42158": {
+  earns_cpl_here: [
+    { t: "OSHA 30-Hour Construction", i: "U.S. Occupational Safety and Health Administration", courses: ["IWAP 40.07"],
+      exhibits: ["MAPICA-RA4P-1-001"], both: true },
+    { t: "Rigging Qualification", i: "NCCER", courses: ["IWAP 40.50", "IWAP 41.09"], exhibits: [] }],
+  prepares_for: [
+    { key: "osha", name: "OSHA 10- or 30-hour card", issuer: "U.S. Occupational Safety and Health Administration",
+      from: "outcomes", quote: "Earn the OSHA 30 card before the field placement.", both: true },
+    { key: "aws_weld", name: "AWS welding certification", issuer: "American Welding Society", from: "careers",
+      quote: "AWS certified structural welder" }] } };
+async function seedRoepCerts(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => window.CPL_PATHWAYS_TAB && window.CPL_PATHWAYS_TAB._certCache, null, { timeout: 60000 });
+  await page.evaluate((seed) => { window.CPL_PATHWAYS_TAB._certCache.colleges["Cerritos College"] = seed; }, CERTS_SEED);
+  await cplpwOpen(page, "Cerritos College", /^Apprenticeship: Field Ironworkers$/);
+  await page.waitForFunction(() => document.querySelector(".cplpw-rcerts-open"), null, { timeout: 30000 });
+  // First Light's greeting opens 650 ms after load and would cover the sidebar: mark the day seen and close it.
+  await page.waitForTimeout(700);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.evaluate(() => document.querySelector(".cplpw-rcerts-open").click());
+  await page.waitForTimeout(300);
+}
+
 // CPL Pathways' catalog records as the table serves them (Sheet 65 card 2, S367). The
 // sweep aborts the table reads, so the seed hands the tab the list it would have read
 // (the pilot's programs, an unchecked record with a long title, and one record no read
@@ -4339,6 +4370,22 @@ module.exports = {
     routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
     widths: [390, 1440],
     seed: (page) => seedRoepRecord(page, "dark", "term"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-certs": {
+    file: "index.html",
+    title: "CPL Pathways: a catalog record's Industry certs sidebar",
+    routes: [{ hash: "cpl-pathways", name: "roep-certs" }],
+    widths: [390, 1440],
+    seed: (page) => seedRoepCerts(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-certs-dark": {
+    file: "index.html",
+    title: "CPL Pathways: a catalog record's Industry certs sidebar, dark",
+    routes: [{ hash: "cpl-pathways", name: "roep-certs-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedRoepCerts(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cpl-pathways-table": {

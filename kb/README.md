@@ -173,6 +173,26 @@ C-ID, re-key it from its M-ID and set `id_system` accordingly.
 lazy on first tab open) + 25 `coci_lookup_desc_<A-Z>.js` description shards
 (fetched per expanded row). STATIC — rebuild on a fresh COCI extract; NOT
 daily-cron artifacts. The tab renderer is root `coci_lookup.js`.
+Since S744 (#3908) the build folds Cerro Coso's and Porterville's glued campus
+letter (`PHEDC 103` to `PHED C103`) from the explicit lists in
+`kb/coci_campus_letter.py`, dropping the twins the fold exposes.
+Since S745 (#3918) its `GLUED` map folds 25 explicit Chabot codes glued to a
+number (`ATHL7`, `PEAC11`) the same way.
+
+`kb/_build_program_certs.py` (S745, #3920) writes `kb/status/program_certs/`,
+the *Industry certs* chip on a CPL Pathways program card: the industry-cert
+exhibits articulated to a program's courses (*earns CPL here*) and the certs its
+catalog text names (*prepares for*); the matcher's measure is
+`kb/status/program_certs/_measure.md`.
+Since S746 (#3925) it also writes a `trained_by` group, the *Trained by* line:
+training committees and JATCs only, because `training_agency` in
+`kb/credentials.json` often names the one site that filed a widely articulated
+credential (`d-trained-by-committees-only-s746`).
+
+`kb/_build_roep_display.py` reads, since S746 (#3927), `kb/exhibits_adoption.json`
+(MAP's live articulated-exhibit view) as a third CPL-here source
+(`adoption_index`), adding a credential to a course only where MAP's CR read and
+the dated feed do not already name it.
 
 ## Governance register (added Session 120, 2026-08-05)
 

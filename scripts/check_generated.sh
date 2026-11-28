@@ -49,6 +49,8 @@ srun "status: csr_proposed_codes.json"            "python3 kb/_csr_propose_codes
 # The harvest's committed-file builds.
 srun "status: commons_data.json"                  "python3 kb/_build_commons_data_status.py --check --quiet"
 srun "status: program_discontinued.json"          "python3 kb/_program_discontinued.py --check"
+srun "status: program_ladders/"                   "python3 kb/_build_program_ladders.py --check"
+srun "status: program_certs/"                     "python3 kb/_build_program_certs.py --check"
 # The session side of each Progress view, written at checkpoints: course.json, cr.json, exhibit.json,
 # subjects.json and program-requirements.json. Hand-kept, so the check is their shape, never their bytes.
 srun "status: five checkpoint-written files"      "q() { python3 scripts/queue_status.py --check --project \$1; }; q course && q cr && q exhibit && q subjects && q program-requirements"

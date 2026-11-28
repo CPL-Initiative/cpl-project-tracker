@@ -251,21 +251,30 @@ function load(rows, onFetch) {
     const ex = R.exhibitsFor({ found: { "MAPICA-SM-1-001": { title: "Sheet Metal Worker", college: "Laney College" }, "X-1": { title: "Other", college: "Norco College" } } }, ["Laney College"]);
     const block = R.referenceBlock(["Laney College", "Norco College"], { "Laney College": "https://cpldashboardcccco.azurewebsites.net/Laney" }, ex);
     check("F2: the block gives each college's MAP landing page as the button's target, and its CPL Opportunity page",
-      /Laney College\n- MAP landing page \(where a student requests CPL at this college; every button goes here\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
+      /Laney College\n- MAP landing page \(where a student requests CPL at this college; every button goes here, with \?Exhibit=<MAP ID> for the exhibit it is about\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
       /cpl-opportunity\/\?college=Laney%20College/.test(block), block);
     // Sam, 2:42 PM PT (COBIx on #3527): articulated only; the landing page, not the dashboard; no fallback link.
     check("F2: ⭐ a college with no landing page on file is said so, with no button and no fallback link",
       /Norco College\n- MAP landing page: NONE ON FILE\. Say on the page/.test(block) && !/map\.rccd\.edu\/cpllandingpages/.test(block), block);
-    check("F2: ⭐ each exhibit's button goes to the college's landing page with its MAP ID kept beside it, never the MAP dashboard, and no parameter yet",
-      block.indexOf('Sheet Metal Worker (MAP ID MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney; tell the student to choose "Sheet Metal Worker" under Possible Qualifications') >= 0 &&
-      !/insights\/exhibit-courses/.test(block) && !/\?Exhibit=/.test(block), block);
+    // Pedro, 2026-11-27 (Sam's ask of 11-18): the landing page takes ?Exhibit=<MAP ID>; verified live S744.
+    check("F2: ⭐ each exhibit's button opens the college's landing page on that exhibit (?Exhibit=<MAP ID>), never the MAP dashboard, and no pick instruction",
+      block.indexOf("Sheet Metal Worker (MAP ID MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney?Exhibit=MAPICA-SM-1-001\n") >= 0 &&
+      !/insights\/exhibit-courses/.test(block) && !/Possible Qualifications/.test(block), block);
+    check("F2: landingButton encodes the ID, joins an address that has a query, and keeps only codes MAP accepts (its own pattern, at most 10, no repeats), and gives the bare page with none and nothing without a page",
+      R.landingButton("https://x/CHC", { id: "MAPICI-BP&C-1-001" }) === "https://x/CHC" &&
+      R.landingButton("https://x/MJC", { id: "MAPICI-E3S--1-001" }) === "https://x/MJC" &&
+      R.landingButton("https://x/L", { id: "MAPICI-ASE(10-1-001" }) === "https://x/L" &&
+      R.landingButton("https://x/L?lang=es", { id: "MAPICA-SM-1-001" }) === "https://x/L?lang=es&Exhibit=MAPICA-SM-1-001" &&
+      R.landingButton("https://x/N", [{ id: "MAPICA-IBEW-1-001" }, { id: "MAPICI-E3S--1-001" }, { id: "mapica-ibew-1-001" }, { id: "MAPICA-IBEW2-1-001" }]) === "https://x/N?Exhibit=MAPICA-IBEW-1-001,MAPICA-IBEW2-1-001" &&
+      R.exhibitParam(Array.from({ length: 12 }, (_, i) => "MAPICA-X" + i + "-1-001")).split(",").length === 10 &&
+      R.landingButton("https://x/Laney", null) === "https://x/Laney" && R.landingButton("", { id: "A" }) === "");
     // Sam, 2:44 PM PT: the drafter checks no articulation; the owner list is a head start, never a filter.
     check("F2: the exhibit list is labeled a head start, not a filter, and the drafter builds no articulated filter",
       /a head start for exact names; not a filter/.test(block) && !/Name only these/.test(block) && !/MAP lists no articulated exhibits/.test(block), block);
     check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
     const CD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/cobi_data.mjs", "utf8");
-    check("F2: the model is told: the landing page, not the dashboard; the exact name under Possible Qualifications; no articulation check; no fallback",
-      /never the MAP dashboard/.test(CD) && /under Possible Qualifications by its exact name as MAP lists it/.test(CD) && /you need not check articulation/.test(CD) && /with no other link in its place/.test(CD) && !/only articulated opportunities/.test(CD));
+    check("F2: the model is told: the landing page with ?Exhibit=, not the dashboard; the exact name only without an ID; no articulation check; no fallback",
+      /never the MAP dashboard/.test(CD) && /adds \?Exhibit=<its MAP ID> to the landing page address/.test(CD) && !/under Possible Qualifications/.test(CD) && /names the exhibit by its exact name as MAP lists it/.test(CD) && /you need not check articulation/.test(CD) && /with no other link in its place/.test(CD) && !/only articulated opportunities/.test(CD));
     check("F3: the drafter adds the reference block on both paths and lets the model use its links",
       /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
       /the reference data from COBI/.test(FN));

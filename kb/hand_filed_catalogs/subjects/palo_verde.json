@@ -620,6 +620,22 @@
    "run": "45626788039,45628362566"
   },
   {
+   "code": "NBE",
+   "heading": "Noncredit Basic Education",
+   "heading_printed": "Noncredit Basic Education",
+   "rule": "index",
+   "codes": [
+    "NBE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NBE 16 Supplemental Skills for Non-Credit English as a Second Language (28 courses)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NSC",
    "heading": "Nursing Science Clinical",
    "heading_printed": "Nursing Science Clinical",
@@ -860,6 +876,6 @@
    "run": "45626788039,45628362566"
   }
  ],
- "subjects": 53,
- "with_heading": 53
+ "subjects": 54,
+ "with_heading": 54
 }

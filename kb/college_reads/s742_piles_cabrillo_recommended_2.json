@@ -1,0 +1,36 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27), second read. The first read (46001469210) printed Psychology A.A. 06381 and Geology A.S. 06380. The reconcile step recommended_counts would also read Dance A.A. 06352 and Exercise and Sports Science A.A. 44992, whose pages no read has printed (the step's reader, MAJOR). This read asks each page's own content call, so a session can quote every list's name with its 'Complete the following number of credits' line, general education, general electives and the degree total, and run the step's recall on the page's own lines. Two loads. No model call, nothing written.",
+ "college": "Cabrillo College",
+ "questions": {
+  "list_lines": "Each list's name with its 'Complete the following number of credits: N' line, in the page's order, with general education, general electives and the degree total."
+ },
+ "keywords": [
+  "[Cc]omplete the following[^<\"]{0,120}",
+  "[Rr]ecommended[^<\"]{0,140}",
+  "General [Ee]lectives?[^<\"]{0,140}",
+  "General Education[^<\"]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,dance-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "list_lines"
+   ],
+   "why": "06352"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,exercise-and-sports-science-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "list_lines"
+   ],
+   "why": "44992"
+  }
+ ],
+ "_quoted": {
+  "46013582118": {
+   "06352": "Toggle · Program Requirements · Dance - Associate in Arts (A.A.) · Complete the following number of credits: 60 · Cabrillo College General Education 24 · Recommended Major Requirements · Complete the following number of credits: 3 · DANCE1 - Dance Appreciation 3 · Recommended Dance Making\nComplete the following number of credits: 3.5\nDANCE11A - Dance Improvisation I 1.5 · DANCE11B - Dance Improvisation II 1.5 · DANCE12A - Choreography I 2 · DANCE12B - Choreography II 2\nNote: students are recommended to take one improvisation class and one choreography class in their first year. 0\nRecommended Dance Techniques\nComplete the following number of credits: 10.5\nNote: students can take any combination of the courses below fulfill 10.5 units of dance techniques. 0\nDANCE2A - Introduction to Dance I 0.5 - 3 · DANCE2B - Introduction to Dance II 0.5 - 3\nDANCE3AP - Dance Conditioning/Pilates I 0.5 - 3\nDANCE3BP - Dance Conditioning/Pilates II 0.5 - 3\nDANCE3CP - Dance Conditioning/Pilates III 0.5 - 3\nDANCE4 - Contemporary Modern Dance I 0.5 - 3\nDANCE5 - Contemporary Modern Dance II 0.5 - 3\nDANCE7 - Ballet I 0.5 - 3 · DANCE8 - Ballet II 0.5 - 3 · DANCE9A - Jazz Dance I 0.5 - 3 · DANCE9B - Jazz Dance II 0.5 - 3 · DANCE15A - Salsa Dance I 0.5 - 3 · DANCE15B - Salsa Dance II 0.5 - 3 · DANCE15C - Salsa Dance III 0.5 - 3\nDANCE16A - Baile Folklórico: Regional Dances of Mexico I 0.5 - 3\nDANCE16B - Baile Folklórico: Regional Dances of Mexico II 0.5 - 3\nDANCE17A - Latin Dance I 0.5 - 3 · DANCE17B - Latin Dance II 0.5 - 3 · DANCE17C - Latin Dance III 0.5 - 3 · DANCE17D - Latin Dance IV 0.5 - 3 · DANCE19A - Hip Hop Dance I 0.5 - 3 · DANCE19B - Hip Hop Dance II 0.5 - 3 · DANCE19C - Hip Hop Dance III 0.5 - 3 · DANCE19D - Hip Hop Dance IV 0.5 - 3\nDANCE68 - Advanced Dance Technique and Performance Skills 0.5 - 3\nRecommended Dance Performance · Complete the following number of credits: 4\nNote: students can repeat the courses below in order to fulfill the 4-unit recommendation. 0\nDANCE13 - Dance Repertory 0.5 - 4 · DANCE14A - Dance Production 0.5 - 4 · Recommended Major Electives · Complete the following number of credits: 10 · Biology · Complete the following number of credits: 4 · BIO4 - Human Anatomy 4\nBIO13A - Biology of People-Anatomy and Physiology 3\nBIO13AL - Biology of People-Anatomy and Physiology Lab 1\nTheatre · Complete the following number of credits: 3 · TA10A - Basic Acting Techniques 3\nTA31 - Introduction to Design in the Theatre 3\nMusic Appreciation · Complete the following number of credits: 3 · MUS10 - Music Appreciation 3 · MUS11A - Jazz Appreciation 3\nGeneral electives: any transferable or degree applicable course. 5\n",
+   "44992": "Toggle · Program Requirements\nExercise and Sports Science - Associate in Arts (A.A.)\nComplete the following number of credits: 60 · Cabrillo College General Education 24 · Recommended Major Requirements · Complete the following number of credits: 10\nBIO13A - Biology of People-Anatomy and Physiology 3\nBIO13AL - Biology of People-Anatomy and Physiology Lab 1\nKIN2 - Introduction to Kinesiology 3\nand 3 units of any kinesiology (KIN) activity class. 3\nRecommended Major Electives · Complete the following number of credits: 8 · KIN4 - Introduction to Personal Training 3 · KIN5 - Theories and Techniques of Coaching 3 · KIN7 - Women in Sports 3\nKIN8A - Beginning Exercise and Nutrition for Wellness and Weight Loss 2\nKIN10A - Athletic Training: Injury Prevention, Evaluation and Care 3\nKIN10B - Athletic Training: Treatment and Rehabilitation of Athletic Injuries 3\nKIN12 - Psychological Aspects of Sports Performance 3\nKIN13 - First Aid 3 · KIN17 - Sports and Society 3 · MA70 - Medical Terminology 3 · Recommended General Electives · Complete the following number of credits: 18\nCHEM30A - Inorganic Chemistry for Health Occupations 4\nNUTR20 - Nutrition 3 · HS10 - Personal Health 3 · PSYCC1000 - Introduction to Psychology 3 · STATC1000 - Introduction to Statistics 5\nPSYCH2A - Statistics for Behavioral Sciences 3\nBUS9 - Business Statistics 3\nNote: students may take only one statistics course. 3 - 5\nor any transferable or degree applicable course. 18\n",
+   "_what": "Each page's Program Requirements text as college-page-read run 46013582118 printed it (the page's own content call), from 'Program Requirements' through the general electives line, copied whole by a session from the run's log; tests/program_reconcile_s742_cabrillo_test.py runs the recommended_counts step on these lines."
+  }
+ }
+}

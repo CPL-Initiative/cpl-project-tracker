@@ -15,6 +15,13 @@ The shared checks are tests/program_piles_s739_common.py's. Pinned here:
   * 31053's note quotes both figures; the five cut-off records add short of their total or state none;
   * the holds: 11340 and 11341 take no rename, 11346 and 17868 are not collectable, 38017's capture names another page.
 
+Either state (S742; d-crc-filing-parked-for-moved-pdf-s741, p-older-pile-tests-pin-runs-later-plans-move-s739): the
+filing of the free reconcile 45972311864 (2026-11-27) carries a capture that opens the Marketing window one page
+earlier, at p.473 of the same hand-filed PDF (its sha256 is unchanged), where the read of 04596 and 35899 opened it at
+p.474. The window still holds p.474 and its heading is still each record's own, so the own-page guard is read against
+the page the record was read from, in either state. The same reconcile re-filed 33542 passing under the scorer's own
+option reading, so 33542 carries its gap or passes at that run.
+
 Run from repo root: python3 tests/program_piles_s739_cosumnes_test.py
 """
 import json
@@ -40,12 +47,31 @@ SCORES = {"noted_section_cut_off": 20, "noted_figures_differ": 40, "noted_no_tot
 OWN = {"04596": "own_heading", "35899": "own_heading", "20197": "own_heading", "39139": "own_heading",
        "15326": "own_section", "20153": "own_heading"}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=45, own=OWN, prior_held=set(M.KEYS))
+# The Marketing window's page, in either state: where the capture names p.473 for a record read at p.474, the guard
+# compares the capture's address with the record's, so the capture is read at the record's page once the files show
+# it is the same window of the same PDF.
+PDF = "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf"
+PDF_SHA = "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
+MOVED = {"04596": "A.A. in Marketing", "35899": "Marketing Certificate"}
+t = T.Checks()
+for _cn, _heading in MOVED.items():
+    _f, _src = W.load(_cn), W.sources()[_cn]["source"]
+    t.check(_f["source_url"] == PDF + "#page=474" and _f["record"]["program"]["section_heading"] == _heading,
+            "%s was read at p.474 under its own heading" % _cn)
+    if _src["url"] != _f["source_url"]:
+        t.check(_src["url"] == PDF + "#page=473" and 474 in _src["pages"] and _src["h1"] == _heading
+                and _src["heading_named"] is True and _src["hand_filed"]["sha256"] == PDF_SHA,
+                "%s: the later capture opens the same window one page earlier, in the same hand-filed PDF, and "
+                "still names the record's heading" % _cn)
+        _src["url"] = _f["source_url"]
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=45, own=OWN, prior_held=set(M.KEYS),
+          t=t)
 check = t.check
 
 f = W.load("33542")
-check("33542" not in M.KEYS and M.LANE_1 == ("33542",) and bool(f["score"].get("gaps")),
-      "33542 is lane 1's, carries its own gap and is no key")
+_refiled = str(f.get("extracted_run")) == "45972311864" and B.S.passes_live(f["score"]) and not f["score"].get("gaps")
+check("33542" not in M.KEYS and M.LANE_1 == ("33542",) and (bool(f["score"].get("gaps")) or _refiled),
+      "33542 is lane 1's, carries its own gap (or passes, re-filed by the reconcile 45972311864) and is no key")
 
 # The live-run reading.
 live = W.prior

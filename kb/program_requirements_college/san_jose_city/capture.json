@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 125,
  "with_closed_list": 90,
- "started": "2026-11-26T14:39:12Z",
+ "started": "2026-11-27T13:56:33Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sjcc.edu/sitemap.xml",
@@ -363,7 +363,7 @@
   "yield_refused_passing": 0
  },
  "loads": 236,
- "seconds": 1191.9,
+ "seconds": 1131.8,
  "found": 84,
  "by_method": {
   "link_search": 2,
@@ -591,138 +591,18 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_jose_city",
-  "kept": 66,
+  "kept": 82,
   "kept_moved": 0,
-  "programs": 17,
+  "programs": 2,
   "list": [
-   {
-    "control_number": "06185",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
-    "was_coverage": 0.778,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "06202",
-    "title": "Construction Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "08859",
-    "title": "Construction Technology-Residential Maintenance-Level 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18449",
-    "title": "Liberal Arts: Arts & Humanities",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
-    "coverage": 0.958,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
-    "was_coverage": 0.951,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18921",
-    "title": "Air Conditioning & Refrigeration Technology 3",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
-    "coverage": 0.944,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "22220",
-    "title": "Accounting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
-    "coverage": 0.923,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
-    "was_coverage": 0.769,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "22225",
     "title": "Real Estate",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
     "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "22237",
-    "title": "Construction Technology-Level 3",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32078",
-    "title": "Medical Assisting: Clinical",
-    "award": "A.S. Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
-    "was_coverage": 0.963,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32260",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
-    "was_coverage": 0.962,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32759",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
-    "coverage": 0.917,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38113",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38498",
-    "title": "Emerging Tech Entrepreneurship Level 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
-    "was_coverage": 0.941,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+    "was_coverage": 0.667,
     "was_method": "sitemap_page"
    },
    {
@@ -730,39 +610,9 @@
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
     "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
-    "coverage": 0.627,
+    "coverage": 0.647,
     "was_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
-    "was_coverage": 0.608,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39391",
-    "title": "Kinesiology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
-    "coverage": 0.973,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
-    "was_coverage": 0.892,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41473",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
-    "coverage": 0.727,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
-    "was_coverage": 0.545,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44596",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
-    "was_coverage": 0.962,
+    "was_coverage": 0.627,
     "was_method": "sitemap_page"
    }
   ],
@@ -1110,5 +960,5 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/"
   }
  },
- "run": "45840981324"
+ "run": "46011334736"
 }
