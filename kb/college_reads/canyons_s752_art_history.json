@@ -1,0 +1,24 @@
+{
+ "_readme": "S752 (Sam's queue ruling of 2026-11-28, d-canyons-37868-needs-pin-s750): College of the Canyons' Art History A.A.-T 37868 stages as not_found in the free capture 46157462134 (rule B then A), though capture 44887850515 read it from PDF p.78. This plan prints pp.77-82 of the 2026-27 catalog PDF the filed capture reads (capture.json pdf.url), so a pdf_pages pin can name the page, the words the section opens on, and where it ends. One load, no model call.",
+ "college": "College of the Canyons",
+ "questions": {
+  "own_page": "Where the Art History A.A.-T section opens (its heading and the first line of its requirement list), where its list ends (its total), and the words the next section opens on, so a pdf_pages pin can name the page, the words, through and until."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
+  }
+ ],
+ "pdf_span": [
+  77,
+  82
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}
