@@ -209,3 +209,13 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   certificates); the opt-in is a hand-edited name set (Glendale: 8 of 165 right). Flag off: 0 differences at 118
   colleges. Round 2 is the next run's. The free Skyline capture dispatched on `claude/s748-readers-found-skyline`
   (`1f7a211b`), as the reader allowed, so the next run has its sources.
+- 08:44Z: the census and `only_cal_getc` second reader (Fable 5.2): the census change **FIX THEN LAND, left out of
+  tonight's land** (BLOCKING: none of its 78 has a live row or `checks.gaps`: 68 place none of their listed courses, 2
+  are extraction errors, 8 have no record; the Commons would read "Passing now" 16,355 as 16,433); `only_cal_getc`
+  LAND (0 differences over 37,940 reconciles at 118 colleges).
+- 08:47Z: live: Lassen 18752 and 18756 at 46122727267 and College of Alameda 32765 at 46122729926, each equal.
+  Records collected: 30.
+- 08:50Z: s748c's second reader (Fable 5.2): FIX THEN APPLY, the fix being test pins alone (passing with no gap is honest
+  here: 2,658 of 16,913 passing records already pass with a listed course unplaced; the reading is used only in this
+  plan; `list_minimum_units` is cleanly gone). Clean md5 pre-read 3 of 3. The apply pushed on `claude/s748-apply`; the
+  test pins go into the land.
