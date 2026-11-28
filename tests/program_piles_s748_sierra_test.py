@@ -32,6 +32,7 @@ import program_piles_s739_common as T  # noqa: E402
 import _program_piles_s739 as B  # noqa: E402
 import _program_piles_s742 as B9  # noqa: E402
 import _program_piles_s748_sierra as M  # noqa: E402
+import _program_piles_s731_lbcc as L  # noqa: E402
 
 W = M.W
 NG, S = B9.NG, B.S
@@ -75,11 +76,17 @@ live = read["live_runs"][M.COLLEGE]
 check(read["read_at"] == "2026-11-28T07:38:12Z" and read["count"][M.COLLEGE] == len(live) == 103
       and read["by_college"][M.COLLEGE] == [],
       "the conductor's live read of 2026-11-28 07:38Z: 103 Sierra rows, none checked by a person")
+# Either state of the plan's own receipt, the four rows by key: before the migrate runner's receipt says s748r2
+# applied, nothing but that read posts a row's run; once it does (the land carries
+# kb/receipts/migration_s748r2_prreq_piles_apply_46124516528.json), the applied plan posts the four at the same runs.
+# The plan's own receipt is left out (skip) to read what stood before it.
+earlier = B9.LiveRead(M.COLLEGE, M.SLUG)
 for cn in ROWS:
     f = W.load(cn)
     check(live.get(cn) == str(f["extracted_run"]) and W.on_live_run(f)
-          and not B9.LiveRead(M.COLLEGE, M.SLUG).on_live_run(f),
-          "%s: live on its filed run %s by that read, and by no earlier receipt or read" % (cn, f["extracted_run"]))
+          and not earlier.on_live_run(f, skip=(M.TAG,)) and earlier.on_live_run(f) == L.plan_applied(M.TAG),
+          "%s: live on its filed run %s by that read, and by no earlier receipt or read; the plan's own receipt "
+          "posts it once applied" % (cn, f["extracted_run"]))
 
 # The pair rows.
 for cn in ("33639", "33646"):
