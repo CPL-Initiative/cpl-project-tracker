@@ -30,7 +30,9 @@ THE THREE KINDS OF CPL ON A COURSE (DEFINITIONS below say them in full):
             (kb/program_requirements_pilot/map_cr_by_course.json, a dated read of
             map_college_cr_unit: counts and exhibit titles, never a student column),
             or MAP's articulated-exhibit feed names the course at this college
-            (kb/coci_articulations.json: industry certifications, credit by exam).
+            (kb/coci_articulations.json: industry certifications, credit by exam),
+            or MAP's live view as the Exhibits tab reads it every morning
+            (kb/exhibits_adoption.json, adoption_index; S746: apprenticeships, AP).
   adopt     another college articulated a credential to a course of the same
             identity, and this college has not articulated that credential to it.
             Never across a cross-disciplinary identity (the minted record's
@@ -342,6 +344,72 @@ def articulation_index(ident: Identity):
                     by_identity[mid][label].add(col)
     stamp = feed.get("_authority_recode_applied_at") or feed.get("_generated_by")
     return here, by_identity, stamp, detail
+
+
+ADOPTION = os.path.join(HERE, "exhibits_adoption.json")
+ADOPT_PAGE = os.path.join(ROOT, "library", "adopt", "adopt_data.json")
+EXHIBIT_CODE = re.compile(r"^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$")
+
+
+def adoption_index():
+    """What each college articulated to each of its courses, from MAP's live view as the Exhibits tab reads it every
+    morning (kb/exhibits_adoption.json: per credential, each articulating college's [course, recommendation] lines),
+    with the credential's CPL type and this college's exhibit codes from the adoption page (library/adopt/
+    adopt_data.json). The articulation feed above is a dated snapshot (2026-09-03): it carries Cerritos's
+    credit-by-exam exhibits and none of its Ironworker apprenticeship exhibits, so the Field Ironworkers A.S. read 15
+    of 24 courses with CPL where MAP articulates all 24 (f-cerritos-ironworkers-all-24-cpl-s744). This read adds
+    a credential to a course only where neither the feed nor MAP's credit-recommendation read already names it
+    (S746). Returns ({(college, ck): [label]}, {(college, ck): [exhibit facts]}, the file's written_at)."""
+    try:
+        adoption = json.load(open(ADOPTION, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}, {}, None
+    names = adoption.get("colleges") or []
+    kinds, codes_at = {}, defaultdict(list)
+    try:
+        page = json.load(open(ADOPT_PAGE, encoding="utf-8"))
+        types = page.get("types") or []
+        pnames = [c[0] for c in page.get("colleges") or []]
+        for cr in page.get("credentials") or []:
+            t = cr.get("t")
+            kinds[t] = ", ".join(types[i] for i in (cr.get("y") or []) if isinstance(i, int) and 0 <= i < len(types))
+            for m in cr.get("m") or []:
+                xid = str(m[0] or "").strip()
+                if len(m) > 1 and isinstance(m[1], int) and 0 <= m[1] < len(pnames) and EXHIBIT_CODE.match(xid):
+                    key = (t, norm_college(pnames[m[1]]))
+                    if xid not in codes_at[key]:
+                        codes_at[key].append(xid)
+    except (OSError, ValueError):
+        pass
+    here, detail = defaultdict(list), defaultdict(list)
+    for ut, e in sorted((adoption.get("credentials") or {}).items()):
+        for k, v in sorted((e.get("a") or {}).items(), key=lambda kv: int(kv[0])):
+            try:
+                college = names[int(k)]
+            except (ValueError, IndexError):
+                continue
+            lines = v[1] if isinstance(v, list) and len(v) > 1 and isinstance(v[1], list) else []
+            nc = norm_college(college)
+            recs_by = defaultdict(list)
+            for row in lines:
+                if not row or not row[0]:
+                    continue
+                code = file_code(str(row[0]).strip())
+                if not code or not re.search(r"\d", code):
+                    continue
+                rec = _clean(row[1]) if len(row) > 1 else ""
+                if rec and rec not in recs_by[ck(code)]:
+                    recs_by[ck(code)].append(rec)
+                elif not rec:
+                    recs_by.setdefault(ck(code), [])
+            exhibits = codes_at.get((ut, nc)) or []
+            for c, recs in recs_by.items():
+                if ut not in here[(nc, c)]:
+                    here[(nc, c)].append(ut)
+                    detail[(nc, c)].append(OrderedDict([
+                        ("exhibit", exhibits[0] if len(exhibits) == 1 else None), ("title", ut), ("credential", ut),
+                        ("type", kinds.get(ut) or None), ("recs", recs[:6])]))
+    return here, detail, adoption.get("written_at")
 
 
 # Words a recommendation and a course title share by field, never by form.
@@ -918,6 +986,7 @@ def build() -> dict:
     unified = {k: v.get("unified_title") for k, v in json.load(open(UNIFIED)).items()
                if isinstance(v, dict) and v.get("unified_title")}
     feed_here, by_identity, feed_stamp, feed_detail = articulation_index(ident)
+    adopt_here, adopt_detail, adoption_at = adoption_index()
     second = second_courses()
     statewide = statewide_cid_index()
     adopters, cer_at = cer_adopters()
@@ -990,6 +1059,11 @@ def build() -> dict:
                         labels.setdefault(t["title"], True)
                     for t in feed_here.get((norm_college(college), k), {}):
                         labels.setdefault(t, True)
+                    # MAP's live view, where neither MAP's read nor the feed names the credential (S746).
+                    have = {fold_label(t) for t in labels} | {fold_label(unified[t]) for t in labels if t in unified}
+                    added = [t for t in adopt_here.get((norm_college(college), k), []) if fold_label(t) not in have]
+                    for t in added:
+                        labels.setdefault(t, True)
                     here_set = {fold_label(t) for t in labels} | {fold_label(unified[t]) for t in labels if t in unified}
                     if mr.get("recs") or labels:
                         # The exhibits articulated here, for the CPL count and its drill-down (Sam,
@@ -1009,6 +1083,10 @@ def build() -> dict:
                             seen_ex.add(tag)
                             fed += 1
                             exhibits.append(d)
+                        for d in adopt_detail.get((norm_college(college), k), []):
+                            if d["credential"] in added:
+                                fed += 1
+                                exhibits.append(d)
                         # MAP's untitled rows (its "Default Credit" for basic military service) are
                         # the feed's named exhibits more often than not: Cerritos's HED 100 carries
                         # one of each for Basic Military Training. They count only past the feed's.
@@ -1152,6 +1230,7 @@ def build() -> dict:
         ("map_read_at", map_read.get("_read_at")),
         ("registry_read_at", registry.get("_read_at")),
         ("articulations", feed_stamp),
+        ("adoption", adoption_at),
         ("memberships", ident.generated_at),
         ("cer", cer_at),
     ])

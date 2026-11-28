@@ -64,9 +64,11 @@ this is what we could want to show: Trained by Ironworker JATC"*): `kb/credentia
 of 2,970 (Carpenters CTCNC 93, CAL FIRE 31, U.S. Armed Forces 26, UA Local 342 JATC 23, Ironworker committees about 50);
 the 16 Cerritos Ironworker Period credentials took the Ironworker JATC through `kb_curation`
 `training_agency_override` (`credentials-s745@bot`; receipt `kb/receipts/credential_trainer_fill_s745_2026-11-27.sql`).
-**FINDING** `f-cerritos-ironworkers-all-24-cpl-s744`: all 24 Cerritos Field Ironworkers A.S. courses carry CPL through
-the apprenticeship exhibits (`MAPICA-RA4P*`/`SA4P*`), but `kb/coci_articulations.json` feeds the display build only
-`MAPCXA-*`, so the view says 15 of 24. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
+**LIVE (S746):** the display build reads MAP's live view, `kb/exhibits_adoption.json` (rebuilt each morning), as a
+third CPL-here source beside MAP's CR read and the dated feed (`adoption_index` in `kb/_build_roep_display.py`):
+2,395 programs gain CPL here, 1,573 from none, 8,264 course entries, nothing drops; Cerritos Field Ironworkers reads
+24 of 24 and up to 38 units (was 15 and 31.5), its certificates 34 of 34 and 38 of 38 (`f-cerritos-ironworkers-all-24-cpl-s744`
+closed). Largest gains: AP exams and the UA and Carpenters apprenticeships. The feed's stamp was 2026-09-03. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
 carries `_x000D_` and cp1252 mojibake. MAP at Bakersfield: 6 Welding A.S. courses carry CPL (NCCER Levels 1-4, AWS
 D1.1/D1.5/D1.8, ASME IX, LA City Certified Welder, credit by exam); Cerritos Business Administration 2.0 A.S.-T has none
 and could adopt on 10 of 11 courses (AP, CLEP, IB calculus, statistics, economics). **LIVE (S746):** *Trained by* on the
@@ -80,8 +82,8 @@ cron, the sync runs before the build). **FINDING** `f-trainer-field-names-one-si
 college's site on credentials many colleges articulate (AP Biology by Mater Dei High School at Glendale; Microsoft
 Office Specialist Excel by the U.S. Armed Forces), and neither `confidence_trainer` nor `classified_by` separates those;
 widening the chip waits on a cleaned field. **NEXT (CPL Pathways):** (1) after the 2026-11-28 cron, confirm Cerritos
-Field Ironworkers' Trained by lists the Period credentials; (2) look at the live cards; (3) the display build reads the apprenticeship exhibits (`library/adopt/adopt_data.json` has them), then the
-B.S. page's text; (4) clean the description shards at build in `kb/_build_coci_lookup.py`.
+Field Ironworkers' Trained by lists the Period credentials; (2) look at the live cards; (3) after the display PR merges, dispatch `program-requirements-college.yml` with `step=display` so
+`program_requirement_records.display` (Sierra, college views) carries the build; (4) clean the description shards at build in `kb/_build_coci_lookup.py`.
 
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.
 

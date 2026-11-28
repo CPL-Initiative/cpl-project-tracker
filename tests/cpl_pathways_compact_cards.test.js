@@ -149,7 +149,7 @@ const tileOf = (r, code) => r.root.querySelector('.cplpw-rmap .cplpw-rtile[data-
   const frame = bar && bar.querySelector("iframe");
   check("(d) the click opens the bottom bar, the last thing in the view", bar && bar.parentNode === root.querySelector(".cplpw-roep").lastElementChild);
   check("(d) the bar frames the landing page on the course's exhibit codes",
-    frame && frame.getAttribute("src") === LANDING + "?Exhibit=" + ex50[0].exhibit && /landing|CPL page/i.test(frame.title), frame && frame.getAttribute("src"));
+    frame && frame.getAttribute("src") === LANDING + "?Exhibit=" + ex50.map((e) => e.exhibit).filter(Boolean).join(",") && /landing|CPL page/i.test(frame.title), frame && frame.getAttribute("src"));
   check("(d) its top row says Get credit at the college, the course, and Close",
     bar && /^Get credit at Cerritos College$/.test(bar.querySelector(".cplpw-gbar-top h3").textContent) && /IWAP 40\.50/.test(bar.querySelector(".cplpw-gbar-top .what").textContent) &&
     bar.querySelector(".cplpw-gbar-top button.cplpw-gbar-close").textContent === "Close");
@@ -195,7 +195,7 @@ const tileOf = (r, code) => r.root.querySelector('.cplpw-rmap .cplpw-rtile[data-
     desc && desc.textContent === "This course acquaints the apprentice with the trade’s specifications. It covers safety.", desc && desc.textContent);
   const hereSec = side.querySelector(".cplpw-rhere");
   check("(e) Exhibits with CPL here lists each exhibit with title, type and code",
-    hereSec && /^Exhibits with CPL here \(1\)$/.test(hereSec.querySelector("h4").textContent) &&
+    hereSec && hereSec.querySelector("h4").textContent === "Exhibits with CPL here (" + ex50.length + ")" &&
     hereSec.querySelector(".t").textContent === ex50[0].credential && new RegExp("Credit by exam · MAP exhibit " + ex50[0].exhibit).test(hereSec.querySelector(".k").textContent));
   check("(e) the card's details moved in, and the card holds none while open", !t50.querySelector(".cplpw-rmore") && side.querySelector(".cplpw-rmore"));
   const go = hereSec.querySelector("button.cplpw-rgo");

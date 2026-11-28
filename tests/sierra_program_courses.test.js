@@ -280,10 +280,11 @@ block("14. the display facts render on a checked program, quoted, never recomput
   const ctx = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
     new Map([[d.control_number, rec]]));
   check("a course with CPL here names its credential on its own line",
-    /IWAP 40\.07 — [^\n]*\(4 units\) \[CPL here: FIW Orientation\]/.test(ctx), ctx);
-  check("the figure is the page's: up to 31.5 of the 34-38 units the catalog prints",
-    p.display.figure.up_to === 31.5
-    && ctx.includes("CPL figure: up to 31.5 units of the 34-38 units the catalog prints can be met through CPL Cerritos College has articulated"), ctx);
+    /IWAP 40\.07 — [^\n]*\(4 units\) \[CPL here: FIW Orientation[;\]]/.test(ctx), ctx);
+  // S746: 38, MAP's live view carrying the apprenticeship period credentials to every IWAP course.
+  check("the figure is the page's: up to 38 of the 34-38 units the catalog prints",
+    p.display.figure.up_to === 38
+    && ctx.includes("CPL figure: up to 38 units of the 34-38 units the catalog prints can be met through CPL Cerritos College has articulated"), ctx);
   check("the recommended-path figure reads TBA while no map is read",
     ctx.includes("Recommended-path figure: TBA. No pathway map has been read for this program."), ctx);
   check("the map line says no map was found", /Term-by-term map: no term-by-term program map found/.test(ctx), ctx);

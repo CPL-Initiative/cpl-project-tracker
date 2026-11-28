@@ -73,10 +73,10 @@ const srcOf = (f) => (f && f.frame ? f.frame.getAttribute("src") : null);
   check("(a) the program has CPL here cards", here.length >= 10, here.length);
   check("(a) every CPL here card carries the CPL control", here.every((t) => t.querySelector("button.cplpw-rcpl")),
     here.filter((t) => !t.querySelector(".cplpw-rcpl")).length);
-  const exp = a.rec.display.courses["IWAP 40.50"].here.exhibits[0].exhibit;
+  const exp = a.rec.display.courses["IWAP 40.50"].here.exhibits.map((e) => e.exhibit).filter(Boolean);
   const mb = await frameFor(a, "IWAP 40.50");
   check("(a) IWAP 40.50 opens the landing page on its exhibit, in the bar's frame",
-    srcOf(mb) === LANDING + "?Exhibit=" + encodeURIComponent(exp), srcOf(mb));
+    srcOf(mb) === LANDING + "?Exhibit=" + exp.map(encodeURIComponent).join(","), srcOf(mb));
   check("(a) the control names the course and college",
     /IWAP 40\.50 at Cerritos College/.test(tileOf(a, "IWAP 40.50").querySelector(".cplpw-rcpl").getAttribute("aria-label")));
   const srcs = [];

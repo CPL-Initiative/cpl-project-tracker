@@ -401,8 +401,9 @@ check(bool(sm) and sm[0]["display"]["figure"]["up_to"] == 22.5 and sm[0]["displa
       "Santa Monica Barbering reads up to 22.5 units and 22.5 along its map: COSM 11C counts once, and Salon "
       "Experience counts at the 1 unit the map prints (sheet 47 card 9)")
 iv = [p for p in progs if p["key"] == "ivc_10265"]
-check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0 and iv[0]["display"]["figure"]["path"] == 3.0,
-      "Irvine Valley Art reads up to 3 units and 3 along its map: ART 85 counts once")
+# S746: ART 40, 41 and 80 carry the AP art exams through MAP's live view; ART 85 still counts once.
+check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 12.0 and iv[0]["display"]["figure"]["path"] == 12.0,
+      "Irvine Valley Art reads up to 12 units and 12 along its map: ART 85 counts once")
 # Sam loaded both on open-asks sheet 47 card 8 (2026-10-07): every record is filed in records/,
 # so the receipt names none waiting.
 check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps/" not in
@@ -411,7 +412,11 @@ check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps
 
 # 4. the figure the approved mock-up shows for the hand-built map
 iw = [p for p in progs if p["key"] == "cerritos_42158"]
-check(bool(iw) and iw[0]["display"]["figure"]["up_to"] == 31.5, "Cerritos Ironworker A.S. reads up to 31.5 units (the mock-up's figure)")
+# S746: 38, every IWAP course carrying CPL through MAP's live view (the mock-up's 31.5 predates the apprenticeship
+# exhibits reaching the build; f-cerritos-ironworkers-all-24-cpl-s744).
+check(bool(iw) and iw[0]["display"]["figure"]["up_to"] == 38.0, "Cerritos Ironworker A.S. reads up to 38 units")
+check(bool(iw) and all(c.get("here") for c in iw[0]["display"]["courses"].values()),
+      "every Cerritos Ironworker A.S. course carries CPL here (MAP articulates all 24)")
 
 # 4b. "already here" compares the CER's unified title too (S332): Riverside's CIS-27 holds
 # "CompTIA Security+ (CIS-27)", so CompTIA Security+ is not "for consideration" there.
