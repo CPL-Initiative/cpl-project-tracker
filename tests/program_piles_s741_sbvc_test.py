@@ -151,8 +151,14 @@ check((NG.answer(f) is None or (S742_REFILED and NG.answer(f)[0] == "ge_units_no
 
 # The holds.
 f = W.load("04894")
-check(B.scorer_passes(f) and not f["score"].get("gaps") and f["score"]["arithmetic"]["computed"] == [26.5, 36.5],
-      "04894: today's scorer passes it without the state's list, and it carries no gap")
+# Either state, one row, told by its run. As this plan held it (run 38748858322) the record added to 26.5-36.5.
+# S748's two reconcile steps for the applied pair's one row (reconcile read 46118801512, reread 46121280132) file it
+# at the printed 27-37; it carries no gap in either state.
+s748 = str(f.get("extracted_run")) == "46118801512"
+check(B.scorer_passes(f) and not f["score"].get("gaps")
+      and f["score"]["arithmetic"]["computed"] == ([27.0, 37.0] if s748 else [26.5, 36.5]),
+      "04894: today's scorer passes it without the state's list, and it carries no gap (26.5-36.5 as held; 27-37 "
+      "since S748's reconcile read)")
 f = W.load("04873")
 two, four = B.blocks(f, "Two courses from the following:"), B.blocks(f, "Four courses from the following:")
 check(len(two) == 1 and two[0]["minimum"] == 2 and len(two[0]["courses"]) == 1

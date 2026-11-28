@@ -1,0 +1,39 @@
+{
+ "_readme": "S748, lane 2's cheap piles (2026-11-28). East Los Angeles 41231 (Environmental Science A.S.-T, Academic Plan E041231H) was read from PDF p.92: its courses add to 39-45 against the printed 41-45. Its low end takes MATH 261S (3 units) in place of MATH 261 (5); with MATH 261 alone the courses add to the printed 41-45. This read prints pp.91-93 whole, so a session can read how the page prints MATH 261 and MATH 261S (one or the other, or the two together) and the line 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45'. One load. No model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "math_261": "The rows that print MATH 261 and MATH 261S, word for word, with their units and any 'or', 'and' or 'with' between them.",
+  "totals_41231": "The option subtotals, the '41-45' line and the 'Total 62-66' line of Academic Plan E041231H."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0?41231[A-Z]?[^\\n]{0,40}",
+  "MATH\\s+261S?[^\\n]{0,100}",
+  "subtotal[^\\n]{0,40}",
+  "choose option[^\\n]{0,100}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pdf_span": [
+  91,
+  93
+ ],
+ "pdf_page_cap": 3,
+ "pages": [
+  {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+   "answers": [
+    "math_261",
+    "totals_41231"
+   ],
+   "why": "41231"
+  }
+ ],
+ "_quoted": {
+  "46120012715": {
+   "choose": "CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45",
+   "math_261": "MATH 261*  Calculus I ............................................5 | OR | MATH 261S Calculus I With Support ......................... 3",
+   "total": "Total  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .62-66",
+   "section": "CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45\nOPTION 1\nBIOLOGY 006* General Biology I ..................................5\nBIOLOGY 007* General Biology II .................................5\nCHEM 101* General Chemistry I ..............................5\nOR · OPTION 2\nBIOLOGY 006*  General Biology ...................................5\nCHEM 101* General Chemistry I ..............................5\nCHEM 102* General Chemistry II .............................5\nSubtotal  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15\nAND ALL COURSES LISTED BELOW\nENV SCI 001  Introduction to Environmental Science .... 3\nGEOLOGY 001  Physical Geology .................................. 3\nAND\nGEOLOGY 006** Physical Geology Laboratory ..................1\nOR\nGEOLOGY 004  Physical Geology and Laboratory ...........4\nOR\nGEOG 001  Physical Geography ............................. 3\nAND\nGEOG 015 Physical Geography Laboratory ............. 2\nBUS 015 Business Statistics ................................ 3\nOR\nECON 020 Statistics for Economics ........................ 3\nOR\nPSYCH 091 Statistics for the Social and Behavioral\nSciences ..........................................4\nOR\nSTAT C1000 Introduction to Statistics .......................4\n[pdf page 93]\nAnthropology, Geography and Geology Department\nEAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 89\nOR\nSTAT C1000E Introduction to Statistics .......................4\nMATH 261*  Calculus I ............................................5\nOR\nMATH 261S Calculus I With Support ......................... 3\nECON C2001 Principles of Microeconomics ................ 3\nPHYSICS 006* General Physics I ..................................4\nAND\nPHYSICS 007*  General Physics II .................................4\nOR\nPHYSICS 101* Physics for Engineers and Scientists I ......5\nAND\nPHYSICS 102* Physics for Engineers and Scientists II. . . . . . 5\nCal-GETC GE Pattern\nTotal  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .62-66",
+   "_what": "Lines of college-page-read run 46120012715's log, PDF pp.92-93 as the reader prints them, copied by a session: 'section' runs from the 'CHOOSE OPTION 1 OR OPTION 2' line to the 'Total' line of Academic Plan E041231H (the running header of p.93 among them), joined by newlines; 'math_261' the three rows that print MATH 261, OR and MATH 261S, joined by ' | '. kb/program_total_differs.json cites the run for East Los Angeles 41231."
+  }
+ }
+}

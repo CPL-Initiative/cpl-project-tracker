@@ -1,0 +1,25 @@
+{
+ "_readme": "S748 lane 1 (keys): Cosumnes River College, the pages of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json) that print the college's own general education pattern for the associate degree, the pages ahead of the Cal-GETC pattern on PDF pp.95-96 (college-page-read run 43519918667). Nine local degrees name 'the Local General Education Pattern or Cal-GETC' or 'the local CRC General Education Requirement', the 60 and electives that fill it, with no units read for the pattern (the census of 2026-11-28 00:44Z, sub-cause ge_pattern_no_units). This read prints what the catalog says the local pattern takes in units, so a set step can quote its own words. One load of the hand-filed copy, free, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "local_ge_units": "How many units does the catalog print for the local general education pattern of the associate degree, in which words, and does it print a total?"
+ },
+ "keywords": [
+  "Local General Education",
+  "General Education Requirement",
+  "Graduation Requirements",
+  "minimum of \\d+ (?:semester )?units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "local_ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  89,
+  94
+ ]
+}

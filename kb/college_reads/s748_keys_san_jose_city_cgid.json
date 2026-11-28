@@ -1,0 +1,46 @@
+{
+ "_readme": "S748 lane 1 (keys): San Jose City College, four program pages, free, no model call, nothing written: Graphic Design A.A. 41533, User Experience and Interaction Design A.S. 42682, Motion Graphic Design A.S. 44388 and Liberal Arts: Arts & Humanities A.A. 18449. The state's Program Course File names fourteen courses of these programs by the cut-off subject name 'ComputerGrap' where a code belongs, and the state's course list names one of them DMA 1 and leaves thirteen unnamed; the 2026-2027 catalog prints each under CGID and a number. S742's read (46006600029) printed the CGID lines and its text is not committed. This plan prints each page's table rows that name a CGID or DMA course, with the title and units beside it (rows), so each printed code is paired with the state's row by the one title both print; and, on 18449's page, the rows that print the 18 units over its two lists ('Complete 18 units from courses listed below', the Theory-based and Non-Theory-based headings) and the totals. 18449's page is last, so its rows sit nearest the end of the log.",
+ "college": "San Jose City College",
+ "questions": {
+  "cgid_lines": "Which row prints each CGID course, with which title and units, and how does 18449's page print the 18 units over its two lists?"
+ },
+ "keywords": [
+  "CGID\\s+\\d+[A-Z]?[^\\n]{0,90}",
+  "[Cc]omplete\\s+\\d+\\s+units[^\\n]{0,120}",
+  "THEORY-BASED[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cgid_lines"
+   ],
+   "why": "41533",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/",
+   "rows": "CGID\\s|DMA\\s|Total|Major"
+  },
+  {
+   "answers": [
+    "cgid_lines"
+   ],
+   "why": "42682",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-associate-science/",
+   "rows": "CGID\\s|DMA\\s|Total|Major"
+  },
+  {
+   "answers": [
+    "cgid_lines"
+   ],
+   "why": "44388",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/",
+   "rows": "CGID\\s|DMA\\s|Total|Major"
+  },
+  {
+   "answers": [
+    "cgid_lines"
+   ],
+   "why": "18449",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
+   "rows": "CGID\\s|DMA\\s|[Cc]omplete\\s+\\d+\\s+units|THEORY-BASED|At least|Total|Major"
+  }
+ ]
+}

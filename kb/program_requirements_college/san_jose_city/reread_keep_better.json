@@ -1,7 +1,7 @@
 {
  "college": "San Jose City College",
- "run": "46011334736",
- "written": "2026-11-27T14:24:07Z",
+ "run": "46121988906",
+ "written": "2026-11-28T07:58:41Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -61,7 +61,7 @@
   "38463": "43357106423",
   "38485": "43357106423",
   "38498": "45840981324",
-  "38499": "45840981324",
+  "38499": "46011334736",
   "38726": "43357106423",
   "39247": "43357106423",
   "39391": "45840981324",
@@ -85,38 +85,24 @@
   "45796": "44769778910",
   "45984": "43357106423"
  },
- "live_read_at": "2026-11-27T13:43:50Z",
- "dispatch": [
-  {
-   "workflow": "program-requirements-college.yml",
-   "ref": "HEAD",
-   "inputs": {
-    "college": "San Jose City College",
-    "step": "reread",
-    "force": "46011334736"
-   },
-   "posts": 1,
-   "control_numbers": [
-    "38499"
-   ],
-   "not_live_at_run": [
-    "38499"
-   ]
-  }
- ],
+ "live_read_at": "2026-11-28T07:47:48Z",
+ "dispatch": "no dispatch: no run holds a kept or new record that a reread has not posted",
  "carried_runs": {
   "44769778910": [
    "41533",
    "45796"
+  ],
+  "46011334736": [
+   "38499"
   ]
  },
  "counts": {
   "reread": 1,
-  "kept": 1,
+  "kept": 0,
   "restored": 0,
   "restored_filed_pass": 0,
   "restored_not_own_program": 0,
-  "held_for_person": 0,
+  "held_for_person": 1,
   "held_checked": 0,
   "held_live_run": 0,
   "new": 0,
@@ -346,6 +332,62 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  },
+  "46121988906": {
+   "base": "origin/main",
+   "base_sha": "59453d4eb60024a44f12a58f6f130d0d7344fc54",
+   "decided": "2026-11-28T07:58:41Z",
+   "counts": {
+    "reread": 1,
+    "kept": 0,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 1,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 4,
+    "records_after": 83,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "22225",
+     "title": "Real Estate",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "source_url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.667,
+      "placed": 2,
+      "listed": 3,
+      "arithmetic": "equal"
+     },
+     "award_tail": "",
+     "shared_title": [
+      "06188"
+     ],
+     "live_run": null,
+     "outcome": "held",
+     "not_own_program": true,
+     "why": "no filed record, and the re-read's heading 'Certificate Requirements' is generic (it names no program), and nothing in the committed files shows its page https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/ is the program's own"
     }
    ]
   }

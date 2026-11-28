@@ -50,7 +50,9 @@ check({"19857", "19883"} <= s741c and "38948" not in s741c,
 
 with open(os.path.join(ROOT, "kb", "program_total_differs.json"), encoding="utf-8") as fh:
     listed = json.load(fh)["colleges"][M.COLLEGE]
-check(sorted(listed) == ["19883", "31319", "38948", "42541"], "the file lists El Camino's four programs and no other")
+# S748 (plan s748r1) lists 19857 too, from a read of its page alone (46119948370). Read in either state.
+check(sorted(set(listed) - {"19857"}) == ["19883", "31319", "38948", "42541"],
+      "the file lists El Camino's four programs, and since S748 19857, and no other")
 for cn in ("19883", "38948"):
     f, e, x = W.load(cn), M.REVIEWED[cn], listed[cn]
     with open(os.path.join(ROOT, "kb", "college_reads", PLANS[cn]), encoding="utf-8") as fh:
@@ -104,9 +106,12 @@ check(all(b["rule"] == "choose_units" and b["minimum"] == 3 and B.same(b["stated
       "38948: two lists printed 3-4 bring the page's figures to 25-27 under 'Total Units: 19-20'")
 
 f = W.load("19857")
-check(not f["score"].get("gaps") and ("El Camino College", "19857") not in NG.total_differs_list()
+# Either state: S748's plan s748r1 lists it in the file and files total_differs on it; before, neither.
+s748 = ("El Camino College", "19857") in NG.total_differs_list()
+check([g["gap"] for g in f["score"].get("gaps") or []] == (["total_differs"] if s748 else [])
       and B.same(f["score"]["arithmetic"]["computed"], [33, 33]) and B.same(f["score"]["arithmetic"]["stated"], [36, 36])
       and "poid=3524" in f["source_url"],
-      "19857: held, on its own page (poid 3524) as filed, in no file and with no gap")
+      "19857: held by this plan, on its own page (poid 3524) as filed; in no file and with no gap until S748 lists "
+      "it, and total_differs alone after")
 
 sys.exit(t.done())

@@ -181,6 +181,21 @@
     "words": "Total . . . 24",
     "evidence": "Recording and Sound Design (Academic Plan E045602D), a Certificate of Achievement: the page prints one list with no choice, MUSIC 161, 165, 166, 172 and 205 (3 each), MUSIC 261-1 (3), MUSIC 365-1 and 365-2 (2 each), TECTHTR 330 (3) and TECTHTR 347 (2), 27 units, under 'Total 24' (college-page-read run 45173349853, S714). The reader's note says the same and that MUSIC 205 is the course the state's file does not list.",
     "run": "45173349853"
+   },
+   "41231": {
+    "page": 92,
+    "where": "PDF pp.92-93",
+    "printed_total": [
+     41,
+     45
+    ],
+    "printed_sum": [
+     39,
+     45
+    ],
+    "words": "CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45 ... MATH 261 Calculus I 5 OR MATH 261S Calculus I With Support 3",
+    "evidence": "Environmental Science A.S.-T (Academic Plan E041231H): PDF p.92 prints 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45', Option 1 (BIOLOGY 006 5, BIOLOGY 007 5, CHEM 101 5) or Option 2 (BIOLOGY 006 5, CHEM 101 5, CHEM 102 5) under 'Subtotal 15', then 'AND ALL COURSES LISTED BELOW': ENV SCI 001 (3); GEOLOGY 001 (3) and GEOLOGY 006 (1), or GEOLOGY 004 (4), or GEOG 001 (3) and GEOG 015 (2); BUS 015 (3) or ECON 020 (3) or PSYCH 091 (4) or STAT C1000 (4) or, on p.93, STAT C1000E (4); 'MATH 261 Calculus I 5' OR 'MATH 261S Calculus I With Support 3'; ECON C2001 (3); PHYSICS 006 (4) and PHYSICS 007 (4), or PHYSICS 101 (5) and PHYSICS 102 (5) (college-page-read run 46120012715, kb/college_reads/s748_piles_east_los_angeles_environmental.json, pp.91-93 printed whole). The rows add to 39 at the least (the option's 15, 3, 4, 3, MATH 261S at 3, 3 and 8) and 45 at the most, under the printed 41-45: the low end the page prints is what the rows add to with MATH 261 at 5.",
+    "run": "46120012715"
    }
   },
   "San Bernardino Valley College": {
@@ -364,6 +379,20 @@
     "words": "Total Units: 19-20",
     "evidence": "Entrepreneurial Studies Certificate of Achievement 38948: the page prints 'Required Core:' BUS 111 (3 units), BUS 113 (3), BUS 124 (3), BUS 125 (3), BUS 127 (3), BUS 128 (1 unit) and CIS 13 (3), seven courses that add to 19, then '3-4 units from:' over BUS 126 (3) and BUS 150 (4), and a second '3-4 units from:' over BUS 119 (3) and BUS 120 (3), under 'Total Units: 19-20' (college-page-read run 45772822110, kb/college_reads/el_camino_certificate_pages_s739.json, read as the capture reads the page). The core alone adds to the low end of the printed total, and the two lists the page prints at 3-4 units each bring its own figures to 25-27. The page prints no other course and no other figure.",
     "run": "45772822110"
+   },
+   "19857": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+    "printed_total": [
+     36,
+     36
+    ],
+    "printed_sum": [
+     33,
+     33
+    ],
+    "words": "Total Units: 36",
+    "evidence": "Architecture Certificate of Achievement 19857: the page prints 'Required Core: 30 units' over ARCH 100 (1 unit), ARCH 107 (3 units), ARCH 108 (3), ARCH 251 (3), ARCH 170 (3), ARCH 171 (3), ARCH 149 (3), ARCH 199 (4) and ARCH 299 (4), nine courses and no choice, whose units add to 27, then '6 units from:' over ARCH 119 (3), ARCH 121 (3), ARCH 125 (3), ARCH 252 (3), ARCH 258 (3), ARCH 174 (2) and ARCH 172 (3), under 'Total Units: 36' (college-page-read run 46119948370, kb/college_reads/s748_readers_el_camino_architecture.json, read as the capture reads the page; S741's read 45953358884 printed the same lines). The core's courses add to 27 where its heading prints 30, so the page's own units add to 33, three under the total it prints; with the heading's 30 the lists add to the printed 36. The page prints no other course and no other figure.",
+    "run": "46119948370"
    }
   },
   "Santa Monica College": {
@@ -381,6 +410,22 @@
     "words": "Area of Emphasis: (26.5 units) ... Salon courses (2 units minimum)",
     "evidence": "Cosmetology certificate 21026: the 2026-2027 catalog PDF, p.121, under 'Cosmetology, Associate Degree or Certificate of Achievement', prints 'Area of Emphasis: (26.5 units)' and 'Required Hours: (1,000 hours minimum including the courses specified below)', then nine headed lists of required courses with their units: Related Science (COSM 10A 1, 10B 1, 20 1, 30 1, 49C 2, 50C 1.5), Hair Cutting (11A 1, 21A 1, 42 1), Hair Styling (11B 1, 21B 1), Hair Coloring (11C 1, 21C 1), Permanent Wave (11D 1), Curly Hair Technique (21E 1), Nail Care (16 1, 26 1, 36 1), Esthetician (18 1, 28A 1, 28B 1, 48B 1) and Salon Management (64 2), 25.5 units in all; then 'Salon Experience Courses: ... students must enroll in one or more of the following Salon courses (2 units minimum)' over COSM 95A (1), 95B (2) and 95C (3). The required courses and the 2-unit minimum add to 27.5 under the printed 26.5 (college-page-read run 45953358884, kb/college_reads/s741_piles_santa_monica_cosmetology.json, pp.120-122 printed whole). The Barbering section before it on the same page prints the same '(26.5 units)' over its own lists.",
     "run": "45953358884"
+   }
+  },
+  "Santa Barbara City College": {
+   "43553": {
+    "where": "the program's own page, https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+    "printed_total": [
+     35,
+     41
+    ],
+    "printed_sum": [
+     32,
+     37
+    ],
+    "words": "Required Core 26-29 units ... List A ... 6-8 units ... Total Units 35.00-41.00",
+    "evidence": "Law, Public Policy, and Society A.A.-T 43553: the page's Requirements tab prints 'Major Requirements', then 'Required Core 26-29 units' over its rows, then 'List A - Complete two courses from two of the areas listed below: (NOTE: courses must have not been taken in the Required Core) 6-8 units' over eight areas, and 'Total Units 35.00-41.00' (college-page-read run 45837455365, kb/college_reads/s740_piles_sbcc_figures.json, read as the capture reads the page). The two list figures are the page's only figures over its lists, and they add to 32-37 under the printed 35-41; the one course with units printed beside it is ECON C2001 (3-4), inside the Required Core's figure. The page prints no other list and no other total.",
+    "run": "45837455365"
    }
   }
  }

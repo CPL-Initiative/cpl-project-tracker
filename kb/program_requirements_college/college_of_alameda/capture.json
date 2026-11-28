@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 85,
  "with_closed_list": 68,
- "started": "2026-11-10T20:12:35Z",
+ "started": "2026-11-28T07:47:53Z",
  "curriqunet": {
   "catalog": 10507,
   "view_prefix": "https://coa.curriqunet.com/catalog/iq/",
@@ -19,12 +19,235 @@
   "entries": 89,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 89
+  "group_ends": {
+   "pages": 6,
+   "lines": 7
+  },
+  "entries_read": 89,
+  "twin_ids": {},
+  "failed_calls": 0
  },
  "pages_read": 89,
+ "pages_listed": 89,
+ "pages_answered": 89,
+ "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 55,
+   "hits": 51,
+   "recall": 0.927,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 0,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 17,
+  "by_result": {
+   "not_matched": 5,
+   "found": 12
+  },
+  "found": 12,
+  "found_active": 12,
+  "found_pages": 12,
+  "found_programs": [
+   {
+    "control_number": "01115",
+    "title": "Auto Body",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47508",
+    "h1": "Auto Body - A.S. Degree",
+    "page_title": "Auto Body - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "01136",
+    "title": "African-American Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47229/47559",
+    "h1": "African American Studies: A.A. Degree",
+    "page_title": "African American Studies: A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "09011",
+    "title": "Chassis Specialist",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47396",
+    "h1": "Chassis Specialist - A.S. Degree",
+    "page_title": "Chassis Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "09013",
+    "title": "Automotive Electronics Specialist",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47376",
+    "h1": "Automotive Electronic Specialist - A.S. Degree",
+    "page_title": "Automotive Electronic Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "09014",
+    "title": "Drivetrain Specialist",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47384",
+    "h1": "Drivetrain Specialist - A.S. Degree",
+    "page_title": "Drivetrain Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "09020",
+    "title": "Mexican/Latin-American Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47365/47536",
+    "h1": "Mexican Latin American Studies: A.A. Degree",
+    "page_title": "Mexican Latin American Studies: A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "19828",
+    "title": "Automotive Electronics Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47591",
+    "h1": "Automotive Electronics Specialist - Certificate of Achievement",
+    "page_title": "Automotive Electronics Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19829",
+    "title": "Chassis and Drivetrain",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47360",
+    "h1": "Chassis and Drivetrain - Certificate of Achievement",
+    "page_title": "Chassis and Drivetrain - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19830",
+    "title": "Drivetrain Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47592",
+    "h1": "Drivetrain Specialist - Certificate of Achievement",
+    "page_title": "Drivetrain Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19840",
+    "title": "Chassis Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47538",
+    "h1": "Chassis Specialist - Certificate of Achievement",
+    "page_title": "Chassis Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "42835",
+    "title": "Dance - A.A.",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47301/47480",
+    "h1": "Dance - A.A. Degree",
+    "page_title": "Dance - A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "42836",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47301/47481",
+    "h1": "Dance - Certificate of Achievement",
+    "page_title": "Dance - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "01106",
+    "title": "Business: Accounting",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "01111",
+    "title": "CIS: Computer Information Systems",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19826",
+    "title": "CIS: Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19841",
+    "title": "Business: Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "37799",
+    "title": "Research Skills",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 169,
- "seconds": 955.4,
+ "seconds": 2211.3,
  "found": 59,
  "by_method": {
   "no_closed_list": 17,
@@ -40,7 +263,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19838",
@@ -48,7 +272,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40310",
@@ -74,7 +299,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40873",
@@ -82,7 +308,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41837",
@@ -90,7 +317,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43962",
@@ -116,7 +344,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -126,7 +355,8 @@
    "award": "A.A- T Degree",
    "pages": [
     "https://coa.curriqunet.com/catalog/iq/47221/47539/47543"
-   ]
+   ],
+   "status": "Approved"
   },
   {
    "control_number": "41485",
@@ -134,7 +364,8 @@
    "award": "A.A. Degree",
    "pages": [
     "https://coa.curriqunet.com/catalog/iq/47221/47539/47543"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "46531",
@@ -142,19 +373,276 @@
    "award": "A.A. Degree",
    "pages": [
     "https://coa.curriqunet.com/catalog/iq/47221/47539/47542"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 3,
-  "0.8-1.0": 9,
-  "1.0": 47
+  "0.8-1.0": 8,
+  "1.0": 48
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_alameda",
-  "kept": 59,
-  "programs": 0,
-  "list": []
+  "kept": 58,
+  "kept_moved": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "31164",
+    "title": "Liberal Arts Emphasis in Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543",
+    "coverage": 1.0,
+    "was_url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543",
+    "was_coverage": 0.989,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "42892493763"
+ "fingerprints": {
+  "01113": {
+   "sha256": "5ae5a89e048207ae7bdbc02551a0d6f1c5f5a4a1ce7bde77d63f1958ccad1352",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47555"
+  },
+  "01114": {
+   "sha256": "837df5dd45c057a0b98de59231ab9675b0a870f4c431c9854ac76a3ac804abb1",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47400"
+  },
+  "01116": {
+   "sha256": "285c60eb367b01112065da435e849d4b3485d107282547ea3ff0f78c231aabb3",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47513"
+  },
+  "01118": {
+   "sha256": "f785d78f4cacaf5982d83e804fd026bb18405456a1b12d727c88e02bddf03e44",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47520"
+  },
+  "01124": {
+   "sha256": "73d73210ee1e39473bec3ef35f47daa2d5d21d68c2ed7e6380707aebe69803c1",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47430"
+  },
+  "01129": {
+   "sha256": "8957c199205b13320767e755744c955665f12b4986476ffaee365f22a6beb087",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47373/47460"
+  },
+  "01132": {
+   "sha256": "c7111d3692b4c582eb3265c7896e483924a98128626044f8b15e4744e512546e",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47393/47472"
+  },
+  "01138": {
+   "sha256": "4601c3178a4029cdd1e174f17478f8a4e331f137c2e63e8099ddf63d6480ea21",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47341/47450"
+  },
+  "01141": {
+   "sha256": "0b3b620ef4c96f1c94b6fb26b81c92a8a33b1b77104c12b1c1b0d222faf95d0b",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47397/47491"
+  },
+  "01143": {
+   "sha256": "8c4a3dc079a3e130503d1f6e2359d00f45f123c15b854513002f2fac2dc042ad",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47353/47454"
+  },
+  "09005": {
+   "sha256": "1b4a98dd7d21d31e975e0c11610761eb572cf2b6963bf65938268d1e742bba26",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47269/47408"
+  },
+  "09009": {
+   "sha256": "a8656b876024a2e7da9a14ffd4a315d535604fba94696085cea82702f706a664",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47392"
+  },
+  "09012": {
+   "sha256": "9d6fc62ec1eaebf10f577833f91b66718bc9687894f0b1dbe6e7d568d4ad72be",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47404"
+  },
+  "09015": {
+   "sha256": "8b112511f5a62d841221ab90a3887990f184e977454da77e03e4a0f9e7ffa840",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47510"
+  },
+  "09017": {
+   "sha256": "c7e8e2b0bfd3b7ad878cac6d47909e2cb276e4830027b1069ddc710c7a49a34f",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47515"
+  },
+  "19827": {
+   "sha256": "ace88ff6c135cba93fe3aa76d846989178c4c31e98e3f648f2f1f831f5f53ce1",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47556"
+  },
+  "19831": {
+   "sha256": "80a6b2b591754eb297581a69cde50ccc5c358a4fdd87c1eadc9a318b844bc124",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47352"
+  },
+  "19832": {
+   "sha256": "f9a19559bbad864370add77239a319b8adfa7e22727a939233613dc2a5de40e4",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47368"
+  },
+  "19833": {
+   "sha256": "c616c83794f1bdc86afdcea03c04e3fb8b8682a8b12d544c03a5e8f82189667a",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47509"
+  },
+  "19834": {
+   "sha256": "67e6eacf1a11d59d999e33a34c1b2d5c4b4e608988eee1dc37ef651c148cb2f1",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47511"
+  },
+  "19835": {
+   "sha256": "c4869805c28b28f0d23806901ed40b7c7e5bcbb08990b3d299487e36aea81ea2",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47514"
+  },
+  "19836": {
+   "sha256": "0ace09784274b97499f4bc6d8ea8af2a61c589849af2fe87431190f937a71669",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47516"
+  },
+  "19837": {
+   "sha256": "a47485279737fc4ce5c05663b7726b484fa4abfbdd4d791ec30be9d48da50b23",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47429"
+  },
+  "31145": {
+   "sha256": "a6060c45cc0e03d4d92a79e24a0e0102be34d8ebd508678d88c72c0806d9b8d4",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47373/47461"
+  },
+  "31164": {
+   "sha256": "9169a65f57b49fb0658838c6d38c1bb07b4809a67cbb6a0bf192b5e4744d2587",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543"
+  },
+  "31165": {
+   "sha256": "c097620b5dc8b62f882df4e8d22bd78c4155ef69031acf8445fa704cb6432d43",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47542"
+  },
+  "31166": {
+   "sha256": "2aa5c70b05382989460b2ee30837f7d3c7e5d9e7f9964d994662be6912965312",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47541"
+  },
+  "32497": {
+   "sha256": "31d29518a70e5a78e9ab0e18306ad47b8197db7cd39defa040ddf0f765057442",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47341/47451"
+  },
+  "32503": {
+   "sha256": "c7dbc99a156e8f47cc8de36531471179e224f291d34906b3aa4e46ff0cf69869",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47389/47465"
+  },
+  "32714": {
+   "sha256": "2d27cfc58f9266884e7c90d07d3abcbdc998c7b0c9a2ec98f9cbb9042cf000b5",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47317/47439"
+  },
+  "32765": {
+   "sha256": "40004f95e63fc88499123b5d589daf8843f12e3538cf62469c01507fd9d003bd",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47380"
+  },
+  "33032": {
+   "sha256": "df9116896111f265a70d0dc896ff0756b370f3e1e0b4fc077fae9a86b5cef4e5",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47397/47492"
+  },
+  "33364": {
+   "sha256": "3ae42a29aac684c10349794f08a98cb78544538971fbda6a319765d2ff90539a",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47273/47417"
+  },
+  "36691": {
+   "sha256": "f55dbbe9eb0e286c83ceeff5974e90ed33b0db157045ba2782f02a9dc314b7a5",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47357/47457"
+  },
+  "37047": {
+   "sha256": "fa1659ec265b241e66e1a8d9b7b923e5d3c6dc68ff481eab58bcaeed0b079cd2",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47313/47432"
+  },
+  "37829": {
+   "sha256": "174c5550172620ed7f78cef311979bb39eacc45f52a37bcb2fb062d65c29bf9f",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47549"
+  },
+  "38437": {
+   "sha256": "67d67eecc36e15e1b31c336ae2480e8f01e39f283d1ad74e5913e37b08a33495",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47547"
+  },
+  "38462": {
+   "sha256": "a5780e374dd5e62fda7b6078fa74d1508822478d191fdc057aff5123e952df9e",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47548"
+  },
+  "40126": {
+   "sha256": "71c5102b1a4edad534d03d34ef9211a56b21b0cf8f78164d5c18d86b9dcf6027",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47446"
+  },
+  "40289": {
+   "sha256": "18c6378a6ceb34192005db4eaa61c27948ab4ef23d212e1207fb902ea1fafa6a",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47519"
+  },
+  "40311": {
+   "sha256": "3e21daba92bd9daeeddac6ad93fe6ae17ddfe372df293e77212c09f8444f1546",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47445"
+  },
+  "40312": {
+   "sha256": "a08bf30562681ee77fa6dcffd427b39bd7ddcd36d56d61815d194ea1affe9f18",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47447"
+  },
+  "40627": {
+   "sha256": "47309b2948d977ce7c8a3f353fa929da42b8b4e5a66e966829b1731a8676cb7c",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47500"
+  },
+  "40628": {
+   "sha256": "233ca6b0511575ebece06e87320fe46f332c517953c20e6a2cf1c3b520a15fc4",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47377/47526"
+  },
+  "40629": {
+   "sha256": "61ed7e98a5d67646dbc62a75bd3457c264be68262859c079a4525721b727208c",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47377/47527"
+  },
+  "41481": {
+   "sha256": "f21a5bedebbfd4cbaa03be69e3cd608f4d3e0a8897ad99fa2cef0bb7644c2f6c",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47333/47477"
+  },
+  "41482": {
+   "sha256": "92bbad3271ee564560d3f9c9f3657567d4fe298a542746e05575e5e3395efe7e",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47329/47487"
+  },
+  "41483": {
+   "sha256": "899c3af11877edbe3529731b31e16d50098d529b469d0fea153cffc42e7d47e0",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47289/47425"
+  },
+  "41836": {
+   "sha256": "bb98f9687561f06189fed75e67233ad1e6fc28e7fb0d24e663a2a7a7bd017d5b",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47333/47478"
+  },
+  "42192": {
+   "sha256": "36fd40ec8eccc64ddf036eca4de586927584985dbc25bec18f6282cb0a5f255e",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47285/47569"
+  },
+  "42200": {
+   "sha256": "3c930d696118c632361be6e7e89294bf2e5b138c798564bf4c506aeb5bbd9ee7",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47277/47420"
+  },
+  "42899": {
+   "sha256": "bc2d0dc7f4c260b66e3ce85bed9c480c6d05109b878060af6bfa49f05b15c753",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47499"
+  },
+  "42964": {
+   "sha256": "cb6735ae43df3317a380ce326be037e8b066136a1851ff8de93535e09df61dc8",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47273/47413"
+  },
+  "43995": {
+   "sha256": "bfc0e8a2ebd1ed843627ed423a65f7469cc3b140dc5e41ccc7dbef00952a502b",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47501"
+  },
+  "43996": {
+   "sha256": "e07d4623ca7951ac3e520ceea85b23bbf208ebfe22750dffc613c33cfbca859c",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47505"
+  },
+  "43997": {
+   "sha256": "a35d2fa24feafd0ab424a3fc7ecd0c79dc24a298247bc357e45cdd2813b3a873",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47502"
+  },
+  "45292": {
+   "sha256": "9cba2e7cd6aa5b285169fd36c0425f41dd6cb2586de7912948dc4b80dfaee58a",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47289/47424"
+  },
+  "45448": {
+   "sha256": "919442c0879424bd8027ca1644ad1c955b6cf901eb53fefc833a4981a878cef9",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47329/47524"
+  },
+  "45995": {
+   "sha256": "427fc8c26e6b15ed2c530151817d056cddc23a0171001e1c4beafb1101eced27",
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47361/47394"
+  }
+ },
+ "run": "46122729926"
 }

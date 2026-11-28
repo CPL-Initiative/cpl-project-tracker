@@ -1695,8 +1695,8 @@
    "AMTA180"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/",
-   "title": "Airframe & Powerplant, Associate in Science Degree < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-associate-science-degree/",
+   "title": "Powerplant, Associate in Science Degree < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
@@ -1704,11 +1704,13 @@
     "title": 1.0,
     "section": "as",
     "section_line": "powerplant, associate in science degree",
-    "section_fit": 1.0
-   }
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 12,
-  "text_chars": 5826
+  "text_chars": 5094
  },
  {
   "control_number": "08628",
@@ -2276,17 +2278,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.6,
   "codes_found": [
    "FBMA100",
    "FBMA215",
-   "FBMA220",
-   "FBMA222",
-   "FBMA280"
+   "FBMA220"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
-   "title": "Food and Beverage Management, Advanced, Certificate of Achievement < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/",
+   "title": "Food and Beverage Management, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
@@ -2294,11 +2294,13 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "food and beverage management, certificate of achievement",
-    "section_fit": 1.0
-   }
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 5,
-  "text_chars": 5211
+  "text_chars": 3837
  },
  {
   "control_number": "08664",

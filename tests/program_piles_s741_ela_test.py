@@ -95,7 +95,12 @@ check(((not kinds and not W.on_live_run(f)) or (W.on_live_run(f) and kinds in ([
       and str(f["extracted_run"]) == "45176404274"
       and B.closes(f, B.apply_ops(f, [("line", 3, 5)])) and not B.closes(f, B.apply_ops(f, [("line", 3, 4)])),
       "02456: the 3-5 line closes it at 48-50; no proved live run and no gap, or posted and S742's kind alone")
+# S748's plan s748b names 41231's gap from a page read (total_differs, tests/program_piles_s748b_test.py): no gap as
+# s741d left it, or that kind alone.
+LATER = {"41231": ["total_differs"]}
 for cn in ("31017", "37510", "41231"):
-    check(W.hand[cn] == M.S720.HAND[cn] and not W.load(cn)["score"].get("gaps"), "%s: s720e's reason, and no gap" % cn)
+    check(W.hand[cn] == M.S720.HAND[cn]
+          and [x["gap"] for x in W.load(cn)["score"].get("gaps") or []] in ([], LATER.get(cn, [])),
+          "%s: s720e's reason, and no gap (or S748's kind alone)" % cn)
 
 sys.exit(t.done())

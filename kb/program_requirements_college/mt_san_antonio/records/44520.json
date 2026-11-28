@@ -71,6 +71,7 @@
     86.0
    ],
    "stated": null,
+   "against": null,
    "why": [
     "the record names no total"
    ]
@@ -89,7 +90,21 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "The catalog states no single total for the major: Lower Division Major Requirements 46-47 and Upper Division Major Requirements 39 (which includes the 9 units of Required Electives); the degree total of 128-129 includes 34 units of Cal-GETC and 9 units of upper division GE. total_units left null rather than computed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 86,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

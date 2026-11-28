@@ -1,0 +1,22 @@
+{
+ "_readme": "S748 lane 1 (keys): San Bernardino Valley College, Music A.A. 04894's own page, its course list's rows alone (rows), free, no model call, nothing written. Read 46117225783 (kb/college_reads/s748_keys_san_bernardino_valley_04894.json) printed the page as the capture reads it, 894 lines with the site's language picker; this plan prints the same page's table rows that name the applied pair, a count of semesters or a total, one line a row, so the lines the reconcile steps stand on are read back in a few lines.",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "applied_row": "Which rows print the heading over the applied pair, the pair and its one figure, the ensemble heading and the totals?"
+ },
+ "keywords": [
+  "MUS\\s+[12]41X2[^\\n]{0,80}",
+  "[Cc]omplete\\s+4\\s+semesters[^\\n]{0,60}",
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?[^\\n]{0,20}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "applied_row"
+   ],
+   "why": "04894",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-aa-degree/",
+   "rows": "MUS\\s+[12]41X2|semesters|Total|Applied|pathway|Pathway"
+  }
+ ]
+}

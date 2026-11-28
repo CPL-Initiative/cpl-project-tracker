@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 175,
  "with_closed_list": 159,
- "started": "2026-11-26T07:20:09Z",
+ "started": "2026-11-27T13:39:58Z",
  "scope": "/coastline/",
  "sitemap": {
   "url": "https://catalog.cccd.edu/sitemap.xml",
@@ -24,15 +24,21 @@
  "pages_answered": 252,
  "child_pages": 1,
  "banner_h1": "ACADEMIC CATALOGS",
+ "site_pins": {
+  "43057": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 137,
+   "tested": 136,
    "hits": 131,
-   "recall": 0.956,
+   "recall": 0.963,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 1,
-   "shared": 6,
+   "shared": 8,
    "false_matches": [],
    "no_claims_matches": [
     {
@@ -223,13 +229,13 @@
   "yield_refused_passing": 0
  },
  "loads": 259,
- "seconds": 1229.1,
- "found": 143,
+ "seconds": 1255.8,
+ "found": 144,
  "by_method": {
   "no_closed_list": 16,
-  "not_found": 10,
+  "not_found": 9,
   "page_claimed": 6,
-  "sitemap_page": 143
+  "sitemap_page": 144
  },
  "shared_pages": {
   "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/": [
@@ -239,6 +245,10 @@
   "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/": [
    "20357",
    "23050"
+  ],
+  "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/": [
+   "33014",
+   "43057"
   ],
   "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/": [
    "41645",
@@ -404,39 +414,6 @@
     "page_checks": true
    },
    "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "43057",
-   "title": "Communications Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 1.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 2833,
-     "content": 6682,
-     "tabs": 1428
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      1408
-     ]
-    ],
-    "page_checks": true
-   },
-   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -523,7 +500,7 @@
  "coverage_bands": {
   "0.5-0.8": 13,
   "0.8-1.0": 27,
-  "1.0": 103
+  "1.0": 104
  },
  "would_extract": {
   "against": "kb/program_requirements_college/coastline_community",
@@ -532,13 +509,13 @@
   "programs": 1,
   "list": [
    {
-    "control_number": "40476",
-    "title": "Introduction to Careers in Esports",
-    "award": "Noncredit program",
-    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
+    "control_number": "43057",
+    "title": "Communications Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
     "coverage": 1.0,
-    "was_url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
-    "was_coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/",
+    "was_coverage": 0.667,
     "was_method": "sitemap_page"
    }
   ],
@@ -648,10 +625,19 @@
     "was_coverage": 1.0
    }
   ],
-  "held_no_gain": [],
+  "held_no_gain": [
+   {
+    "control_number": "40476",
+    "title": "Introduction to Careers in Esports",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
   "held_opens_on_list": [],
   "only": [
-   "40476"
+   "43057"
   ],
   "not_named": [
    {
@@ -1084,7 +1070,7 @@
    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-beginning-level-skills-certificate-completion/"
   },
   "40476": {
-   "sha256": "be0764e4745e87b699f200a5eb318d674ffc6a17d239ce4f38b003a553eb3220",
+   "sha256": "cb9082fcd67fd5c213a227c1d5c2d67070730d48d63b751021283d08918f9ea1",
    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/"
   },
   "40477": {
@@ -1198,6 +1184,10 @@
   "43031": {
    "sha256": "b4195f06c7884843708d888f6ca1869774c4f51bef1ddb8224bc0288c402cef8",
    "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/studio-arts-aat/"
+  },
+  "43057": {
+   "sha256": "952e05833314ecd1372341c5ccacba7ab34cf83b37f6622be880ba1685de7455",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/"
   },
   "43490": {
    "sha256": "beb5213ac164832865141c68126ea221310f821713cb21434b2e5311841e44f4",
@@ -1313,9 +1303,9 @@
   }
  },
  "staged_from": {
-  "run": "45774426242",
-  "proof": "text sha256 of 143 programs",
+  "run": "46008933093",
+  "proof": "text sha256 of 144 programs",
   "pages_loaded": 0
  },
- "run": "45777312083"
+ "run": "46119872022"
 }

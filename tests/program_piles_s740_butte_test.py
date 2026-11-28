@@ -62,9 +62,13 @@ check(B.same(a["computed"], [60, 61]) and B.same(a["stated"], [62, 69]) and a["a
       "01312: its degree reads 60-61 below the map's 62-69, and it carries no gap or S742's kind alone")
 f = W.load("14583")
 # S742 read 14583 from its own page (paid read 46012628995, S741's site pin): still incomplete, on a page no other
-# record was read from; before that read its page was 43185's too.
-check(f["score"]["arithmetic"]["status"] == "incomplete" and not f["score"].get("gaps")
-      and (("43185" in W.shared_with("14583")) != (str(f.get("extracted_run")) == "46012628995")),
-      "14583: its arithmetic is incomplete and it carries no gap; its page was 43185's too, or is its own since S742")
+# record was read from; before that read its page was 43185's too. S748's plan s748a names that own-page record's gap
+# (noted_section_cut_off, tests/program_piles_s748a_test.py): no gap as s740h left it, or that kind alone on that read.
+own_read = str(f.get("extracted_run")) == "46012628995"
+check(f["score"]["arithmetic"]["status"] == "incomplete"
+      and [x["gap"] for x in f["score"].get("gaps") or []] in ([], ["noted_section_cut_off"] if own_read else [])
+      and (("43185" in W.shared_with("14583")) != own_read),
+      "14583: its arithmetic is incomplete and it carries no gap, or S748's kind on its own page; its page was "
+      "43185's too, or is its own since S742")
 
 sys.exit(t.done())

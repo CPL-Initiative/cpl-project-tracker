@@ -60,20 +60,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    26.5,
-    36.5
+    27.0,
+    37.0
    ],
    "stated": [
     27.0,
     37.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 26.5-36.5; the catalog states 27.0-37.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -100,7 +98,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -290,11 +288,12 @@
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS 241X2",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -564,5 +563,24 @@
    "Program learning outcomes taken from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 46118801512,
+ "reconciled": [
+  {
+   "field": "joined_units",
+   "was": null,
+   "now": {
+    "MUS 241X2": "MUS 141X2"
+   },
+   "words": "Music A.A. 04894: 'Applied Courses: · Complete 4 semesters totaling 2 units · MUS 141X2 · & MUS 241X2 Applied Music I · and Applied Music II 1' ... 'Total Units 27-37' (college-page-read run 46117535772)"
+  },
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS 141X2": 2
+   },
+   "words": "Complete 4 semesters totaling 2 units\t\nMUS 141X2\n& MUS 241X2"
+  }
+ ],
+ "read_run": "38748858322"
 }

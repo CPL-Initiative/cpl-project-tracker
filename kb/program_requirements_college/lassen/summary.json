@@ -2,19 +2,22 @@
  "college": "Lassen College",
  "programs": 78,
  "with_closed_list": 73,
- "found": 64,
+ "found": 62,
  "extracted": 64,
  "errors": 0,
- "passed_machine_checks": 42,
+ "passed_machine_checks": 44,
  "failed": {
   "coverage": 5,
   "invented": 0,
-  "arithmetic": 22,
+  "arithmetic": 20,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 4.54,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 4.54,
  "cost_per_program": 0.0709,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "09297",
@@ -23,7 +26,8 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
     "coverage": 0.421
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "09299",
@@ -32,7 +36,19 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
     "coverage": 0.211
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "09316",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=38",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Approved"
   },
   {
    "control_number": "09319",
@@ -41,16 +57,18 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
     "coverage": 0.267
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19376",
    "title": "Human Services",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
-    "coverage": 0.267
-   }
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97",
+    "coverage": 0.2
+   },
+   "status": "Active"
   },
   {
    "control_number": "21605",
@@ -59,31 +77,52 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
     "coverage": 0.267
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "31407",
-   "title": "Graphic Design",
-   "award": "A.S. Degree",
+   "control_number": "31178",
+   "title": "Art History",
+   "award": "A.A- T Degree",
    "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
-    "coverage": 0.333
-   }
-  },
-  {
-   "control_number": "31411",
-   "title": "Graphic Design",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
-    "coverage": 0.364
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40583",
    "title": "IT Support Professional",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43938",
+   "title": "Registered Dental Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44495",
+   "title": "Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Approved"
   },
   {
    "control_number": "45100",
@@ -92,8 +131,9 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
     "coverage": 0.369
-   }
+   },
+   "status": "Approved"
   }
  ],
- "run": "39006337658"
+ "run": "46122727267"
 }

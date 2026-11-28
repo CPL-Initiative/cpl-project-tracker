@@ -173,9 +173,14 @@ check(S739_MOVES <= set(M.HELD), "S739's moves are holds of this plan")
 # floor ('Complete 60 transferable units'; free reconcile 45966682528). Read in either state.
 S741_MOVES = {(M.CUY, cn) for cn in ("18634", "18635", "18636")}
 check(S741_MOVES <= set(M.HELD), "S741's moves are holds of this plan")
+# S742 moves one more: Cuyamaca 18637 passes once the college's second reconcile step reads the page's 'CSU or UC
+# transferable units' as the electives that fill the degree (electives_fill_words; free reconcile 46017556328, kept
+# for 18637 alone, S748). Read in either state.
+S742_MOVES = {(M.CUY, "18637")}
+check(S742_MOVES <= set(M.HELD), "S742's move is a hold of this plan")
 for key in sorted(M.HELD):
     f = M.load(key)
-    check(f is not None and (key in S739_MOVES | S741_MOVES or not S.passes_live(f["score"])),
+    check(f is not None and (key in S739_MOVES | S741_MOVES | S742_MOVES or not S.passes_live(f["score"])),
           "%s %s: held, and its live score does not pass" % key)
 f = M.load((M.POR, "06773"))
 check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]

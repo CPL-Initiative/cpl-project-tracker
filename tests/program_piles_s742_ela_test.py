@@ -70,8 +70,12 @@ check(B.closes(bare, B.apply_ops(bare, e["ops"]))
 check(not W.shared_with("02456")
       and bare["record"]["program"]["section_heading"] == "(Academic Plan E0%sC)" % "02456",
       "02456: no other record was read from its page, and its heading is its own Academic Plan code")
+# S748's plan s748b names 41231's gap from a page read (total_differs, tests/program_piles_s748b_test.py): no gap as
+# s742b left it, or that kind alone.
+LATER = {"41231": ["total_differs"]}
 for cn in HELD:
     g = W.load(cn)
-    check(not g["score"].get("gaps") and cn not in M.REVIEWED, "%s: a hold, with no gap" % cn)
+    check([x["gap"] for x in g["score"].get("gaps") or []] in ([], LATER.get(cn, [])) and cn not in M.REVIEWED,
+          "%s: a hold, with no gap (or S748's kind alone)" % cn)
 
 sys.exit(t.done())

@@ -1,0 +1,25 @@
+{
+ "_readme": "S748 (lane 1, readers). El Camino's Architecture Certificate of Achievement 19857 is held since S741: its record (run 44480396671, its own page, poid 3524) adds to 33 where the page prints 'Total Units: 36', and S741's read of the page (run 45953358884) found 'Required Core: 30 units' over nine courses that add to 27. total_differs is filed only from a page a session read (kb/program_total_differs.json). This read prints the certificate's own page as the capture reads it, alone in its log, so a session can read each course's units, the 'Required Core' figure, the '6 units from:' list and the total word for word. One load, no model call, nothing written.",
+ "college": "El Camino College",
+ "http_hosts": {
+  "catalog.elcamino.edu": "the registry's catalog address is http://catalog.elcamino.edu/, and the harvest's capture reads every program page at that address, so each filed source and record carries it; this read asks for the same page as filed"
+ },
+ "questions": {
+  "figures": "Each course the Architecture certificate's page prints with its units, the figure it prints beside 'Required Core', the '6 units from:' list, and the total."
+ },
+ "keywords": [
+  "Required Core[^\\n]{0,80}",
+  "\\d+ units from[^\\n]{0,40}",
+  "Total[^\\n]{0,80}",
+  "\\d+ units?\\b[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "figures"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print"
+  }
+ ]
+}
