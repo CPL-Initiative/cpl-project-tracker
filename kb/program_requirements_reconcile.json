@@ -28,6 +28,7 @@
  },
  "read_found_pages": {
   "Coastline Community College": "COBIx lane 1, Sam's Nov 28 ruling (a college turns on once none of its found pages is wrong): live capture 46161449846 measured 121 right of 125 tested, none wrong, 4 not found. It only asks; each capture's own recall decides the day.",
+  "West Valley College": "COBIx lane 1 free capture to measure recall; asks only, the capture decides whether any page is filed (not yet measured, so not in the PR).",
   "Napa Valley College": "COBIx lane 1, Sam's Nov 28 ruling (a college turns on once none of its found pages is wrong): live capture 46161456023 measured 82 right of 88 tested, none wrong, 6 not found. It only asks; each capture's own recall decides the day."
  },
  "colleges": {
