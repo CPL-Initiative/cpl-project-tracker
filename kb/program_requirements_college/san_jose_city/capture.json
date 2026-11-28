@@ -591,9 +591,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_jose_city",
-  "kept": 82,
+  "kept": 83,
   "kept_moved": 0,
-  "programs": 2,
+  "programs": 1,
   "list": [
    {
     "control_number": "22225",
@@ -604,21 +604,15 @@
     "was_url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
     "was_coverage": 0.667,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38499",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
-    "coverage": 0.647,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
-    "was_coverage": 0.627,
-    "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "22225"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -960,5 +954,10 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/"
   }
  },
- "run": "46011334736"
+ "staged_from": {
+  "run": "46011334736",
+  "proof": "text sha256 of 84 programs",
+  "pages_loaded": 0
+ },
+ "run": "46121988906"
 }

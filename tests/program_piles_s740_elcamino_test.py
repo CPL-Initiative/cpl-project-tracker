@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import program_piles_s739_common as T  # noqa: E402
 import _program_piles_s740 as B7  # noqa: E402
 import _program_piles_s740_elcamino as M  # noqa: E402
+import _program_piles_s731_lbcc as L  # noqa: E402
 
 W = M.W
 B, NG = B7.B, B7.NG
@@ -82,7 +83,16 @@ check(f["score"]["arithmetic"].get("stated") is None and B.shape_cut(f, e) and B
 
 # The holds.
 f = W.load("19857")
-check(not W.on_live_run(f) and not f["score"].get("gaps"), "19857: on no proved live run, and it carries no gap")
+# S748 (plan s748r1) collects it under total_differs from its own page read (46119948370). Either state, and the
+# file decides which: once kb/program_total_differs.json lists it the record carries total_differs alone; before, no gap.
+s748 = (M.COLLEGE, "19857") in NG.total_differs_list()
+check([g["gap"] for g in f["score"].get("gaps") or []] == (["total_differs"] if s748 else []),
+      "19857: it is in no file and carries no gap until S748 lists it, and total_differs alone after")
+# Its live run, one row in either state. No load or reread receipt and no plan before S748 posts 19857 at its run, so
+# this plan held it; s748r1 proved the run by a live pre-read, and once the migrate runner's receipt says s748r1
+# applied (kb/receipts/migration_s748r1_prreq_piles_apply_*.json), that applied plan posts the row at its run.
+check(not W.on_live_run(f, skip=("s748r1",)) and W.on_live_run(f) == L.plan_applied("s748r1"),
+      "19857: on no proved live run by the receipts this plan read; S748's applied plan s748r1 alone posts its run")
 # S742: the Acalog road reads site_pages pins, and paid read 46007782666 read 19883 from its own page (poid 3640);
 # before it the record sat on the Photography A.S. page with 02512. Read in either state.
 check(W.shared_with("19883") == ["02512"]

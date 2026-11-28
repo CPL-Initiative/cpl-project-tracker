@@ -1,0 +1,22 @@
+{
+ "_readme": "S748 lane 1 (keys): College of Alameda, Art History A.A.-T 32765's own entry, read through the catalog's own JSON as the capture reads it (cq_view, catalog 10507), free, no model call, nothing written. The record's note quotes its units line as 'General Education (Cal-GETC) and Elective Courses 42.00', where the college's set step for transfer degrees reads '... and Elective Units' (Sociology 33032's wording, college page read 42609117444). This read prints the entry's lines once more, so the step's pattern is widened on the page's own words: the units line, the major's figure and the total.",
+ "college": "College of Alameda",
+ "questions": {
+  "units_line": "How does the entry print its general education and electives line, its major's units and its total?"
+ },
+ "keywords": [
+  "Cal-?GETC[^\\n]{0,80}",
+  "Elective[^\\n]{0,60}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47380",
+   "answers": [
+    "units_line"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  }
+ ]
+}

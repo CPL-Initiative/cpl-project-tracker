@@ -36,8 +36,14 @@ check(len(members) == 24 and set(members) == set(E.HAND_HELD) and set(members) <
 
 # ── the self-recall, per reading: right and wrong against the hand ──
 pr = E.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 24 and pr["right"] == 24 and pr["wrong"] == 0,
-      "the readings answer the hand on all 24: %s" % pr["wrong_keys"])
+# S748 answered one of S714's nine holds with later evidence. 41231: page read 46120012715 shows the read is whole and
+# the page's own rows add to 39-45 under its 41-45, so kb/program_total_differs.json lists it (plan s748b, applied).
+# Either state of it is accepted; every other answer is S714's hand. 31017 stays held: S748's reconcile step for its
+# movement list was refused by its second reader and removed (the page's own figures give 54-61 around 60).
+LATER = {"41231": "gap"}
+later = {w["control_number"]: w["rule"] for w in pr["wrong_keys"]}
+check(pr["read"] == 24 and pr["right"] + len(later) == 24 and all(LATER.get(k) == v for k, v in later.items()),
+      "the readings answer the hand on all 24, but for the one S748 answered: %s" % pr["wrong_keys"])
 check(pr["by_answer"] == {"passes": 14, "gap": 1, "none": 9}, "14 pass, 1 named gap, 9 held: %s" % pr["by_answer"])
 by_reading = {}
 for cn in members:
@@ -58,7 +64,8 @@ check(pr["held_by_name"] == {"02430": {"without_the_hold": "none", "hand": "none
       % pr["held_by_name"])
 # Each held record stays held (none) under the readings: they read no gap and pass nothing.
 held = [cn for cn in members if E.hand_answer(cn) == "none"]
-check(all(E.read(E.at_base(cn), secs[cn]["text"])["answer"] == "none" for cn in held), "the 9 held stay held")
+check(all(E.read(E.at_base(cn), secs[cn]["text"])["answer"] in ("none", LATER.get(cn, "none")) for cn in held),
+      "the 9 held stay held, but for the one S748 answered")
 
 # ── the boundaries: each reading across each edge ──
 bd = E.boundaries(CENSUS_AT_PLAN)

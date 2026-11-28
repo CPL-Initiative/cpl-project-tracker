@@ -9,7 +9,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "01109",
@@ -33,7 +37,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "01113",
@@ -112,7 +120,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47508",
+    "title": "Auto Body - A.S. Degree",
+    "h1": "Auto Body - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "01116",
@@ -301,7 +323,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47229/47559",
+    "title": "African American Studies: A.A. Degree",
+    "h1": "African American Studies: A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "01138",
@@ -496,7 +532,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47396",
+    "title": "Chassis Specialist - A.S. Degree",
+    "h1": "Chassis Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "09012",
@@ -539,7 +589,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47376",
+    "title": "Automotive Electronic Specialist - A.S. Degree",
+    "h1": "Automotive Electronic Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "09014",
@@ -551,7 +615,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47384",
+    "title": "Drivetrain Specialist - A.S. Degree",
+    "h1": "Drivetrain Specialist - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "09015",
@@ -629,7 +707,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47365/47536",
+    "title": "Mexican Latin American Studies: A.A. Degree",
+    "h1": "Mexican Latin American Studies: A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19826",
@@ -641,7 +733,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "19827",
@@ -685,7 +781,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47591",
+    "title": "Automotive Electronics Specialist - Certificate of Achievement",
+    "h1": "Automotive Electronics Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19829",
@@ -697,7 +807,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47360",
+    "title": "Chassis and Drivetrain - Certificate of Achievement",
+    "h1": "Chassis and Drivetrain - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19830",
@@ -709,7 +833,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47592",
+    "title": "Drivetrain Specialist - Certificate of Achievement",
+    "h1": "Drivetrain Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19831",
@@ -962,7 +1100,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47538",
+    "title": "Chassis Specialist - Certificate of Achievement",
+    "h1": "Chassis Specialist - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19841",
@@ -974,7 +1126,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "31145",
@@ -1410,7 +1566,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "art history - a.a.-t degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -1588,7 +1745,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "37829",
@@ -2162,7 +2323,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47301/47480",
+    "title": "Dance - A.A. Degree",
+    "h1": "Dance - A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "42836",
@@ -2174,7 +2349,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47301/47481",
+    "title": "Dance - Certificate of Achievement",
+    "h1": "Dance - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "42899",

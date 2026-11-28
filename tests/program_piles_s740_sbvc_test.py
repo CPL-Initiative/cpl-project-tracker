@@ -176,8 +176,14 @@ for cn in ("22820", "12197"):
 
 # ── the holds ──────────────────────────────────────────────────────────────
 f = W.load("04894")
-check(B.scorer_passes(f) and B.arithmetic(f)["status"] == "unequal",
-      "04894 passes today's scorer without the state's list and fails with it")
+# Either state, one row, told by its run. As this plan held it (run 38748858322) the record added to 26.5-36.5 under
+# the printed 27-37 with the state's list. S748's two reconcile steps for the applied pair's one row (and_units, and
+# repeat with block_sum; reconcile read 46118801512, reread 46121280132) file it at 27-37, equal.
+s748 = str(f.get("extracted_run")) == "46118801512"
+check(B.scorer_passes(f) and B.arithmetic(f)["status"] == ("equal" if s748 else "unequal")
+      and f["score"]["arithmetic"]["computed"] == ([27.0, 37.0] if s748 else [26.5, 36.5]),
+      "04894 passes today's scorer without the state's list and fails with it, until S748's reconcile read files it "
+      "equal at 27-37")
 a = W.load("35833")["score"]["arithmetic"]
 check(a["stated"][0] <= a["computed"][0] and a["computed"][1] <= a["stated"][1],
       "35833's 19-22 sits inside its printed 18.5-22")

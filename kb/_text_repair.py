@@ -71,3 +71,37 @@ def fix_moji(s):
             break
         s = repaired
     return s
+
+
+# A run-by-run repair for text that mixes correct characters with mojibake (S747, the COCI catalog descriptions):
+# fix_moji's whole-string round trip fails on such a string (a correct en dash encodes to 0x96, not valid UTF-8 alone)
+# and hands it back untouched. fix_moji_runs repairs each run that starts with a UTF-8 lead byte as cp1252 shows it and
+# continues with continuation bytes, to a fixed point; a run that does not decode stays. Callers apply fix_moji first.
+_RUN_CONT = ("\u0080-\u00bf\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014"
+             "\u2018-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122")
+_RUN_RE = re.compile("[\u00c2-\u00f4][" + _RUN_CONT + "]+")
+
+
+def _run_byte(c):
+    o = ord(c)
+    return o if o < 0x100 else c.encode("cp1252")[0]
+
+
+def _fix_run(m):
+    run = m.group(0)
+    try:
+        return bytes(_run_byte(c) for c in run).decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return run
+
+
+def fix_moji_runs(s):
+    """Repair each mojibake run in place, up to three passes (text read as cp1252 twice needs two)."""
+    if not isinstance(s, str) or not s:
+        return s
+    for _ in range(3):
+        repaired = _RUN_RE.sub(_fix_run, s)
+        if repaired == s:
+            break
+        s = repaired
+    return s

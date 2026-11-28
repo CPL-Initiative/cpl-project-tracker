@@ -2,18 +2,18 @@
  "college": "Coastline Community College",
  "programs": 175,
  "with_closed_list": 159,
- "found": 143,
+ "found": 144,
  "extracted": 154,
  "errors": 0,
- "passed_machine_checks": 126,
+ "passed_machine_checks": 127,
  "failed": {
-  "coverage": 13,
+  "coverage": 12,
   "invented": 0,
-  "arithmetic": 28,
+  "arithmetic": 27,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd_run": 0.04,
+ "cost_usd_run": 0.06,
  "cost_usd_filed": 8.52,
  "cost_per_program": 0.0553,
  "extract_calls": 1,
@@ -177,40 +177,7 @@
     "page_checks": true
    },
    "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "43057",
-   "title": "Communications Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 1.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 2833,
-     "content": 6682,
-     "tabs": 1428
-    },
-    "tab_panels": [
-     [
-      "REQUIREMENTS",
-      1408
-     ]
-    ],
-    "page_checks": true
-   },
-   "status": "Active"
   }
  ],
- "run": "45777312083"
+ "run": "46119872022"
 }

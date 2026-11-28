@@ -1,0 +1,45 @@
+{
+ "_readme": "S748 (lane 1, readers). Reedley's 'Early Childhood Education: Assistant Teacher' certificate 30465 (8 to fewer than 16 units; the state lists ECE 1, 2, 3, 4 and 19) is held under rule A: the capture (run 39616074283) read it from the page headed 'Child Development, Certificate of Achievement' (iq/3101/3519/3273), whose one table adds to 21.5 units, and its record places none of its courses. The capture filed the Child Development department's pages 3269 to 3274 and 3277 for its other programs. This read prints the department's node with its links, the page the record was read from, and the two pages between the filed ones (3275, 3276), so a session can see whether the catalog prints an Assistant Teacher certificate of its own, under what heading, and with what courses and total. Four loads, no model call, nothing written.",
+ "college": "Reedley College",
+ "questions": {
+  "own_page": "Does the Child Development department list an Assistant Teacher certificate page, and what are its heading, its courses with their units and its total?",
+  "read_page": "What does the page the record was read from print: its heading, each course with its units and the total?"
+ },
+ "keywords": [
+  "Assistant Teacher[^\\n]{0,80}",
+  "Associate Teacher[^\\n]{0,80}",
+  "Certificate of Achievement[^\\n]{0,80}",
+  "Total[^\\n]{0,60}",
+  "ECE \\d+[A-Z]?[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "links": "Teacher|Child|Certificate",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519"
+  },
+  {
+   "answers": [
+    "read_page"
+   ],
+   "capture_view": true,
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3273"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "capture_view": true,
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3275"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "capture_view": true,
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3276"
+  }
+ ]
+}

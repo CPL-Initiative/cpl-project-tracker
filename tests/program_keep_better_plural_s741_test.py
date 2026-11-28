@@ -36,7 +36,8 @@ Pinned here:
     the capture had named it for the program, a page that is not its own and whose program has another title.
     Admitted there with the fold on and not with it off is wrong. Two remain, each printed, and each is a page
     whose address prints the program's own title, a plural aside, while the capture filed another program on it
-    (Coastline's 2.0 page for 43057; Grossmont's University Studies page for 19823). The exact reading's own
+    (Coastline's 2.0 page for 43057, until S748's read through its pin filed 43057 there and the page became its
+    own; Grossmont's University Studies page for 19823). The exact reading's own
     admissions on a sibling's page are counted beside them and are as they were.
   The change writes no row: it moves what keep-better decides about a later re-read that comes back under a
   generic heading.
@@ -59,6 +60,9 @@ checks, failures = [0], []
 MOVED = 37                  # own-page answers the fold moves (2026-11-27, S742's round 2)
 EXACT_ON_SIBLING = (1800, 1799)  # the exact reading's admissions on a sibling's page: 1800 before tonight's live records, 1799 after
 WRONG = [("coastline_community", "43057", "33014"), ("grossmont", "19823", "19608")]
+# The 2.0 degree's page Coastline's reconcile entry pins for 43057 (site_pages), where paid read 46119872022 filed it.
+COAST_PIN = ("https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/"
+             "communication-studies-2-aat/")
 
 
 def check(cond, msg):
@@ -193,10 +197,21 @@ check(not lost, "no answer moves from shown to not shown: %s" % lost[:5])
 cuy = ("Cuyamaca College", "18637")
 with open(os.path.join(CUY_DIR, "records", "18637.json"), encoding="utf-8") as fh:
     on_own_page = json.load(fh).get("source_url") == OWN_PAGE
-check(len(moved) == MOVED + (cuy in moved), "the fold moves %d own-page answers (pinned %d, and 18637 once it is filed "
-      "from its own page); the capture names each page for its program, so this counts reach" % (len(moved), MOVED))
+# Coastline 43057 in either state (S748): its filed record sat on its pathway's landing page and did not move; paid
+# read 46119872022, through its site_pages pin, filed it from the 2.0 degree's page, whose address prints the title a
+# plural aside ('communication-studies-2-aat'), and that record is one more the fold moves.
+coast = ("Coastline Community College", "43057")
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "coastline_community", "records", "43057.json"),
+          encoding="utf-8") as fh:
+    coast_on_pin = json.load(fh).get("source_url") == COAST_PIN
+check(len(moved) == MOVED + (cuy in moved) + (coast in moved),
+      "the fold moves %d own-page answers (pinned %d, and 18637 and 43057 once each is filed from its own page); the "
+      "capture names each page for its program, so this counts reach" % (len(moved), MOVED))
 check((cuy in moved) == on_own_page,
       "18637's record filed from Grossmont's page does not move; filed from its own page (read 46003456131) it does")
+check((coast in moved) == coast_on_pin,
+      "43057's record filed from its pathway's landing page does not move; filed from the 2.0 page its pin names "
+      "(read 46119872022) it does")
 
 print("the wrong-join recall: every program on every sibling's page")
 pairs, off, on, wrong = 0, 0, 0, []
@@ -234,9 +249,13 @@ for slug, srcs in sorted(SOURCES.items()):
                       % (slug, a.get("control_number"), a.get("title"), b.get("control_number"), b.get("title"), y[:90]))
 print("pairs %d, admitted with the fold off %d, with it on %d, by the fold alone %d" % (pairs, off, on, len(wrong)))
 check(pairs > 3000000, "the recall handed every program every sibling's page (%d pairs)" % pairs)
-check(sorted(wrong) == sorted(WRONG),
-      "the fold alone admits two programs on a sibling's page, each a page whose address prints the program's own "
-      "title, a plural aside (pinned %s): %s" % (WRONG, wrong))
+# Coastline's leaves the list once the read through its pin files 43057 on the 2.0 page (S748, paid read 46119872022):
+# the page is then the capture's own page for 43057, no sibling's. Grossmont's stays.
+want_wrong = [w for w in WRONG if not (w[:2] == ("coastline_community", "43057") and coast_on_pin)]
+check(sorted(wrong) == sorted(want_wrong),
+      "the fold alone admits on a sibling's page only the programs pinned, each a page whose address prints the "
+      "program's own title, a plural aside: Grossmont 19823, and Coastline 43057 until it is filed from that page "
+      "(pinned %s): %s" % (want_wrong, wrong))
 check(on - off == len(wrong) and off in EXACT_ON_SIBLING,
       "the exact reading's own admissions on a sibling's page are as they were (%d, pinned %s)"
       % (off, EXACT_ON_SIBLING))

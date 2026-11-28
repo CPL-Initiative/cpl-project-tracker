@@ -51,8 +51,15 @@ S740B = {}
 if os.path.isfile(_S740B):
     with open(_S740B, encoding="utf-8") as fh:
         S740B = {r["control_number"]: r["moves_to"] for r in json.load(fh)["records"]}
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=14, own=OWN,
-          rolled_back=ROLLED_BACK, refiled=REFILED)
+# S748's paid read (run 46122364368, reread 46125067463) filed 08663 from its own page, the Food and Beverage
+# Management certificate's, under its own heading. 43362 is then the one record read from the Advanced certificate's
+# page: the guard asks nothing of it today, one boundary reading (its own heading not shown) no longer applies, and
+# the receipt keeps the form s739j applied it under (own_heading). The form is American River's (S741, 39341).
+READ_08663 = "46122364368"
+MOVED = str(W.load("08663").get("extracted_run")) == READ_08663
+OWN_NOW = {k: v for k, v in OWN.items() if not (MOVED and k == "43362")}
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=13 if MOVED else 14, own=OWN_NOW,
+          receipt_own=OWN, rolled_back=ROLLED_BACK, refiled=REFILED)
 check = t.check
 
 check("08626" not in W.keys and B.S.passes_live(W.load("08626")["score"]) and "wrong page" in M.NOTE_08626,
@@ -81,9 +88,15 @@ def _cross_listed(cn):
         == {"ARCH/CNST A196", "ARCH/CNST A197"}
 
 
-check(not NG.collectable(W.load("43100")["score"])
+# S748's plan s748c rescores 43100's coverage on the capture's finding that its page does not print PSYC A160
+# (state_course_not_on_page, tests/program_piles_s748c_test.py): not collectable as s739j read it, or carrying that
+# rescore with the scorer's own coverage beside it.
+_cov = W.load("43100")["score"]["coverage"]
+check((not NG.collectable(W.load("43100")["score"])
+       or (_cov.get("as_scored") == {"pass": False, "unexplained": _cov.get("not_on_page")} and _cov.get("rescored")))
       and all(not NG.collectable(W.load(cn)["score"]) or _cross_listed(cn) for cn in ("08628", "19473", "19474")),
-      "the four coverage holds are not collectable, or pass since by s741b's rename of the two cross-listed codes")
+      "the four coverage holds are not collectable, or pass since by s741b's rename of the two cross-listed codes or "
+      "by s748c's rescore of 43100")
 
 f = W.load("32737")
 check(f["score"]["arithmetic"]["status"] == "incomplete" and B.closes(f, B.apply_ops(f, [("drop", M._SUBSTITUTION)])),
@@ -93,9 +106,19 @@ check(B.shape_open(f, {"open": "Related Fields"}) and "12 core + 3-7 does not ma
       "36732: Related Fields prints no figure, and the gap files the note on the figures too")
 for cn, mate in (("43362", "08663"), ("41373", "32086")):
     f = W.load(cn)
+    g = W.load(mate)
+    if (cn, mate) == ("43362", "08663") and MOVED:
+        # 08663 since S748's paid read: on its own page under its own heading, so 43362's page has no mate.
+        check(B.shape_note_quotes(f, M.REVIEWED[cn]) and W.shared_with(cn) == [] and W.shared_with(mate) == [],
+              "43362: its note quotes both figures, and its page is its own since S748's read moved 08663")
+        check(g["record"]["program"]["section_heading"] == "Food and Beverage Management, Certificate of Achievement"
+              and f["record"]["program"]["section_heading"] == "Food and Beverage Management, Advanced, Certificate of Achievement"
+              and g["source_url"] != f["source_url"]
+              and W.own(g, {"gap": "noted_figures_differ"}) == "its page is its own",
+              "08663 carries its own heading on its own page since S748's paid read (run %s)" % READ_08663)
+        continue
     check(B.shape_note_quotes(f, M.REVIEWED.get(cn) or M.ROLLED_BACK[cn]) and W.shared_with(cn) == [mate],
           "%s: its note quotes both figures" % cn)
-    g = W.load(mate)
     check(g["record"]["program"]["section_heading"] == f["record"]["program"]["section_heading"]
           and W.own(g, {"gap": "noted_figures_differ", "own_heading": g["record"]["program"]["section_heading"]}) is None,
           "%s carries %s's heading and does not own it" % (mate, cn))

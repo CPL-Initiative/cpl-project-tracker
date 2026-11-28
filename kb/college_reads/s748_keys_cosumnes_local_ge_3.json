@@ -1,0 +1,25 @@
+{
+ "_readme": "S748 lane 1 (keys): Cosumnes River College, the hand-filed 2026-27 catalog, the pages that print the local general education pattern itself. Reads 46122189139 and 46122961074 printed PDF pp.89-93: p.90 (Catalog Rights) names 'the new local AA/AS GE requirements (https://crc.losrios.edu/catalog/local-ge)' and prints no unit figure for the pattern, and pp.91-93 are the transfer guidance. This plan looks for the pattern's own page between PDF pp.60 and 110, by the words that name it and no broader ones, so only its pages print. One load of the hand-filed copy, free, no model call, nothing written. A set step for the college's nine local degrees waits on the figure this read prints.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "local_ge_units": "Which page prints the local AA/AS general education pattern, how many units does it take in all and by area, and in which words?"
+ },
+ "keywords": [
+  "Local General Education",
+  "[Ll]ocal AA/AS GE",
+  "AA/AS General Education",
+  "Associate Degree General Education"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "local_ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  60,
+  110
+ ]
+}

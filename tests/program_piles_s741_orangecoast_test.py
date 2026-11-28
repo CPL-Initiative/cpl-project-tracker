@@ -119,7 +119,14 @@ check(B.scorer_passes(f) and not f["score"].get("gaps") and W.gap_noted(f, {"423
     "gap": B8.WITHIN, "words_from": "figures", "shape": ["within"], "computed": [11.5, 16], "stated": [9.5, 16]}}) is None,
       "42331: today's scorer passes it on its record, so the within-range kind is refused and it carries no gap")
 f = W.load("08626")
-check("08626" not in M.KEYS and S.passes_live(f["score"]) and "airframe-powerplant" in f["source_url"],
-      "08626 is no key: it passes as filed, read from the Airframe & Powerplant page")
+# Either state, one row, told by its run. As this plan read it the record passed as filed from the Airframe &
+# Powerplant page. S748's paid read (run 46122364368, reread 46125067463) filed Powerplant A.S. 08626 from its own
+# page, powerplant-associate-science-degree, and it passes there.
+own_read = str(f.get("extracted_run")) == "46122364368"
+check("08626" not in M.KEYS and S.passes_live(f["score"])
+      and ("/powerplant-associate-science-degree/" if own_read else "airframe-powerplant") in f["source_url"]
+      and (own_read or "/powerplant-associate-science-degree/" not in f["source_url"]),
+      "08626 is no key: it passes as filed, read from the Airframe & Powerplant page, or from its own page since "
+      "S748's paid read")
 
 sys.exit(t.done())

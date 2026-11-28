@@ -1491,6 +1491,7 @@
      "created": "2026-09-18",
      "governs": [
       "kb/_text_repair.py",
+      "kb/_build_coci_lookup.py",
       "kb/_build_college_courses.py",
       "chatbox/build_coci_offerings.py",
       "tests/course_title_mojibake_test.py"
@@ -1506,7 +1507,7 @@
      ],
      "title": "A double-decoded string needs the codec that decoded it \u2014 cp1252, a C1 passthrough, and repair before you collapse whitespace",
      "type": "methodology",
-     "updated": "2026-09-18"
+     "updated": "2026-11-28"
     },
     {
      "created": "2026-09-17",
@@ -14405,7 +14406,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 112,
+   "count": 113,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15854,6 +15855,20 @@
       "knowledge-base"
      ],
      "title": "Rules-based official-ID folds \u2014 the severed evidence index + tiered fold rule (the SPAN 200 case)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-28",
+     "governs": [],
+     "path": "docs/s748_readers_NOTES.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest"
+     ],
+     "title": "S748 readers \u2014 notes for the next session (holds by key, Sierra and Skyline)",
      "type": null,
      "updated": ""
     },
@@ -17650,8 +17665,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 698,
+   "count": 699,
    "docs": [
+    {
+     "created": "2026-11-28",
+     "governs": [],
+     "n": 748,
+     "path": "docs/session_748_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 748 handoff (from SkyShearwater, S747, Sam's plain session of 2026-11-28: the 38-unit B.S., panels beside the view, Commons Clarity 3 and 4, the click-through, COCI descriptions)",
+     "type": null,
+     "updated": "2026-11-28"
+    },
     {
      "created": "2026-11-28",
      "governs": [],
@@ -29196,5 +29225,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1596
+ "total": 1598
 }

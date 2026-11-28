@@ -2876,5 +2876,139 @@ def units_within_named(every: list[dict]) -> list[tuple]:
                   if not (f.get("score") or {}).get("gaps") and units_within_printed_range(f))
 
 
+# ── state_course_not_on_page (S748, lane 2's cheap piles) ──────────────────
+# A record that fails coverage on a listed course it neither places nor explains, where the committed capture of
+# the program's own page finds that course on no line: the state's file lists a course the page does not print.
+# Thousands of records pass coverage on a reader's own "not in the text"; these are the records whose reader placed
+# every course the page prints and wrote no reason for the one it does not. The reading names that course from the
+# capture's finding, and the plan that files it rescores coverage with the course explained (kb/_program_piles_
+# s748c.py); the record is unchanged.
+#
+# A READING, NOT A GAP KIND, AND NOT A RECORD RULE. It is filed only where the units check passes, so the row then
+# passes as the live table counts it, and a passing score carries no gap (keep_named_gaps in
+# kb/_program_requirements_college.py; tests/reconcile_keeps_named_gaps_test.py): GAPS and ARITH_SCORE above do not
+# name it. The capture's finder is the evidence, and state_course_recall measures it against answers the readers
+# already hold: of its fires on held answers about 4 in 100 are wrong (a code the page prints otherwise than the
+# state's file spells it). So it is filed from a reviewed list alone, by key, and RECORD_RULES, answer and judge
+# above do not name it: no reconcile, load or rescore files it on its own.
+STATE_COURSE = "state_course_not_on_page"
+STATE_COURSE_SENTENCE = ("The state's course list for this program names a course the program's own page does not "
+                         "print; the record places every listed course the page prints, and its units add up.")
+STATE_COURSE_TEXT_CAP = 16000      # kb/_program_requirements_pilot.py TEXT_CAP: a capped text may end before the list
+NOT_IN_TEXT = re.compile(r"\bnot\s+(?:in|on)\s+(?:the\s+)?(?:catalog\s+|provided\s+|page\s+)?(?:text|page|section)\b"
+                         r"|\bnot\s+printed\b|\bnot\s+listed\s+(?:in|on)\b", re.I)
+
+
+def _spaced(raw: str) -> bool:
+    """A code the state's file writes with a space or a hyphen: the capture's finder reads such a code on a page;
+    one stored with neither (MUSIC189) it misses where the page prints MUSIC-189 (kb/_program_piles_s739.py claim)."""
+    return bool(re.search(r"[\s-]", str(raw or "").strip()))
+
+
+def state_course_evidence(filed: dict, src: dict | None, closed: list | None) -> dict | None:
+    """What the committed capture shows of a coverage failure, or None where the kind does not stand. src is the
+    record's entry in its college's sources.json (the capture's account of the page it read for the program);
+    closed the program's state list. The kind stands where:
+      the record fails on coverage alone: a listed course unexplained, some course placed, invented and the units
+        check passing, no gap filed;
+      the capture read the address the record was read from, whole (its text under the cap);
+      the record's notes do not say its list is cut off or may continue;
+      the record places at least half of the state's list;
+      the capture finds on the page every listed course the record places that the state's file writes with a
+        space or a hyphen (its finder reads this page's codes; one written with neither it cannot find);
+      each unexplained course is one the state's file writes with a space or a hyphen, and the capture finds it on
+        no line of the page."""
+    sc = filed.get("score") or {}
+    cov, a = sc.get("coverage") or {}, sc.get("arithmetic") or {}
+    un = [S.norm_code(c) for c in cov.get("unexplained") or []]
+    if (S.passes_live(sc) or cov.get("pass") or cov.get("none_placed") or not un or sc.get("gaps")
+            or not (sc.get("invented") or {}).get("pass") or not a.get("pass")):
+        return None
+    source = (src or {}).get("source")
+    if not isinstance(source, dict) or source.get("url") != filed.get("source_url"):
+        return None
+    chars = (src or {}).get("text_chars")
+    if not isinstance(chars, (int, float)) or chars >= STATE_COURSE_TEXT_CAP:
+        return None
+    if incomplete_read(filed) or cut_off_claim(filed) or may_continue(filed):
+        return None
+    raw = {S.norm_code(c.get("code")): str(c.get("code") or "") for c in closed or [] if c.get("code")}
+    missing = {S.norm_code(c) for c in cov.get("missing") or []}
+    placed = sorted(k for k in raw if k not in missing)
+    found = {S.norm_code(c) for c in (src or {}).get("codes_found") or []}
+    if not raw or any(k not in raw for k in un) or len(placed) * 2 < len(raw):
+        return None
+    if any(k not in found for k in placed if _spaced(raw[k])) or any(k in found or not _spaced(raw[k]) for k in un):
+        return None
+    return {"not_on_page": [raw[k] for k in un], "placed": len(placed), "listed": len(raw),
+            "found": sum(1 for k in placed if k in found)}
+
+
+def state_course_not_on_page(filed: dict, src: dict | None, closed: list | None, run: str | None = None) -> str | None:
+    """The reading's words, from the capture's finding, or None."""
+    ev = state_course_evidence(filed, src, closed)
+    if not ev:
+        return None
+    return ("the state's list names %s, which the program's page does not print: the capture%s finds on the page "
+            "%d of the %d listed courses the record places (the rest are codes the state's file writes with no "
+            "space, which its finder does not read), and finds %s on no line of it"
+            % (_listed(ev["not_on_page"]), " (run %s)" % run if run else "", ev["found"], ev["placed"],
+               "it" if len(ev["not_on_page"]) == 1 else "them")) if ev["found"] < ev["placed"] else (
+            "the state's list names %s, which the program's page does not print: the capture%s finds on the page "
+            "each of the %d listed courses the record places, and finds %s on no line of it"
+            % (_listed(ev["not_on_page"]), " (run %s)" % run if run else "", ev["placed"],
+               "it" if len(ev["not_on_page"]) == 1 else "them"))
+
+
+def state_course_recall(every: list[dict], sources: dict, closed_of) -> dict:
+    """The capture's finder against answers the readers hold, on every filed record whose capture read the record's
+    own address under the cap. sources: {(college, control number): its sources.json entry}; closed_of(college,
+    control number): the state list. For each listed course whose answer a reader holds, the kind's own test is
+    asked as if the course were the record's one unexplained course, every other placed course found:
+      a course the reader explains as not in the text (NOT_IN_TEXT): held 'not on the page'. Right where the capture
+        finds it on no line; a miss where the capture finds it somewhere in the page's text (the kind stays silent);
+      a course the reader placed: held 'on the page'. Right where the capture finds it; WRONG where the capture
+        finds it on no line (the kind would name a course the page prints).
+    So the recall can report a wrong, and does: wrong is every placed course the capture misses on a page where it
+    finds every other placed course."""
+    out = collections.Counter()
+    wrong_by_college = collections.Counter()
+    for f in every:
+        key = (f.get("college"), str(f.get("control_number")))
+        src = sources.get(key) or {}
+        source = src.get("source")
+        chars = src.get("text_chars")
+        if not isinstance(source, dict) or source.get("url") != f.get("source_url") \
+                or not isinstance(chars, (int, float)) or chars >= STATE_COURSE_TEXT_CAP:
+            out["records_without_a_whole_capture_of_their_address"] += 1
+            continue
+        out["records"] += 1
+        raw = {S.norm_code(c.get("code")): str(c.get("code") or "") for c in closed_of(*key) or [] if c.get("code")}
+        cov = (f.get("score") or {}).get("coverage") or {}
+        missing = {S.norm_code(c) for c in cov.get("missing") or []}
+        placed = [k for k in raw if k not in missing]
+        found = {S.norm_code(c) for c in src.get("codes_found") or []}
+        unfound = [k for k in placed if k not in found and _spaced(raw[k])]
+        why = {S.norm_code(m.get("code")): str(m.get("why") or "")
+               for m in (f.get("record") or {}).get("missing_explained") or [] if isinstance(m, dict) and m.get("code")}
+        if not unfound:
+            for k in missing:
+                if k in raw and _spaced(raw[k]) and NOT_IN_TEXT.search(why.get(k, "")):
+                    out["not_on_page_right" if k not in found else "not_on_page_missed"] += 1
+        for k in placed:
+            if not _spaced(raw[k]):
+                out["placed_unspaced_not_asked"] += 1
+            elif [u for u in unfound if u != k]:
+                out["placed_not_asked_another_course_unfound"] += 1
+            elif k in found:
+                out["on_page_right"] += 1
+            else:
+                out["on_page_wrong"] += 1
+                wrong_by_college[str(f.get("college"))] += 1
+    out = dict(out)
+    out["wrong_by_college"] = dict(wrong_by_college.most_common())
+    return out
+
+
 if __name__ == "__main__":
     sys.exit(main())

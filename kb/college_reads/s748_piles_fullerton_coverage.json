@@ -1,0 +1,38 @@
+{
+ "_readme": "S748, lane 2's cheap piles (2026-11-28). Two Fullerton records fail on coverage alone: the state's list names THEA 231 F for Stage Management 18749 and PE 108 F for Kinesiology A.A.-T 36863, and the committed capture finds neither on its page. Plan s748c files state_course_not_on_page on the capture's finding. This read prints each page as the capture reads it, so a session and the plan's second reader can see for themselves whether any line prints the course. Two loads. No model call, nothing written.",
+ "college": "Fullerton College",
+ "questions": {
+  "thea_231": "Whether the Stage Management certificate page prints THEA 231 F on any line, and each list it prints.",
+  "pe_108": "Whether the Kinesiology A.A.-T page prints PE 108 F on any line, and each list it prints."
+ },
+ "keywords": [
+  "THEA\\s*231[^\\n]{0,80}",
+  "PE\\s*108[^\\n]{0,80}",
+  "Total[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/stage-management-certificate/",
+   "answers": [
+    "thea_231"
+   ],
+   "why": "18749",
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/kinesiology-associate-arts-degree-transfer/",
+   "answers": [
+    "pe_108"
+   ],
+   "why": "36863",
+   "capture_view": true
+  }
+ ],
+ "_quoted": {
+  "46125626841": {
+   "thea_231": "no line of the Stage Management certificate page prints 231; it prints 29 THEA rows: THEA 091 F, THEA 100 F, THEA 105 F, THEA 109 F, THEA 130 F, THEA 131 F, THEA 132 F, THEA 134 F, THEA 139 F, THEA 141 F, THEA 153 F, THEA 159 F, THEA 160 F, THEA 169 F, THEA 170 F, THEA 177 F, THEA 178 F, THEA 197 F, THEA 225 F, THEA 233 F, THEA 234 F, THEA 243 F, THEA 249 F, THEA 250 F, THEA 265 F, THEA 266 F, THEA 267 F, THEA 278 F, THEA 279 F",
+   "pe_108": "no line of the Kinesiology A.A.-T page prints PE 108 F; its one '108' is 'Advanced Beginning Modern Dance (formerly DANC 108 F)'; it prints 28 PE rows: PE 102 F, PE 103 F, PE 104 F, PE 105 F, PE 112 F, PE 114 F, PE 115 F, PE 117 F, PE 121 F, PE 127 F, PE 129 F, PE 134 F, PE 139AF, PE 149 F, PE 151 F, PE 163 F, PE 165 F, PE 167 F, PE 181 F, PE 182 F, PE 188 F, PE 189 F, PE 192 F, PE 193 F, PE 203 F, PE 204 F, PE 235 F, PE 252 F",
+   "_what": "A session's findings over college-page-read run 46125626841's log (each page as the capture reads it; the pages print a non-breaking space inside each code, written here as a space), with the codes of the rows each page prints. Not quoted lines: kb/_program_piles_s748c.py cites them beside the capture's own finding for Fullerton 18749 and 36863."
+  }
+ }
+}

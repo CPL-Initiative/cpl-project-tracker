@@ -123,7 +123,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_differs",
+    "label": "The catalog prints a total for this program that its own printed units do not add to.",
+    "words": "the catalog prints a total of 36, and its own figures add to 33 (the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print; college-page-read run 46119948370)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 57,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

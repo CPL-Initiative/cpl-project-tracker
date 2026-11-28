@@ -79,14 +79,21 @@ SECOND = {
               "words": "12 core + 3-7 does not match 18-19"},
 }
 more = dict(W.REVIEWED, **SECOND)
+# Either state of one pair, told by 08663's run. As s721b read it 43362's page was 08663's too, so 43362 held.
+# S748's paid read (run 46122364368, reread 46125067463) filed 08663 from its own page, the Food and Beverage
+# Management certificate's: 43362's page is then its own, and its claim stands. 41373 and 32086 are as they were.
+MOVED_08663 = str(W._load("08663").get("extracted_run")) == "46122364368"
 for cn in ("41373", "43362"):
-    check(W.gap_noted(W._load(cn), more) is not None and W.shared_with(cn), "%s: its notes carry the kind" % cn)
+    check(W.gap_noted(W._load(cn), more) is not None
+          and bool(W.shared_with(cn)) == (not (cn == "43362" and MOVED_08663)), "%s: its notes carry the kind" % cn)
 saved = dict(W.REVIEWED)
 W.REVIEWED.update(SECOND)
 check(W.claim(W._load("41373")) == "the page is shared" and W.shared_with("41373") == ["32086"],
       "41373's page is shared with 32086, so it holds")
-check(W.claim(W._load("43362")) == "the page is shared" and W.shared_with("43362") == ["08663"],
-      "43362's page is shared with 08663, so it holds")
+check((W.claim(W._load("43362")), W.shared_with("43362"))
+      == (("stands", []) if MOVED_08663 else ("the page is shared", ["08663"])),
+      "43362's page is shared with 08663, so it holds, until S748's paid read files 08663 from its own page and "
+      "43362's claim stands")
 W.REVIEWED.clear()
 W.REVIEWED.update(saved)
 f36732 = W._load("36732")
@@ -112,13 +119,20 @@ for b in r["blocks"]:
 check(not W.scorer_passes(f) and S.score(r, [], "", f["award"])["arithmetic"]["status"] == "equal",
       "32737: its substitution list read as no requirement, today's scorer passes it")
 check(W.scorer_passes(W._load("42331")), "today's scorer passes 42331 as it stands")
+# 43100 in either state, told by its committed coverage. As s721b read it coverage failed on PSYC A160. S748's plan
+# s748c files the reading state_course_not_on_page (the page does not print the course): the committed score passes
+# and keeps the scorer's own failing coverage beside it (coverage.as_scored), which is what this line reads then.
+cov_43100 = W._load("43100")["score"]["coverage"]
+check((cov_43100["as_scored"] == {"pass": False, "unexplained": ["PSYCA160"]} and cov_43100.get("pass") is True)
+      if cov_43100.get("rescored") else not NG.collectable(W._load("43100")["score"]),
+      "43100: coverage fails on the state's PSYC A160, as scored; S748's plan s748c explains the course and keeps "
+      "that failing coverage in as_scored")
 # s741b passes 08628, 19473 and 19474 by a rename of the page's two cross-listed codes
 # (kb/_program_piles_s741_orangecoast.py): each fails coverage or invented as s721b read it, or carries that rename.
-check(not NG.collectable(W._load("43100")["score"])
-      and all(not NG.collectable(W._load(cn)["score"])
-              or {x.get("printed") for x in W._load(cn)["score"].get("course_renumbers") or []}
-              == {"ARCH/CNST A196", "ARCH/CNST A197"} for cn in ("08628", "19473", "19474")),
-      "coverage or invented fails on the four, or s741b's rename of the two cross-listed codes passes it since")
+check(all(not NG.collectable(W._load(cn)["score"])
+          or {x.get("printed") for x in W._load(cn)["score"].get("course_renumbers") or []}
+          == {"ARCH/CNST A196", "ARCH/CNST A197"} for cn in ("08628", "19473", "19474")),
+      "coverage or invented fails on the three, or s741b's rename of the two cross-listed codes passes it since")
 
 # 19547's line is the page's own figures: Subtotal 67 less Program Major Units 49 is the 18 the record leaves out.
 check(W.REVIEWED["19547"]["less"] == [-18, -18] and W.line_closes(

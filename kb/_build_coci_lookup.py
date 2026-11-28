@@ -37,6 +37,7 @@ from datetime import date, timezone
 sys.path.insert(0, "kb")
 from coci_campus_letter import fold as fold_campus_letter  # noqa: E402
 from coci_subject_folds import fold as fold_subject  # noqa: E402
+from _text_repair import fix_moji, fix_moji_runs  # noqa: E402
 
 try:
     import openpyxl
@@ -49,6 +50,26 @@ SINGLETONS = "kb/coci_minted_singletons.json"
 
 CID_SENTINELS = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE"}
 DESC_MAX = 900  # catalog descriptions avg ~420 chars; hard-cap the tail
+
+
+# COCI's CatalogDescription carries Excel's escapes for control characters (_x000D_, a carriage return, about
+# 78,800 times) and UTF-8 text read as cp1252, some of it twice ("studentâ€™s", "Ã‚Â" before a no-break space).
+# Both are undone here with the one repair module (kb/_text_repair.py; methodology-a-double-decoded-string-needs-the-
+# codec-that-decoded-it): fix_moji for the whole string, then fix_moji_runs for a string that mixes correct characters
+# with mojibake, which fix_moji's round trip cannot decode (S747; f-coci-description-shards-mojibake-s744).
+_XESC = re.compile(r"_x([0-9A-Fa-f]{4})_")
+
+
+def clean_desc(text):
+    """A catalog description as the catalog wrote it: Excel escapes decoded, mojibake repaired before any whitespace
+    is touched, then whitespace (the decoded carriage returns and no-break spaces among it) folded to single spaces."""
+    t = _XESC.sub(lambda m: chr(int(m.group(1), 16)), text or "")
+    t = fix_moji_runs(fix_moji(t))
+    # What no repair can reach: a no-break space whose second byte the extract dropped leaves a bare "Â" at the end of
+    # a description or before a quote (147 in the Nov 2026 extract), and one right quote whose ™ was spelled out
+    # ("artisanâ€TMs"). A "Â" before a letter (French "Âme") stays.
+    t = re.sub(r"Â+(?![^\W\d_])", " ", t).replace("â€TM", "’")
+    return re.sub(r"\s+", " ", t).strip()
 
 
 def credit_char(credit_type, units):
@@ -163,7 +184,7 @@ def main():
         rows.append([ci, ctrl, subj, num, title, units, cc, top, cid, ccn, mid])
         desc = str(row[idx["CatalogDescription"]] or "").strip()
         if desc:
-            desc = re.sub(r"\s+", " ", desc)
+            desc = clean_desc(desc)
             if len(desc) > DESC_MAX:
                 desc = desc[:DESC_MAX - 1] + "…"
             shards.setdefault(shard_key(subj), {})[ctrl] = desc

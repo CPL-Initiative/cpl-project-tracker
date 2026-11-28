@@ -61,34 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     52.0,
+     52.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +140,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -291,5 +297,20 @@
    "Outcomes are printed under 'Learning Outcome(s)' for the program; recorded as printed (first outcome has no closing period)."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 46122729926,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "General Education (Cal-GETC) and Elective Courses (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444) and, on Art History 32765's entry, 'Total units required for major: 18 · 18.00 · General Education (Cal-GETC) and Elective Courses · 42.00 · Total Units Required for Degree · 60.00' (college page read 46121438840, the entry as the capture reads it); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38935121852"
 }

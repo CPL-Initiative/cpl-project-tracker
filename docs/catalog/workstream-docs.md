@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-112 document(s).
+113 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -96,6 +96,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Re-loading map_student_credit with its credit columns](../map_student_credit_reload.md) | `map_student_credit_reload.md` | 2026-08-10 | 2026-08-10 |
 | [Regulatory Action Proposal — conforming §55050 to Ed. Code Article 9](../t5_55050_regulatory_action_proposal.md) | `t5_55050_regulatory_action_proposal.md` | 2026-08-26 | 2026-08-26 |
 | [Rules-based official-ID folds — the severed evidence index + tiered fold rule (the SPAN 200 case)](../official_id_fold_scope.md) | `official_id_fold_scope.md` | 2026-06-10 |  |
+| [S748 readers — notes for the next session (holds by key, Sierra and Skyline)](../s748_readers_NOTES.md) | `s748_readers_NOTES.md` | 2026-11-28 |  |
 | [SB 135 sweep — all 16 CPL revisions against Ed. Code §78093–78093.2](../gr_sb135_row_sweep.md) | `gr_sb135_row_sweep.md` | 2026-08-25 | 2026-08-25 |
 | [Scope — MAP performance vs the three funding-priority metrics (funding tab v2)](../funding_priority_metrics_scope.md) | `funding_priority_metrics_scope.md` | 2026-06-11 | 2026-06-11 |
 | [Session 457b (the side session beside S457) handoff: the communications register shipped; the Library team-phrase listing is next](../session_457b_handoff.md) | `session_457b_handoff.md` | 2026-10-23 |  |

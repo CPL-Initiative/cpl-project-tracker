@@ -41,9 +41,11 @@ check = t.check
 
 with open(os.path.join(ROOT, "kb", "program_total_differs.json"), encoding="utf-8") as fh:
     listed = json.load(fh)["colleges"][M.COLLEGE]
-# S742 (plan s742r2) lists two more, each from its own page read: 19883 and 38948.
-check({"31319", "42541"} <= set(listed) and set(listed) <= {"31319", "42541", "19883", "38948"},
-      "the file lists El Camino's two programs, and since S742 the two s742r2 files (%s)" % sorted(listed))
+# S742 (plan s742r2) lists two more, each from its own page read: 19883 and 38948. S748 (plan s748r1) lists 19857
+# from a read of its page alone (46119948370).
+check({"31319", "42541"} <= set(listed) and set(listed) <= {"31319", "42541", "19883", "38948", "19857"},
+      "the file lists El Camino's two programs, since S742 the two s742r2 files, and since S748 19857 (%s)"
+      % sorted(listed))
 with open(os.path.join(ROOT, "kb", "college_reads", "s741_piles_el_camino_pages.json"), encoding="utf-8") as fh:
     urls = [p["url"] for p in json.load(fh)["pages"]]
 for cn in ("31319", "42541"):
@@ -84,11 +86,14 @@ check(B.same(core["stated"], [28, 30]) and len(core["courses"]) == 8
       "42541: 'Required Core' prints 28-30 over eight rows that add to 27-30")
 
 f = W.load("19857")
-check(not f["score"].get("gaps") and ("El Camino College", "19857") not in NG.total_differs_list()
+# Either state: S748's plan s748r1 lists it in the file and files total_differs on it; before, neither.
+s748 = ("El Camino College", "19857") in NG.total_differs_list()
+check([g["gap"] for g in f["score"].get("gaps") or []] == (["total_differs"] if s748 else [])
       and B.same(f["score"]["arithmetic"]["computed"], [33, 33]) and B.same(f["score"]["arithmetic"]["stated"], [36, 36])
       and sum(c["units"] for c in f["record"]["blocks"][0]["courses"]) == 27
       and B.same(f["record"]["blocks"][0]["stated"], [30, 30]),
-      "19857: its core prints 30 over courses that add to 27; the file does not list it, and it carries no gap")
+      "19857: its core prints 30 over courses that add to 27; it is in no file and carries no gap until S748 lists "
+      "it, and total_differs alone after")
 # S742: paid read 46007782666 read 19883 from its own page (poid 3640) through its pin, and plan s742r2 files its
 # gap; before it the record sat on the Photography A.S. page with no gap. Read in either state.
 f = W.load("19883")

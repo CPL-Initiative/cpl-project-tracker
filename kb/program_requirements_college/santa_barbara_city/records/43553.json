@@ -100,7 +100,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_differs",
+    "label": "The catalog prints a total for this program that its own printed units do not add to.",
+    "words": "the catalog prints a total of 35-41, and its own figures add to 32-37 (the program's own page, https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/; college-page-read run 45837455365)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

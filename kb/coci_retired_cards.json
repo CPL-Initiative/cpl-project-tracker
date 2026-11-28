@@ -4,11 +4,11 @@
 "_inputs":{
 "coci_courses":{
 "path":"coci_lookup_data.js",
-"sha256":"f10fbe009d9ee35d9194e91311f0ed09e03bd21d66bc0b9784e09e07845716b2"
+"sha256":"a2c5765891880c2c0b88d90f2ea2a3fdfddc95ce47cbd176532d92095c0c041d"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"02d5a0a55193190b2c968eebccbcd8ccb7fdd1f7a8c2765969c5e9000d716552"
+"sha256":"7d7d50b164c6a2e2e4f121ae0882cb73fcc79fcfce45e49e152ce10ba73fd33d"
 },
 "fall_2025":{
 "path":"kb/reference/cb_course_basic_fall2025.csv",
