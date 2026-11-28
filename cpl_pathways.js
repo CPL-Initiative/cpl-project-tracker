@@ -29,12 +29,9 @@
   var DIR_POOL_CAP = 20;
 
   // ── Config (anon key is public + RLS-gated; mirrors map_export.js) ──────
-  // Quick-Adopt intake: cpl_adoption_interest is anon INSERT-only (no public
-  // SELECT — contact info is never publicly readable). Schema of record:
-  // kb/supabase_adoption_interest.sql.
+  // The Quick Adopt intake (cpl_adoption_interest) is written by adopt_panel.js alone since S746.
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
-  var ADOPT_INTAKE = SUPABASE_URL + "/rest/v1/cpl_adoption_interest";
 
   // ── The MAP link beside a credential this college could adopt (Sam, Open Asks Sheet 134
   // card 2, 2026-10-27, "build"): map_links.js draws one chip per college that built a
