@@ -54,6 +54,17 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
   check("program has sections with courses",
     !!bs && Array.isArray(bs.sections) && bs.sections.length >= 3 &&
     bs.sections.every(s => Array.isArray(s.courses) && s.courses.length > 0));
+  // The featured map counts the A.S. major the catalog prints: the 19-unit core plus the Structural option (38),
+  // with the Reinforcing option as the uncounted alternate path. MAP articulates all 24 courses, so every IWAP row
+  // of the lower division carries a stamp; S747 found the page counting 31.5 with Welding I and the Structural
+  // option parked as "in progress" (program_requirement_records 42158 reads up to 38).
+  const counted = bs ? bs.sections.filter(s => /^as-/.test(s.id) && !s.no_count) : [];
+  const sum = (secs, f) => secs.reduce((n, s) => n + s.courses.filter(f).reduce((m, c) => m + (c.units || 0), 0), 0);
+  check("the counted A.S. major is 38 units of CPL (core 19 + Structural 19)",
+    sum(counted, c => !!c.cpl) === 38, sum(counted, c => !!c.cpl));
+  const iwap = bs ? bs.sections.filter(s => /^as-/.test(s.id)).flatMap(s => s.courses).filter(c => /^IWAP 4/.test(c.code || "")) : [];
+  check("all 24 A.S. major courses are listed and stamped as articulated",
+    iwap.length === 24 && iwap.every(c => c.cpl && c.cpl.credential), iwap.length);
 }
 
 // ── Part B — behavior, loaded into jsdom ──

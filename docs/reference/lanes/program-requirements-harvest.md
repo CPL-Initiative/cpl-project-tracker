@@ -59,9 +59,10 @@ go. please roll with it"*): the `adopt_panel.js` chip on catalog cards and featu
 *Request Adopt* per row on the B.S. directory, one sidebar, and each credential's MAP line ONE link to the nearest
 college's exhibit (`map_links.js` `nearest()`). **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
 carries `_x000D_` and cp1252 mojibake. **NEXT (CPL Pathways):** (1) after the 2026-11-28 06:17Z run, confirm Cerritos
-Field Ironworkers' Trained by lists the Period credentials; (2) the featured B.S. page's hero figures still say 31.5 units
-of CPL: check them against 38; (3) the 31 records at older display builds; (4) clean the description shards at build in
-`kb/_build_coci_lookup.py`.
+Field Ironworkers' Trained by lists the Period credentials; (2) the 31 records at older display builds; (3) clean the
+description shards at build in `kb/_build_coci_lookup.py`. **DONE (S747):** the featured B.S. page counts the A.S. major
+the catalog prints, the 19-unit core plus the Structural option, 38 units of CPL (was 31.5: Welding I and the Structural
+option sat in an uncounted *in progress* section); Reinforcing shows as the alternate path; guard `tests/cpl_pathways.test.js`.
 
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.
 
