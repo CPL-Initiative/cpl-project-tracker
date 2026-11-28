@@ -1,7 +1,7 @@
 {
  "college": "Sierra College",
- "run": "44687646623",
- "written": "2026-11-20T07:54:50Z",
+ "run": "39726642315",
+ "written": "2026-11-28T08:25:08Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -40,6 +40,7 @@
   "31176": "39709837031",
   "31258": "39709837031",
   "31259": "39709837031",
+  "31260": "44687646623",
   "31261": "39709837031",
   "31837": "39709837031",
   "31922": "38675248607",
@@ -108,27 +109,46 @@
   "46074": "39709837031",
   "46286": "39709837031"
  },
+ "live_read_at": "2026-11-28T07:38:12Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s689",
+   "ref": "claude/s748-post-sierra",
    "inputs": {
     "college": "Sierra College",
     "step": "reread",
-    "force": "44687646623"
+    "force": "39726642315"
    },
    "posts": 1,
    "control_numbers": [
-    "31260"
+    "21525"
    ],
    "not_live_at_run": [
-    "31260"
+    "21525"
+   ],
+   "already_live": [
+    "32728",
+    "36307",
+    "36314",
+    "36718",
+    "36719",
+    "38372",
+    "38745",
+    "38746",
+    "39209",
+    "44605",
+    "44616",
+    "46007"
    ]
   }
  ],
- "carried_runs": {},
+ "carried_runs": {
+  "44687646623": [
+   "31260"
+  ]
+ },
  "counts": {
-  "reread": 1,
+  "reread": 13,
   "kept": 1,
   "restored": 0,
   "restored_filed_pass": 0,
@@ -137,14 +157,14 @@
   "held_checked": 0,
   "held_live_run": 0,
   "new": 0,
-  "already_live": 0,
+  "already_live": 12,
   "kept_on_own_page": 0,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 2,
   "records_after": 105,
-  "dropped_by_filing": 6,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
@@ -232,6 +252,452 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  },
+  "39726642315": {
+   "base": "HEAD",
+   "base_sha": "2bbaa9c428cad4376a46af4737dc9f7b3d806897",
+   "decided": "2026-11-28T08:25:08Z",
+   "counts": {
+    "reread": 13,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 12,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 2,
+    "records_after": 105,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "21525",
+     "title": "Interdisciplinary Entrepreneurship",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/business/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/business/",
+     "filed_run": "38675248607",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.333,
+      "placed": 1,
+      "listed": 3,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "38675248607",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.333,
+      "placed": 1,
+      "listed": 3,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "32728",
+     "title": "Journalism",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/communication-studies/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/communication-studies/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "36307",
+     "title": "Photography and Video",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/photography/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/photography/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "36314",
+     "title": "Photography and Video",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/photography/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/photography/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "36718",
+     "title": "Allied Health - Pre-Nursing Option",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "36719",
+     "title": "Medical Assisting",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "38372",
+     "title": "Paramedicine",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "38745",
+     "title": "Film and Video Production",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.917,
+      "placed": 11,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.917,
+      "placed": 11,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "38746",
+     "title": "Film and Video Production",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/applied-art-design/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 9,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 9,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "39209",
+     "title": "UCTP: Chemistry",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.sierracollege.edu/departments/chemistry/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/chemistry/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "44605",
+     "title": "Surgical Technology",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/alh/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "44616",
+     "title": "Paramedicine",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/health-sciences/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
+    },
+    {
+     "control_number": "46007",
+     "title": "Forest Science and Management",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.sierracollege.edu/departments/agriculture/",
+     "filed_source_url": "https://catalog.sierracollege.edu/departments/agriculture/",
+     "filed_run": "39726642315",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "live_run": "39726642315",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 39726642315: a reread posted it"
     }
    ]
   }

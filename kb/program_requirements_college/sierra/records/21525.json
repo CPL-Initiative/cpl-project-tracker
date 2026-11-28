@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11893,
-    "output_tokens": 2265,
+    "output_tokens": 2289,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2265,
+  "output_tokens": 2289,
   "output_tokens_details": {
-   "thinking_tokens": 741
+   "thinking_tokens": 685
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09287,
- "ms": 18609,
- "seconds": 19.0,
+ "cost_usd": 0.09335,
+ "ms": 18861,
+ "seconds": 19.8,
  "parts": null,
  "error": null,
  "score": {
@@ -131,7 +132,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Innovation and Entrepreneurship Certificate of Achievement (formerly Interdisciplinary Entrepreneurship)",
+   "section_heading": "Innovation and  Entrepreneurship Certificate of Achievement (formerly Interdisciplinary Entrepreneurship)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -300,20 +301,22 @@
   "missing_explained": [
    {
     "code": "BUS 28",
-    "why": "not in the certificate text; section is cut off after IT 0060, and the matching degree section lists BUS 0028 in a further 'Select 3 units' block that is likely truncated here"
+    "why": "not in this section's text; section is cut off after IT 0060 (degree section lists BUS 0028 in a further 'Select 3 units' block that the certificate likely also has)"
    },
    {
     "code": "BUS 95",
-    "why": "not in the certificate text; section is cut off after IT 0060, and the matching degree section lists BUS 0095 in a further 'Select 3 units' block that is likely truncated here"
+    "why": "not in this section's text; section is cut off after IT 0060 (degree section lists BUS 0095 in a further 'Select 3 units' block that the certificate likely also has)"
    }
   ],
   "notes": [
-   "The certificate section is cut off mid-list after 'IT 0060'; the rest of the elective list, any further block (likely BUS 0028/BUS 0095 as in the A.A./A.S. section) and the Total Units line are missing, so total_units is null. Reviewer should check the full page.",
-   "Closed-list codes IT 60, BUS 28, BUS 95 correspond to catalog codes IT 0060, BUS 0028, BUS 0095 (zero-padded); IT 0060 treated as on the closed list.",
+   "The program is printed as 'Innovation and Entrepreneurship Certificate of Achievement (formerly Interdisciplinary Entrepreneurship)'.",
+   "The certificate section is truncated after 'IT 0060' in the 'Select 3 units' list: any remaining courses, a likely further block (BUS 0028/BUS 0095, as in the A.A./A.S. section) and the Total Units are missing, so total_units is null. Reviewer should check the full page.",
+   "Closed-list codes BUS 28, BUS 95, IT 60 are printed in the catalog as BUS 0028, BUS 0095, IT 0060; IT 0060 treated as the closed-list IT 60.",
    "BUS 0241 appears both in Required Courses and in the 'Select 3 units' list, as printed.",
-   "The outcomes are one Program Student Learning Outcomes list on the department page's outcomes tab, shared by all Business programs; recorded here as applying to this award.",
-   "The description says the certificate 'provides foundational business skills for entrepreneurs'; no explicit career list is printed, so careers left empty."
+   "Units are not printed beside the courses in the 'Select 3 units' list or beside the 'or' alternatives.",
+   "Outcomes come from the page's single PSLO tab for the Business department as a whole; this certificate shares that list.",
+   "The description says the certificate provides skills 'for entrepreneurs in any discipline'; this was read as describing the audience, not a named career, so careers is empty."
   ]
  },
- "extracted_run": "38675248607"
+ "extracted_run": "39726642315"
 }
