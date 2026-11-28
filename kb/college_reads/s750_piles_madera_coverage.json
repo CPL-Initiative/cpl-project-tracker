@@ -1,0 +1,49 @@
+{
+ "college": "Madera College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Madera Elementary Teacher Education A.A.-T 39810: POLSC C1000 and POLSC C1000H. Two loads: the filed address with the data its own scripts fetch, and the entry as the capture reads it (cq_view, catalog 6; the filed address ends in the entry's id, 1074, and the section in the address is a placeholder, so the read reports the node as not among its siblings).",
+ "questions": {
+  "polsc": "Whether the Elementary Teacher Education A.A.-T entry prints POLSC C1000 or POLSC C1000H on any line, which political science course it prints, and its total."
+ },
+ "keywords": [
+  "POLS[A-Z]*\\s*[A-Z]?\\d+[^\\n]{0,80}",
+  "[Pp]olitical [Ss]cience[^\\n]{0,80}",
+  "[Aa]merican [Gg]overnment[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "the college's own catalog (madera.curriqunet.com), served on its catalog vendor's domain; the page's own scripts fetch the entry's text from it"
+ },
+ "pages": [
+  {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
+   "answers": [
+    "polsc"
+   ],
+   "why": "39810: the filed address",
+   "network": true,
+   "network_hosts": [
+    "madera.curriqunet.com"
+   ],
+   "network_find": [
+    "POLS",
+    "Government",
+    "Total"
+   ]
+  },
+  {
+   "url": "https://madera.curriqunet.com/catalog/iq/0/0/1074",
+   "answers": [
+    "polsc"
+   ],
+   "why": "39810: the entry as the capture reads it",
+   "cq_view": true,
+   "cq_catalog": 6
+  }
+ ],
+ "_quoted": {
+  "46149637666": {
+   "polsc": "no line of the entry 'Elementary Teacher Education for Transfer, Associate in Arts - Major #M.5891.AA-T' (node 1074) prints POLSC C1000, POLSC C1000H or any political science course. It prints 'Required Core Courses (41-47 units)' and beneath it 39.5, the sum of the core's printed units (BIOL C1001 3.0 and BIOL C1001L 1.0, CDEV C1000 3.0, COMM C1000 3.0, EDUC 10 3.0, ENGL C1002 3.0, ENGL C1000 4.0, GEOG 6 3.0, GEOL 9 3.5, HIST C1001 3.0, HIST 20 3.0, MATH 10A 3.0, SCI 1A 4.0), and 'Total : 48.5'. So the heading counts 1.5 to 7.5 units more than the list holds; the state's POLSC C1000 is 3 units",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding."
+  }
+ }
+}
