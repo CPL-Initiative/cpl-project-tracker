@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -73,7 +72,6 @@
     32.5,
     32.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,17 +87,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -179,6 +166,5 @@
    "The page notes the degree is awarded for completing the Paramedic Certificate required courses plus graduation requirements; the certificate section itself was not provided."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

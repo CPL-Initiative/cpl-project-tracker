@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -63,7 +62,6 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
-   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -81,14 +79,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -178,6 +168,5 @@
    "VOC FSH12 or VOC FSH16 is recorded as a single required entry, with VOC FSH16 as its alternative."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38064250199"
+ "extracted_run": "38064250199"
 }

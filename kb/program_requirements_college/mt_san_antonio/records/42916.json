@@ -52,7 +52,6 @@
     "VOCNCLXP"
    ],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -66,7 +65,6 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
-   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -84,14 +82,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -207,6 +197,5 @@
    "Outcomes are taken from the page's Program Learning Outcomes tab; the trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was omitted. The typo 'heath field' is copied as printed."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

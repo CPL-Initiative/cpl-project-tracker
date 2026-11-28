@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -69,7 +68,6 @@
     41.0,
     41.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -85,17 +83,6 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -203,6 +190,5 @@
    "Total Units 41 is printed for the required courses list and recorded as total_units."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

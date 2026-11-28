@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -75,7 +74,6 @@
     20.0,
     21.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,14 +89,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -202,6 +192,5 @@
    "Catalog prints BUSA 8 title as 'Principles of Accounting - Managerial'; the state file has 'Principles of Accounting -Managerial' (spacing difference only)."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

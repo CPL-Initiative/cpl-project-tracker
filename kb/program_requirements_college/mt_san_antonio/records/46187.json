@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -69,7 +68,6 @@
     18.0,
     18.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -85,14 +83,6 @@
    "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -195,6 +185,5 @@
    "The page title calls the award 'Certificate'. The overview states that a Certificate of Achievement is granted on completing all mandatory courses with a grade of C or higher."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38064250199"
+ "extracted_run": "38064250199"
 }

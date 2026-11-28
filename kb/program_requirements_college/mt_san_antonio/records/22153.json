@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -81,7 +80,6 @@
     24.5,
     24.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,14 +95,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -227,6 +217,5 @@
    "The catalog text begins mid-way through a navigation list of other Business programs; only the N0470 section was read."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

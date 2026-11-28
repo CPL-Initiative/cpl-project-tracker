@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -69,7 +68,6 @@
     10.5,
     10.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -85,14 +83,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -174,6 +164,5 @@
    "The 10.5-unit total is below the 12-unit floor that the award type's range ('8S/12Q to fewer than 16S/24Q', read as 8 semester or 12 quarter units) would imply in quarter units. It is consistent with the semester range."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

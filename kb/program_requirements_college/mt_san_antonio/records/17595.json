@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -75,7 +74,6 @@
     30.0,
     30.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,14 +89,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -218,6 +208,5 @@
    "Program Learning Outcomes come from the page's outcomes tab for this certificate. The page also links to separate SLOs that are not printed in the text."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

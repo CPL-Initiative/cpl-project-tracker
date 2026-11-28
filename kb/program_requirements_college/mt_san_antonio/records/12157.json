@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -81,7 +80,6 @@
     27.5,
     27.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,17 +95,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -214,6 +201,5 @@
    "Five courses are not in the closed list and are recorded as catalog additions: BUSM 20, BUSM 60, BUSM 61, BUSM 62 and CISB 15."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

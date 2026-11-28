@@ -51,7 +51,6 @@
     "ID36"
    ],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -75,7 +74,6 @@
     59.0,
     59.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,14 +89,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -369,6 +359,5 @@
    "Footnote states NKBA no longer 'accredits' programs; the program is affiliated with NKBA."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

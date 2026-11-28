@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -69,7 +68,6 @@
     48.0,
     52.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -85,17 +83,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -387,6 +374,5 @@
    "The page also links a Public Health AS-T Degree (S1014); only the AS Degree S0428 section was read."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

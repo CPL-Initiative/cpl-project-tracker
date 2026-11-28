@@ -54,8 +54,7 @@
     "CHLD6"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,7 +70,6 @@
     0.0
    ],
    "stated": null,
-   "against": null,
    "why": [
     "the record names no total"
    ]
@@ -89,14 +87,6 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": false
  },
@@ -134,6 +124,5 @@
   ],
   "notes": []
  },
- "extracted_run": 46124747415,
- "read_run": "38064250199"
+ "extracted_run": "38064250199"
 }

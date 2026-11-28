@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -79,7 +78,6 @@
     33.0,
     33.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,14 +93,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -203,6 +193,5 @@
    "The outcomes come from the page's Outcomes tab under 'Program Learning Outcomes'. That tab is not labeled for the certificate alone, and the page also lists an AS Degree (S0308), so the list may be shared with the degree. The closing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

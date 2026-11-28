@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -73,7 +72,6 @@
     34.0,
     34.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,17 +87,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -246,6 +233,5 @@
    "Outcomes taken from the page's outcomes tab for this AS degree; the line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was omitted."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

@@ -44,40 +44,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 22,
    "listed": 26,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
-   "none_placed": false,
-   "course_id": [
-    {
-     "printed": "HISTC1001",
-     "listed": "HIST7",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1001H",
-     "listed": "HIST7H",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1002",
-     "listed": "HIST8",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1002H",
-     "listed": "HIST8H",
-     "matched_by": "course_id"
-    }
+   "share": 0.846,
+   "missing": [
+    "HIST7",
+    "HIST7H",
+    "HIST8",
+    "HIST8H"
    ],
+   "unexplained": [],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -91,7 +83,6 @@
     18.0,
     18.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -107,17 +98,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -482,6 +462,5 @@
    "Total Units 60 includes Cal-GETC 34 units; total_units records the 18-unit major only. Courses may be double-counted for the major and Cal-GETC."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

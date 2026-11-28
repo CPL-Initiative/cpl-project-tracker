@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -81,7 +80,6 @@
     33.0,
     33.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,17 +95,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -209,6 +196,5 @@
    "The 'Total Units 33' row printed at the end of the course table was recorded as the program total. No separate block total is printed, so the block's stated values are null."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -63,7 +62,6 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
-   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -81,14 +79,6 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -148,6 +138,5 @@
    "No units or hours are printed beside any course, and no total is stated, so units and total_units are null. Measure is left as 'units' because the text does not state hours, even though this is a noncredit program."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

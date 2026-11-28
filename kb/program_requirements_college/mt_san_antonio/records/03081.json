@@ -51,7 +51,6 @@
     "ADJU13"
    ],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -71,7 +70,6 @@
     30.0,
     30.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,17 +85,6 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
   },
   "pass": true
  },
@@ -278,6 +265,5 @@
    "The page also lists toggles for the AS-T Degree S0362 and Certificate T0406, whose content is not included; only the AS Degree section was read."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }

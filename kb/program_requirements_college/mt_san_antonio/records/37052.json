@@ -49,7 +49,6 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
-   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -75,7 +74,6 @@
     32.0,
     33.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,14 +89,6 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
-  },
-  "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -269,6 +259,5 @@
    "Page contains an image label 'tech theater 19-20 (2)', which may refer to an older catalog year; the catalog heading states 2026-2027."
   ]
  },
- "extracted_run": 46124747415,
- "read_run": "38059865531"
+ "extracted_run": "38059865531"
 }
