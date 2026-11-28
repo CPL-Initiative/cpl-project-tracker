@@ -1801,12 +1801,11 @@ check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", 
 steps_fields = {st["field"] for c in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb",
                 "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]
                 if st["kind"] not in ("course_units", "course_hours", "pool_lists", "pool_areas", "repeat", "unit_line", "fill_to", "or_units", "and_units",
-                                      "recommended_counts", "list_minimum_units")}
+                                      "recommended_counts")}
 # course_units and course_hours fill a course's figure inside a block (S455, S484), and pool_lists (S487) and
 # pool_areas (S495) join blocks, repeat (S497) marks a course or a list taken more than once, unit_line (S500) adds a block fill_to (S534) marks a block's fill and or_units (S535) gives an alternative its parent's units and and_units (S536) a joined lab 0: the basis keeps every block, so a confirm of the record before the change does
 # not carry, and the curator sees the course list again. recommended_counts (S742) gives a list headed 'Recommended' its
-# printed figure as units to choose: a block change too. list_minimum_units (S748) reads a list the page prints with
-# its least units and a count of courses as that many units to choose: a block change as well.
+# printed figure as units to choose: a block change too.
 check(all("- '%s'" % f in BASIS for f in steps_fields),
       "every field a college's reconcile steps fill or clear is one a confirm carries across: %s" % sorted(steps_fields))
 VF = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",

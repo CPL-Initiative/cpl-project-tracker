@@ -20,8 +20,10 @@ COLLECTED WITH A NAMED GAP (1, REVIEWED below):
 
 HELD (1), its reason in HAND:
   31017  Kinesiology A.A.-T: no filed kind is true of a sum on both sides of its printed total (54-67 around 60).
-         Its lever is a reading: the movement list at its printed '(minimum 3 units)' (kb/program_requirements_
-         reconcile.json, East Los Angeles's list_minimum_units step, S748; a second reader, then a free reconcile).
+         NOTES. The page's own figures give 54-61 around 60: the printed Subtotal 20-27 is the core's 11, the
+         movement list at 3 to 6 and List A's 6 to 10, and Cal-GETC is 34. A reconcile step reading the movement
+         list at exactly 3 units passed it only by a ceiling the catalog does not print; its second reader refused
+         it in S748 (NO GO) and it was removed. The record stays held.
 
     python3 kb/_program_piles_s748b.py --dry-run     # the batch this pile is in
 
@@ -60,9 +62,11 @@ HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
     "31017": ("held: posted by S742's reread (force 45176404274) and still failing: its major passes and the degree "
               "reads 54-67 on both sides of the printed 60, with electives that fill it; no filed kind's sentence is "
-              "true of such a sum. Its lever is a reading, the movement list at its printed '(minimum 3 units)' "
-              "(college page read " + PAGE_READ + ", PDF p.240): East Los Angeles's list_minimum_units reconcile "
-              "step, S748, which needs a second reader and then a free reconcile and a reread"),
+              "true of such a sum. The page's own figures do not close it either (college page read " + PAGE_READ
+              + ", PDF pp.240-241): the printed Subtotal 20-27 is the core's 11, the movement list at 3 to 6 "
+              "('(minimum 3 units)', one course from each of three areas) and List A's 6 to 10, and with Cal-GETC's "
+              "34 the printed figures give 54-61 around the printed 60. A reconcile step reading the list at exactly "
+              "3 units was refused by its second reader in S748 and removed: the catalog prints no such ceiling"),
 })
 
 W = B10.Pile(college=COLLEGE, slug=SLUG, tag=TAG, name="East Los Angeles", prior=B10.LiveRead(COLLEGE, SLUG),

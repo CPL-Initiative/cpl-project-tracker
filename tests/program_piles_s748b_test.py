@@ -51,7 +51,7 @@ T.run(OCC.W, rows={"03993": "figure_within_variable_units"},
       held={"08663": ["45999669017", "the conductor's"], "08670": ["60-63.5"], "36032": ["55-64", "both sides"],
             "42331": ["closed-list rescore"], "43100": ["PSYC A160", OCC.PAGE_READ]},
       scores={"figure_within_variable_units": 60}, day=DAY, boundaries=5, t=t, batch_rows=N)
-T.run(ELA.W, rows={"41231": "total_differs"}, held={"31017": ["both sides", "list_minimum_units", ELA.PAGE_READ]},
+T.run(ELA.W, rows={"41231": "total_differs"}, held={"31017": ["both sides", "54-61", "refused", ELA.PAGE_READ]},
       scores={"total_differs": 50}, day=DAY, boundaries=2, t=t, batch_rows=N)
 
 # ── the batch ──
@@ -165,8 +165,8 @@ check(g["record"]["program"]["section_heading"] == "(Academic Plan E041231H)" an
 
 # ── the holds ──
 f = ELA.W.load("31017")
-check(not f["score"].get("gaps") or S.passes_live(f["score"]),
-      "31017: the record carries no gap (or passes, once its reconcile step's reread posts it)")
+check(not f["score"].get("gaps") and not S.passes_live(f["score"]),
+      "31017: the record carries no gap and stays held")
 alone = found_none = 0
 for d in sorted(glob.glob(os.path.join(NG.COLLEGE_DIR, "*"))):
     try:
