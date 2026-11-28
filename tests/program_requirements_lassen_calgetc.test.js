@@ -12,8 +12,9 @@
 // What it guards: (1) the config entry quotes the page's own sentence, at its page, as a set step for transfer
 // degrees naming the pattern and degree total, and carries no statewide step; (2) the quoted words are on the
 // fixture page, and its six area figures add to the 34 it prints; (3) the step, run by the reconcile itself,
-// fills 34 only on a transfer degree that names Cal-GETC, its pattern and its degree total, and leaves a
-// record with a figure, a local degree and a record without a degree total alone, and leaves alone the three
+// fills 34 only on a transfer degree that names Cal-GETC, its pattern and its degree total (and, by S748's
+// second step, on a local degree whose pattern is Cal-GETC alone), and leaves a record with a figure, a local
+// degree naming its own pattern and a record without a degree total alone, and leaves alone the three
 // records the step holds by name (S680: 31297, 35106, 41912), which the same step without its hold would fill;
 // (4) the committed apply plan applies only the ten records that fail on arithmetic alone, holds the two overlap
 // records and 31297 (42300's legacy number, held by the conductor) for restore, and turns no passing record
@@ -39,11 +40,22 @@ const PAGE = fs.readFileSync(path.join(__dirname, "fixtures", "lassen_calgetc_p7
 const CONF = (JSON.parse(fs.readFileSync(path.join(ROOT, "kb", "program_requirements_reconcile.json"), "utf8"))
   .colleges || {})[COLLEGE] || {};
 const STEP = (CONF.steps || []).find((s) => s.field === "ge_units") || {};
+// S748 added a second set step from the same sentence on the same page, for local degrees whose pattern is
+// Cal-GETC alone (Lassen's University Studies A.A. degrees; only_cal_getc). Its own guard and self-recall are
+// tests/program_reconcile_s748_lassen_test.py; here it is pinned as the entry's one other step.
+const LOCAL = (CONF.steps || []).find((s) => s.field === "ge_units" && s !== STEP) || {};
 
 block("(1) config", () => {
   check("(1) Lassen's entry is one set step on ge_units at 34 for transfer degrees",
-    (CONF.steps || []).length === 1 && STEP.kind === "set"
-    && JSON.stringify(STEP.value) === JSON.stringify({ min: 34, max: 34 }) && STEP.awards === "transfer");
+    STEP.kind === "set" && (CONF.steps || []).indexOf(STEP) === 0
+    && JSON.stringify(STEP.value) === JSON.stringify({ min: 34, max: 34 }) && STEP.awards === "transfer"
+    && !("only_cal_getc" in STEP));
+  check("(1) and, since S748, one more for local degrees whose pattern is Cal-GETC alone: two steps in all",
+    (CONF.steps || []).length === 2 && LOCAL.kind === "set" && LOCAL.awards === "local" && LOCAL.only_cal_getc === true
+    && JSON.stringify(LOCAL.value) === JSON.stringify({ min: 34, max: 34 })
+    && JSON.stringify(LOCAL.only_with) === JSON.stringify(STEP.only_with)
+    && LOCAL.source === STEP.source && LOCAL.source_words === WORDS && !("hold" in LOCAL),
+    JSON.stringify((CONF.steps || []).map((s) => [s.kind, s.field, s.awards, s.only_cal_getc])));
   check("(1) only where the record names its pattern, degree total and printed major total",
     JSON.stringify(STEP.only_with) === JSON.stringify(["ge_pattern", "degree_total", "total_units"]));
   check("(1) the source is the 2026-2027 catalog at PDF p.72 and the words are the page's own sentence",
@@ -82,6 +94,10 @@ r, n = R.reconcile(rec(), text, C, "A.A- T Degree")
 out["fills"] = [r["program"]["ge_units"], [x["words"] for x in n]]
 out["has_figure"] = R.reconcile(rec(ge_units={"min": 37, "max": 37}), text, C, "A.A- T Degree")[0]["program"]["ge_units"]
 out["local"] = R.reconcile(rec(), text, C, "A.A. Degree")[0]["program"]["ge_units"]
+out["local_own"] = {p: R.reconcile(rec(ge_pattern=p), text, C, "A.A. Degree")[0]["program"]["ge_units"]
+                    for p in ("Lassen College General Education", "Cal-GETC or CSU GE")}
+out["transfer_only"] = [(st.get("awards"), R.reconcile(rec(), text, C, "A.A. Degree", steps={C: dict(R.load_steps()[C], steps=[st])})[0]["program"]["ge_units"])
+                        for st in R.load_steps()[C]["steps"]]
 out["no_major"] = R.reconcile(rec(total_units={"min": None, "max": None}), text, C, "A.A- T Degree")[0]["program"]["ge_units"]
 out["no_total"] = R.reconcile(rec(degree_total={"min": None, "max": None}), text, C, "A.S. T Degree")[0]["program"]["ge_units"]
 out["no_name"] = R.reconcile(rec(), "Associate in Arts Degree in Sociology for Transfer\\nTotal 60 units", C, "A.A- T Degree")[0]["program"]["ge_units"]
@@ -104,7 +120,17 @@ block("(3) the reconcile", () => {
     got.fills[1].length === 1 && got.fills[1][0].includes("#page=72") && got.fills[1][0].includes(WORDS));
   check("(3) a record already holding a figure keeps it",
     JSON.stringify(got.has_figure) === JSON.stringify({ min: 37, max: 37 }));
-  check("(3) a local degree is left alone", JSON.stringify(got.local) === empty);
+  // A local degree, since S748: the transfer step alone still leaves it empty; the local step fills it only where its
+  // pattern is Cal-GETC alone, and a local degree naming its own pattern, or two, is left alone as before.
+  const byStep = Object.fromEntries(got.transfer_only.map(([awards, units]) => [awards, JSON.stringify(units)]));
+  check("(3) a local degree is left alone by the transfer step",
+    byStep.transfer === empty, JSON.stringify(got.transfer_only));
+  check("(3) a local degree whose pattern is Cal-GETC alone takes 34 by S748's local step, and by no other",
+    JSON.stringify(got.local) === JSON.stringify({ min: 34, max: 34 })
+    && byStep.local === JSON.stringify({ min: 34, max: 34 }), JSON.stringify([got.local, got.transfer_only]));
+  check("(3) a local degree naming its own pattern, or two patterns, is left alone",
+    Object.keys(got.local_own).length === 2
+    && Object.values(got.local_own).every((u) => JSON.stringify(u) === empty), JSON.stringify(got.local_own));
   check("(3) a record without a degree total is left alone", JSON.stringify(got.no_total) === empty);
   check("(3) a record without a printed major total is left alone (33388's shape)",
     JSON.stringify(got.no_major) === empty);
