@@ -401,7 +401,7 @@
   function revert(r) {
     var w = (r && r.decision && r.decision.was) || {};
     if (!r || !r.decision) return;
-    ["printed_name", "common", "discipline", "title_state", "title_source", "common_source"].forEach(function (k) { r[k] = w[k] == null ? null : w[k]; });
+    ["printed_name", "common", "discipline", "title_state", "title_source", "common_source", "common_confidence"].forEach(function (k) { r[k] = w[k] == null ? null : w[k]; });
     r.decision = null;
   }
   function whoOf(w) { return w && w !== "a reviewer" && !/@/.test(w) ? w : ""; }
@@ -847,6 +847,10 @@
           : el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
             r.common_source === "statewide_filing" ? " " : null,
             r.common_source === "statewide_filing" ? el("span", { cls: "csb-sub csb-saved", text: "Filed statewide by a person in the Local subjects List." }) : null,
+            /* COBI's common-subject pick (kb/subject_decisions.py, S749): its 0-100 bar, and the words that say whose. */
+            r.common_source === "cobi" ? " " : null,
+            r.common_source === "cobi" ? bar(r.common_confidence, "COBI's pick of " + r.common) : null,
+            r.common_source === "cobi" ? el("span", { cls: "csb-sub csb-sky", text: "Picked by COBI" + (r.common_confidence != null && r.common_confidence < STANDS ? "; check it" : "") }) : null,
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
           el("td", null, [el("button", { type: "button", cls: "csb-word csb-num", "data-csb-code": r.code, "data-csb-slug": r.slug,
             "aria-label": "Courses under " + r.code + " at " + r.college + ": " + heads + ". Show them.", text: heads }), categoryLine(r)]),
@@ -1067,7 +1071,11 @@
   function swOf(r) { return VIEW.W && VIEW.M && r ? swIndex(VIEW.W, VIEW.M)[r.slug + "|" + String(r.code).toUpperCase()] || null : null; }
   function attention(r) {
     var sv = savedOf(r), c = swOf(r), rec = recOf(r), A = { sw: c, level: SETTLED_BAND, conf: null, code: false, title: false };
-    if (!(sv && sv.common) && r.common_source !== "statewide_filing") {
+    /* A COBI pick at 80 or more stands like a filing; under 80 it is flagged for a look (Sam, S722: "flag for possible
+       action those that are below 80"). */
+    var cobiStands = r.common_source === "cobi" && r.common_confidence != null && r.common_confidence >= STANDS;
+    if (r.common_source === "cobi" && !cobiStands && !(sv && sv.common)) { A.conf = r.common_confidence || 0; A.level = confBandOf(A.conf); }
+    else if (!(sv && sv.common) && r.common_source !== "statewide_filing" && !cobiStands) {
       if (c && !filedOf(c)) { A.conf = (c.recommend || {}).confidence || 0; A.level = confBandOf(A.conf); }
       else if (!c && !r.common) A.level = "";
     }
