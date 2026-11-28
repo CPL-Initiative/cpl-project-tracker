@@ -19,8 +19,9 @@ left both as gap plans. The shared checks are tests/program_piles_s739_common.py
     from the page read's run, whose plan reads the address the record was read from; the record's two lists carry
     the page's 26-29 and 6-8; the record rule names the gap in its own words; unlisted, it never takes the gap;
   * the holds: Santa Barbara City 30746 fails coverage on PSY 200 alone; East Los Angeles 31017 carries no gap, no
-    record rule names one, its sum sits on both sides of the printed 60, and its lever (the movement list at its
-    printed minimum) passes today's scorer.
+    record rule names one, and its sum sits on both sides of the printed 60 (the page's own figures give 54-61);
+    the reading its second reader refused (the movement list at exactly 3 units) passes today's scorer only short
+    of the printed subtotal's high end, and no reconcile step reads it.
 
 Run from repo root: python3 tests/program_piles_s748a_test.py
 """
@@ -203,10 +204,10 @@ if not B.S.passes_live(f["score"]) and str(f.get("extracted_run")) == "451764042
     check(a["against"] == "degree" and a["status"] == "unequal" and a["major"]["pass"]
           and a["computed"][0] < a["stated"][0] < a["computed"][1] and B.same(a["stated"], [60, 60]),
           "31017: the major passes, and the degree's sum sits on both sides of the printed 60")
-    lever = B.apply_ops(f, M.ELA_31017_LEVER)
-    check(lever is not None and B.closes(f, lever, verdict=True) and not B.closes(f, lever),
-          "31017: with the movement list at its printed minimum today's scorer passes it, short of the printed "
-          "subtotal's high end: a reading for a reconcile step, no gap")
+    refused = B.apply_ops(f, M.ELA_31017_REFUSED)
+    check(refused is not None and B.closes(f, refused, verdict=True) and not B.closes(f, refused),
+          "31017: with the movement list at exactly 3 units today's scorer passes it, short of the printed "
+          "subtotal's high end: the reading its second reader refused, a ceiling the catalog does not print; no gap")
     check(ELA.precision()["right"] == 1, "31017: no entry stands for it")
 
 sys.exit(t.done())
