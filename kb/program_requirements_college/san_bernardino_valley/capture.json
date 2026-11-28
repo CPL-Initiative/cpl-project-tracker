@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 236,
  "with_closed_list": 232,
- "started": "2026-11-27T12:43:20Z",
+ "started": "2026-11-28T06:56:05Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.valleycollege.edu/sitemap.xml",
@@ -155,7 +155,7 @@
   "yield_refused_passing": 0
  },
  "loads": 306,
- "seconds": 1485.5,
+ "seconds": 1469.9,
  "found": 227,
  "by_method": {
   "no_closed_list": 4,
@@ -416,7 +416,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/audio-production-aa-degree/"
   },
   "04875": {
-   "sha256": "3e31de32b813eef8bbbc7e8518c6f00ffbcb6366dd23ac0c6775e737ee7645c2",
+   "sha256": "4043735772274d51642902399c4c3bd403a38d50b6fd55bbd0e8a70a9baee598",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/"
   },
   "04878": {
@@ -456,7 +456,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/graphic-design-aa-degree/"
   },
   "04907": {
-   "sha256": "392f5233889606753300ea874ce5f844ed67a8b9283f575d89d5d3e3d48d5bed",
+   "sha256": "be78f737c457535b51f2ca2c9eadd85e4b0ef411eff081221114405ea4535323",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/psychiatric-technology/psytch-as-degree/"
   },
   "04920": {
@@ -512,7 +512,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-information-technology/cit-office-technology-aa-degree/"
   },
   "09271": {
-   "sha256": "d6348f19204b6227f754474582bfe39ba363d9d2a814580bc1faee1f4ab3bda3",
+   "sha256": "80f2e80bc8d184a820dfa3362986fdeb24ca6ea99853a534b110ef9aa586d930",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/"
   },
   "09272": {
@@ -572,7 +572,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-certificate-achievement/"
   },
   "09376": {
-   "sha256": "d5a4b95851765caf2e3398443ef64c2ef2243c8bd7bb48127418ab8a9bae0fc1",
+   "sha256": "f0a16a3fda27ef07757b29b869fb296ab5c7389b1af9ff068d3e9c2b46428cde",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/astronomy/astronomy-as-degree/"
   },
   "11075": {
@@ -632,7 +632,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/"
   },
   "17044": {
-   "sha256": "7202249df01f86fab96f48987343febe07f8c552437d3a4a36bbfdf970dfa1a0",
+   "sha256": "9ca49cfddf5e3e0c6b58696569e9391ce47eb5069b829ab5220fa0b402b7d347",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-family-child-care-provider-certificate-achievement/"
   },
   "17766": {
@@ -648,11 +648,11 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/"
   },
   "18529": {
-   "sha256": "3fac75a600f521f55f39d9ea2f2e605201a40a009c560f933dfa2d41f186f556",
+   "sha256": "0dbef755d3fac7a483357cf9815f6348344f558032ff0b15e3ffb3d71fde8dd5",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/liberal-arts-aa-degree/"
   },
   "18530": {
-   "sha256": "6f1164da7de55bac3987b0969d44f53840d98046d5b7a5cfcb19082268f930b3",
+   "sha256": "2986ff9830c7f17ca5fb470643e1374de8f0566a0477a1bd35627dd5da0ea041",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/"
   },
   "18531": {
@@ -756,7 +756,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/water-supply-technology-certificate-achievement/"
   },
   "22820": {
-   "sha256": "ab696410f8e981960728870cad08a9c2f2873a66c75e8f5c4045a4706fa1b8b9",
+   "sha256": "a8eeef76b9207b2387412a857a65c23f9924b89120fb4d6961d5a0df75452eff",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/graphic-design-certificate-achievement/"
   },
   "22821": {
@@ -764,7 +764,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/"
   },
   "22822": {
-   "sha256": "392f5233889606753300ea874ce5f844ed67a8b9283f575d89d5d3e3d48d5bed",
+   "sha256": "be78f737c457535b51f2ca2c9eadd85e4b0ef411eff081221114405ea4535323",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/psychiatric-technology/psytch-as-degree/"
   },
   "22830": {
@@ -1000,7 +1000,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/gas-metal-arc-welding-gmaw-certificate-achievement/"
   },
   "38123": {
-   "sha256": "0effe8a91758c3cb7946ac1ad470f28ef84b796fec0a42c5db48c9e096c138bf",
+   "sha256": "b7d59a84e4533df5469115cc4ca0178ba8301a65f1a3627bde7d9648e32f9239",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/gas-tungsten-arc-welding-gtaw-certificate-achivement/"
   },
   "38124": {
@@ -1072,7 +1072,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/production-certificate-achievement/"
   },
   "39235": {
-   "sha256": "ef10a6c1c3c30dd45ace8a7d71d362964d92cd8af3f475ded24b67b64d113e8a",
+   "sha256": "bd5565cb1062901a541fc01ac956dcaeeffa7ced38396a8f13adc7cac4690156",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/social-media-field-production-certificate-achievement/"
   },
   "39236": {
@@ -1108,7 +1108,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/economics/economics-aat-degree/"
   },
   "39404": {
-   "sha256": "4b17b642b2962c291f06d4d5fa6a6a9f308d490478162f15cfd0d8966005320e",
+   "sha256": "b0eff5f2839b5effdce0713fe039aefe8aadb908f1de00abeed821ac7b9a3cd7",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/"
   },
   "39446": {
@@ -1188,7 +1188,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/career-essentials-certificate/"
   },
   "42295": {
-   "sha256": "d0eca27fcee941f7338cfb81f27980f5daea20f2a7a356dc11e328f48b19fdf5",
+   "sha256": "d4a24a03494cc67a12f923ed26e2e7a7d13688a80a82ffb0ea743cb0f7d1de78",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ethnic-studies/social-justice-ethnic-studies-aat-degree/"
   },
   "42960": {
@@ -1284,7 +1284,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/applied-ai-as-degree/"
   },
   "46165": {
-   "sha256": "06f2fe82ade19dfe5473e52a6d2a665242a4660954b255670d375c54928b53cc",
+   "sha256": "2e310e19e494858c25d959bc09ca1cb7fedb87441bf694a081d2193bff6e9115",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/ai-certificate-achievement/"
   },
   "46166": {
@@ -1300,5 +1300,5 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wrm-bs-degree/"
   }
  },
- "run": "46000859685"
+ "run": "46118801512"
 }
