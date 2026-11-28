@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -62,19 +63,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    29.5,
+    30.5,
     31.5
    ],
    "stated": [
     30.5,
     30.5
    ],
-   "why": [
-    "the blocks sum to 29.5-31.5; the catalog states 30.5-30.5"
-   ]
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -90,7 +91,18 @@
    "heading_without_outcomes": true,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -287,5 +299,6 @@
    "No general education pattern is named in the section; ge_pattern is null."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

@@ -343,8 +343,15 @@ ems = ((sql.get(("Mt. San Antonio College", "03059")) or {}).get("courses") or {
 check(ems.get("coci") == {"status": "Inactive", "program_ccn": "CCC000584685", "current_ccn": "CCC000616276"},
       "Mt. San Antonio EMS 80 carries its COCI status on the paramedic program (got %s)" % ems.get("coci"))
 ag = ((sql.get(("Mt. San Antonio College", "02990")) or {}).get("checks") or {}).get("units_differ")
-check(ag == {"blocks": [29.5, 31.5], "printed": [30.5, 30.5]},
-      "Agricultural Science and Technology keeps its unit difference as printed (got %s)" % ag)
+# Either state, by the record's run. S748's free reconcile (run 46124747415, reread 46136604772) scored 02990
+# again under the printed-floor rule: its blocks add to 30.5-31.5 and meet the printed 30.5, the record passes, and
+# the display carries no difference. The record as extraction 38059865531 filed it read 29.5-31.5 beside 30.5.
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "mt_san_antonio", "records", "02990.json")) as _fh:
+    AG_RECONCILED = str(json.load(_fh).get("extracted_run")) == "46124747415"
+check(ag == (None if AG_RECONCILED else {"blocks": [29.5, 31.5], "printed": [30.5, 30.5]}),
+      "Agricultural Science and Technology %s (got %s)"
+      % ("meets its printed 30.5 since run 46124747415 and carries no unit difference" if AG_RECONCILED
+         else "keeps its unit difference as printed", ag))
 for p in progs:
     d = p["display"]
     key = (p["college"], p["control_number"])
