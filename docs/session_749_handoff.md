@@ -127,3 +127,13 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   of the Canyons 37868, San Jose City 22225, about $0.23 together.
 - 07:37Z: s748r1's reader (Sonnet): APPLY (the record is the certificate's own page, poid 3524; MINOR: the S740 test's
   edit should tie to `total_differs_list()`). Clean md5 pre-read 1 of 1. The apply pushed on `claude/s748-apply`.
+- 07:39Z: s748r1's migrate 46122086358 green (El Camino 19857). Records collected: 9.
+- 07:41Z: `piles` stop 2 (`4c08ad7c`): plan s748b (Orange Coast 03993 `figure_within_variable_units`, East Los Angeles
+  41231 `total_differs`) to a Sonnet plan reader; a new reconcile kind, `list_minimum_units`, for East Los Angeles
+  31017 (recall over 136 records: 31017 alone) to a Fable 5.2 second reader. Orange Coast's paid read (only 08663 and
+  08626, force 08626, sources_from 45999669017, about $0.15) dispatched on `claude/s748-piles-oc` (`dbfa9e08`).
+  `piles`' finding: 33 records statewide fail coverage on a course their own page omits, and 21 would pass; `piles`
+  writes it as a named gap for its seven colleges. 16 discontinued flags, none new; units rules move none.
+- 07:46Z: Lassen's and Alameda's second reader (Sonnet): GO each (34 is the catalog's printed figure, PDF page 72; MAJOR
+  for `keys` before the land: the S731 Saddleback test fails on San Bernardino Valley's `block_sum`; two MINOR test
+  pins). The free reconciles dispatched on `claude/s748-keys-lassen` and `-alameda` (`344d4d2c`).
