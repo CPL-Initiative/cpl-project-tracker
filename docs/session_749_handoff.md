@@ -36,7 +36,7 @@ session is **SkySandpiper**, to take the next free number at its start.
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order at sign-off:** the land #3945 has merged (`cd464091`); the second land, Mt. San Antonio's eight
-   (`claude/s748-land-mtsac`: PR number and merge sha, the conductor fills in), merges next; this checkpoint, #3940,
+   (`claude/s748-land-mtsac`: #3946, merged `852db460`, confirmed on `origin/main`) has merged; this checkpoint, #3940,
    merges after it, with one update from `main` right before its merge. Open beside them: COBIx's #3937, #3926 and
    #3917 (Sam's or COBIx's) and dependabot's #3383, which waits.
 
@@ -265,15 +265,15 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 In all: **41 records collected and live**, no outline rows, paid reads about $0.34 on their receipts (Coastline $0.06,
 San Bernardino Valley $0.09, San Jose City $0.06, Orange Coast $0.13; College of the Canyons' read failed; page reads
 and reconciles free). A **full checkpoint** (data receipts were written and the harvest lane moved). The census at the
-start is in *The start* above. The closing census: (run id and counts: the conductor fills in).
+start is in *The start* above. The closing census, 46141774235 on `main` (`b446d321`, 11:55Z): 15,698 of 20,282 pass, 3,888 have no passing record, 696 are collected with a named gap (from 15,680, 3,927 and 675).
 
 **Merged.**
 - **#3945, the land** (`claude/s748-land`, merged `cd464091`, 10:48Z, confirmed on `origin/main`): 33 records' plans,
   receipts and reads, Coastline's staging fix, the reconcile steps at San Bernardino Valley, Lassen and College of
   Alameda, Lassen's guard `only_cal_getc`, the plan modules `kb/_program_piles_s748*.py`. `test` green on `0add7c1e`
   (run 46134498846); a Sonnet second reader said MERGE.
-- **The second land, Mt. San Antonio's eight** (`claude/s748-land-mtsac`, built by `post`): (PR number and merge sha:
-  the conductor fills in).
+- **The second land, Mt. San Antonio's eight** (`claude/s748-land-mtsac`, built by `post`): #3946, merged `852db460`
+  (confirmed on `origin/main`; `test` green on `0103cae2`, thread empty).
 
 **Live (each applied, reread or loaded).**
 - By guarded plans, 24. Named gaps, 21: s748a Butte 14583, Santa Barbara City 43553; s748k1 College of the Canyons
@@ -430,7 +430,7 @@ about $190.
 |---|---|---|
 | #3940 (`claude/nice-maxwell-ykve9f`) | the declaration, the log and this checkpoint (draft, docs only) | merges at sign-off, after the lands and one update from `main` |
 | #3945 (`claude/s748-land`) | merged `cd464091` (10:48Z); the branch is gone | none |
-| `claude/s748-land-mtsac` | the second land, Mt. San Antonio's eight, built by `post` | (PR number and merge sha: the conductor fills in) |
+| `claude/s748-land-mtsac` | the second land, Mt. San Antonio's eight, built by `post` | #3946, merged `852db460` (`test` green on `0103cae2`, thread empty) |
 | `claude/s748-apply` (`686e6b94`) | s748a, s748k1, s748r1, s748b, s748g1, s748r2 and s748c applied; `.apply` restored | none; in the land |
 | `claude/s748-keys` (`da2cc599`) | in the land, less the census change `50bedbf7` (reverted there) | NEXT (4): the census fix |
 | `claude/s748-keys-sbvc`, `-keys-lassen`, `-keys-alameda` | reconciles and rereads live (04894; 18752, 18756; 32765) | none; in the land |
@@ -446,7 +446,7 @@ about $190.
 | `claude/s748-paid-coc` (`2975e3fd`) | College of the Canyons 37868's paid read 46121986278 failed | NEXT (7): its log first |
 | `claude/s748-post-sierra` (`f26375bd`) | Sierra 21525, a tie, no dispatch | a person's look |
 | `claude/s742-readers-cuy2`, `claude/s742-readers-stagepin` | superseded by their `s748` copies, in the land | none |
-| Harvest gap census on `main` | 46089216929 (00:44Z): 15,680 pass; the closing run: (run id and counts: the conductor fills in) | the next run's first read, after the display build |
+| Harvest gap census on `main` | 46089216929 (00:44Z): 15,680 pass; the closing run 46141774235 (11:55Z): 15,698 pass, 3,888 without, 696 with a named gap | the next run's first read, after the display build |
 | #3937, #3926, #3917 | COBIx's (subject titles; two superseded) | Sam's or COBIx's |
 | #3383 | dependabot's | waits |
 
@@ -454,11 +454,11 @@ about $190.
 
 The conductor holds no PR subscription, check-in or artifact watch: it opened no `subscribe_pr_activity` subscription
 on #3940 or #3945, no COBIx watcher (stopped by Sam, `d-cobix-watcher-stopped-on-sam-word-s714`) and no scheduled wake,
-so none is to drop. Workers end with the session; each branch is pushed. The vault note for this run: (the conductor
-fills in its path and PR).
+so none is to drop. Workers end with the session; each branch is pushed. The vault note for this run: `CPLBrain/07-session-notes/2026-11-28-s748-skystilt-collection.md`, draft samueltlee/CPLBrain#881, which merges on its own.
 
-Spend: not available; 2026-11-28T06:12Z to (the conductor fills in the figure, its tags and the end time).
+Spend: $183.98 estimate (Fable 5.2 $172.63, Sonnet 5.5 $11.21, Haiku 5.5 $0.14); collection $183.98; 2026-11-28T06:12Z to 2026-11-28T11:59Z.
+(A token-count estimate at the repo's list prices (`kb/_spend_meter.py`'s table), measured from this session's and its agents' transcripts at 11:59Z, with Fable 5.2 priced at the Opus 5.5 rate as S739 to S742 did, since the table names no Fable rate; get_session is not among this run's tools. The paid reads' own cost, about $0.34 on their receipts, is apart.)
 
 Opening line: *Greetings, you are SkySandpiper (the next free session number at your start; the routine takes it), see SkyStilt's (S748) handoff — `docs/session_749_handoff.md` — let's keep rolling with our queue.*
 
-(Last line: the conductor fills in: conductor model, session cost, records collected, outline rows, substantive PRs merged.)
+Conductor model: Fable 5.2 (claude-fable-5-2), as the run header reports and the form names; session cost about $183.98 (a token-count estimate; get_session is not available here); 41 records collected and live (20 passing, 21 named gaps); 0 outline rows added; 2 substantive PRs merged (#3945 `cd464091` and #3946 `852db460`, each confirmed on `origin/main`), not counting this checkpoint.
