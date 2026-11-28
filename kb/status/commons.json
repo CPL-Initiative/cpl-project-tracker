@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T13:25:28Z",
+ "written_at": "2026-11-28T16:51:38Z",
  "rows": [
   {
    "key": "requirements",
@@ -224,14 +224,14 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 4004,
-     "of": 15871,
-     "words": "cards the auditor scores 0.85 or better; 9,674 at needs review, 2,193 at needs repair, 0 not ready",
+     "n": 4011,
+     "of": 17019,
+     "words": "cards the auditor scores 0.85 or better; 10,771 at needs review, 2,237 at needs repair, 0 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 296,
-     "of": 15871,
+     "of": 17019,
      "words": "confirmed by a person, 145 of them ready; a person also confirmed 350 cards now kept for the record and left out of the counts (350 merged)",
      "open": "#coci-lookup/courses",
      "error": null
@@ -243,7 +243,7 @@
    ],
    "issues": [
     {
-     "n": 9726,
+     "n": 10496,
      "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
@@ -258,14 +258,14 @@
      "error": null
     },
     {
-     "n": 3200,
+     "n": 3354,
      "words": "common courses (cards) with a unit anomaly",
      "owner": "a curator (an identity keeps its unit range)",
      "carry": "no_procedure",
      "open": "#coci-lookup/list/units"
     },
     {
-     "n": 5303,
+     "n": 5376,
      "words": "common courses (cards) with a blank catalog description",
      "owner": "the colleges' COCI entries",
      "carry": "routine",
@@ -286,28 +286,25 @@
      "words": "Re-mints follow the playbook, one cron window each"
     },
     {
-     "n": 3966,
-     "words": "cards kept for the record and left out of these counts: 2,816 merged, 7 retired, 1,118 inactive, 25 not applicable",
+     "n": 2818,
+     "words": "cards kept for the record and left out of these counts: 2,818 merged, 0 retired, 0 inactive, 0 not applicable",
      "open": "#coci-lookup/courses"
     }
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-28T06:24:11+00:00",
+    "at": "2026-11-28T15:58:05+00:00",
     "every_hours": 24
    },
    "facts": {
-    "total": 15871,
-    "ready": 4004,
-    "needs_review": 9674,
-    "needs_repair": 2193,
+    "total": 17019,
+    "ready": 4011,
+    "needs_review": 10771,
+    "needs_repair": 2237,
     "not_ready": 0,
     "cap": 0.79,
     "kept_not_counted": {
-     "merged": 2816,
-     "inactive": 1118,
-     "not_applicable": 25,
-     "retired": 7
+     "merged": 2818
     },
     "confirmed": 296,
     "confirmed_ready": 145,
@@ -315,12 +312,12 @@
      "merged": 350
     },
     "tags": {
-     "blank_description": 5303,
-     "discipline_title_mismatch": 946,
-     "blank_discipline": 72,
-     "seed_untouched_discipline": 9726,
-     "top_discipline_disagreement": 1004,
-     "unit_anomaly": 3200
+     "blank_description": 5376,
+     "discipline_title_mismatch": 1017,
+     "blank_discipline": 73,
+     "seed_untouched_discipline": 10496,
+     "top_discipline_disagreement": 1097,
+     "unit_anomaly": 3354
     }
    },
    "sources": [
@@ -383,7 +380,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-27T19:40:49+00:00",
+    "at": "2026-11-27T14:36:28-08:00",
     "every_hours": null
    },
    "facts": {
@@ -454,15 +451,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 246,
-     "of": 246,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (138 by a person, 108 by the nightly procedure or a session cohort)",
+     "n": 247,
+     "of": 247,
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (137 by a person, 110 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 138,
-     "of": 246,
-     "words": "confirmed by a person, 138 of them settled",
+     "n": 137,
+     "of": 247,
+     "words": "confirmed by a person, 137 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -521,12 +518,12 @@
     "every_hours": 24
    },
    "facts": {
-    "disciplines": 246,
-    "confirmed": 246,
-    "person": 138,
-    "cohort": 108,
-    "person_settled": 138,
-    "settled": 246,
+    "disciplines": 247,
+    "confirmed": 247,
+    "person": 137,
+    "cohort": 110,
+    "person_settled": 137,
+    "settled": 247,
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
@@ -692,7 +689,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 9726,
+      "n": 10496,
       "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -700,7 +697,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 3200,
+      "n": 3354,
       "words": "common courses (cards) with a unit anomaly",
       "owner": "a curator (an identity keeps its unit range)",
       "open": "#coci-lookup/list/units"
@@ -815,7 +812,7 @@
    {
     "ref": "course",
     "title": "Common Course Reference",
-    "n": 5303,
+    "n": 5376,
     "words": "common courses (cards) with a blank catalog description",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
@@ -841,6 +838,17 @@
     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
+   },
+   {
+    "ref": "course",
+    "title": "Common Course Reference",
+    "kind": "not_shrinking",
+    "n": 5376,
+    "was": 5310,
+    "since": "2026-11-21",
+    "words": "common courses (cards) with a blank catalog description",
+    "owner": "the colleges' COCI entries",
+    "open": "#coci-lookup/list/nodesc"
    }
   ]
  },

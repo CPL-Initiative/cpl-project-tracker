@@ -534,6 +534,33 @@ def restore(p, rb, before_text=None, seed_text=None, aliases_text=None):
         er.dump(os.path.join(p["kb"], f), docs[name])
 
 
+def payload_disciplines(receipt, path):
+    """After the token re-key, each moved row in the catalog payload carries the discipline its record now holds, as
+    the daily generator would write it. The payload filled a discipline-less AERO row from its prefix (Aviation,
+    `dsrc` subject_map_edge); on MILS that fill neither holds nor re-derives (tests/discipline_edge_fill_test.py). The
+    file is written back in its own serialization (it round-trips through json.dumps). -> rows changed."""
+    if not os.path.exists(path):
+        return 0
+    src = read(path)
+    j = src.index("=", src.index("window.")) + 1
+    body = src[j:].strip().rstrip(";")
+    doc = json.loads(body)
+    if json.dumps(doc, ensure_ascii=False) != body:
+        raise SystemExit(f"{path} does not round-trip through json.dumps; left as it is")
+    after = {v["new_id"]: v.get("discipline_after") for v in receipt["aliases"].values()}
+    n = 0
+    for row in doc.get("rows") or []:
+        d = after.get(row.get("id"))
+        if d and row.get("disc") != d:
+            row["disc"] = d
+            if row.get("dsrc") == "subject_map_edge":
+                row.pop("dsrc")
+            n += 1
+    if n:
+        write(path, src[:j] + src[j:].replace(body, json.dumps(doc, ensure_ascii=False), 1))
+    return n
+
+
 def rollback(p):
     if not os.path.exists(p["rollback"]):
         raise SystemExit("no rollback receipt at " + rel(p, p["rollback"]))
@@ -590,6 +617,7 @@ def main(argv=None):
         if args.rekey_generated:
             import _subjects_list_recode as slr
             print("generated files re-keyed:", slr.rekey_generated(alias))
+            print("payload disciplines:", payload_disciplines(r, os.path.join(p["root"], "unified_courses_data.js")))
         return 0
     if not args.apply:
         docs = er.load_docs(p["kb"])
