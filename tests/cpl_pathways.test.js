@@ -54,6 +54,17 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
   check("program has sections with courses",
     !!bs && Array.isArray(bs.sections) && bs.sections.length >= 3 &&
     bs.sections.every(s => Array.isArray(s.courses) && s.courses.length > 0));
+  // The featured map counts the A.S. major the catalog prints: the 19-unit core plus the Structural option (38),
+  // with the Reinforcing option as the uncounted alternate path. MAP articulates all 24 courses, so every IWAP row
+  // of the lower division carries a stamp; S747 found the page counting 31.5 with Welding I and the Structural
+  // option parked as "in progress" (program_requirement_records 42158 reads up to 38).
+  const counted = bs ? bs.sections.filter(s => /^as-/.test(s.id) && !s.no_count) : [];
+  const sum = (secs, f) => secs.reduce((n, s) => n + s.courses.filter(f).reduce((m, c) => m + (c.units || 0), 0), 0);
+  check("the counted A.S. major is 38 units of CPL (core 19 + Structural 19)",
+    sum(counted, c => !!c.cpl) === 38, sum(counted, c => !!c.cpl));
+  const iwap = bs ? bs.sections.filter(s => /^as-/.test(s.id)).flatMap(s => s.courses).filter(c => /^IWAP 4/.test(c.code || "")) : [];
+  check("all 24 A.S. major courses are listed and stamped as articulated",
+    iwap.length === 24 && iwap.every(c => c.cpl && c.cpl.credential), iwap.length);
 }
 
 // ── Part B — behavior, loaded into jsdom ──
@@ -635,6 +646,14 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   let boxes = dside ? Array.from(dside.querySelectorAll("input[type=checkbox]")) : [];
   check("the heading opens every credential, none checked", boxes.length === dad.length - 1 && boxes.every(b => !b.checked) && /NBRC CRT/.test(dside.textContent), boxes.length);
   check("the panel names El Camino as granting it", /El Camino College/.test(dside.textContent));
+  // Beside the view, never over it (Sam, 2026-11-23): from 900px the page gives up the panel's width while it is open.
+  // S747 found the live Request Adopt panel fixed over the right 520px, covering the rows' own Request Adopt buttons.
+  const besideCss = Array.from(w.document.querySelectorAll("style")).map(st => st.textContent).join("\n");
+  check("the open panel marks the page so it gives up the panel's width",
+    w.document.body.classList.contains("cplpw-panel-on") &&
+    /@media \(min-width: 900px\) \{ body\.cplpw-panel-on \{ margin-right:min\(520px, 100vw\); \} \}/.test(besideCss));
+  dside.querySelector(".cplpw-panel-close").dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("Close gives the width back", !w.document.body.classList.contains("cplpw-panel-on") && dside.hidden);
   const rowBtn = dad.find((b, i) => i > 0 && /NBRC CRT/.test(b.getAttribute("aria-label") || ""));
   rowBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
   dside = w.document.getElementById("cplpw-panel");

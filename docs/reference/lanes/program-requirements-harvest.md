@@ -59,9 +59,14 @@ go. please roll with it"*): the `adopt_panel.js` chip on catalog cards and featu
 *Request Adopt* per row on the B.S. directory, one sidebar, and each credential's MAP line ONE link to the nearest
 college's exhibit (`map_links.js` `nearest()`). **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
 carries `_x000D_` and cp1252 mojibake. **NEXT (CPL Pathways):** (1) after the 2026-11-28 06:17Z run, confirm Cerritos
-Field Ironworkers' Trained by lists the Period credentials; (2) the featured B.S. page's hero figures still say 31.5 units
-of CPL: check them against 38; (3) the 31 records at older display builds; (4) clean the description shards at build in
-`kb/_build_coci_lookup.py`.
+Field Ironworkers' Trained by lists the Period credentials; (2) clean the description shards at build in
+`kb/_build_coci_lookup.py`. **FINDING (S747)** `f-older-display-builds-are-unrefiled-reads-s747`: the 32 records at older
+display builds (De Anza 15, Glendale 15, LACC 1, Mt. SAC 1) are earlier reads that no current capture files, so the
+build never reaches them. The 2026–27 re-captures hold De Anza's 15 as `would_extract` (found, not yet extracted) and
+the other 17 as `not_found` near misses (Glendale Mass Communications A.S.: 3 of 21 listed courses on the page). They
+stay as read, labeled with their catalog year; extraction and recall are the routine's collection. **DONE (S747):** the featured B.S. page counts the A.S. major
+the catalog prints, the 19-unit core plus the Structural option, 38 units of CPL (was 31.5: Welding I and the Structural
+option sat in an uncounted *in progress* section); Reinforcing shows as the alternate path; guard `tests/cpl_pathways.test.js`.
 
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.
 
@@ -79,7 +84,7 @@ of CPL: check them against 38; (3) the 31 records at older display builds; (4) c
 **A wave** (`program-requirements-wave.yml`, #3191): up to eight colleges on distinct hosts, one branch, one PR, one filing job, no table written (lessons, *Running a wave*). **DECIDED** `d-wave-one-branch-hard-stop-s644`, `d-wave-price-rate-floor-s644`.
 **The display apply (#3190, #3204, #3495):** `step=display` writes the whole build, `display_college` one college; no display receipt is committed (the private bucket `cpl-receipts` holds it). The two paragraphs as they stood: lessons, *Moved from the lane (S687 checkpoint)*.
 
-**Display build `229a759101f7` is live** (S746, #3927 `8ae97588`, run 46092611343 on `main`): 18,751 records at the build, 31 at two older builds (`0874a3a15f22` 16, `bef8ef819af7` 15; not yet examined). It reads MAP's live view (`kb/exhibits_adoption.json`) beside the dated feed. Cerritos 42158 reads up to 38 units in the table Sierra reads. The census after S746: 15,680 of 20,282 active programs pass at 118 colleges (2026-11-28 02:20Z).
+**Display build `229a759101f7` is live** (S746, #3927 `8ae97588`, run 46092611343 on `main`): 18,751 records at the build, 32 at three older builds (`0874a3a15f22` 16, `bef8ef819af7` 15, `4c57fd250cce` 1; reads no current capture files, S747). It reads MAP's live view (`kb/exhibits_adoption.json`) beside the dated feed. Cerritos 42158 reads up to 38 units in the table Sierra reads. The census after S746: 15,680 of 20,282 active programs pass at 118 colleges (2026-11-28 02:20Z).
 
 **Standing pieces moved at the S739 checkpoint** (the extraction gate and one spend meter, `d-extraction-gate-every-run-s653` and `d-one-spend-meter-s654`; cheap piles under Sam's collect-with-gaps ruling, `sam-collect-with-gaps-2026-11-17`; the unblocker step, `scheduled_sessions` step 12; Rule D, `d-rule-d-from-committed-previews-s687`): each as it stood, lessons, *Moved from the lane (S739 checkpoint)*. They stand.
 
